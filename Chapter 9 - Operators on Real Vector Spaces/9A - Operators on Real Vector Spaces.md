@@ -24,8 +24,7 @@ Chapter 9: **Operators on Complex Vector Spaces**
 
 _Exercise 1_
 
-Take a look at 9.2.
-Obviously $V_\mathbb{C}$ is a vector space, because it equals $V \times V$.
+$V_\mathbb{C}$ is clearly closed under addition.
 We can write each complex number in the form $a + bi$ for some $a, b \in \mathbb{R}$ and we have
 
 $$
@@ -34,6 +33,14 @@ $$
 
 where the first equality follows from the definition and the second because the vectors inside both parentheses are in $V$.
 Thus $V_{\mathbb{C}}$ is closed under complex scalar multiplication.
+If $0$ is the additive identity on $V$, then $0 + i0$ is the additive identity on $V_\mathbb{C}$ because
+
+$$
+(u + iv) + (0 + i0) = (u + 0) + i(v + 0) = u + iv.
+$$
+
+One easily checks that the rest of the properties listed in 1.19 are satisfied by $V_\mathbb{C}$.
+
 Therefore $V_\mathbb{C}$ is a complex vector space.
 
 _Exercise 2_

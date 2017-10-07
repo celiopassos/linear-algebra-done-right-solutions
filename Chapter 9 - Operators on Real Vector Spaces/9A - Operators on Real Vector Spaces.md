@@ -18,7 +18,7 @@ Chapter 9: **Operators on Complex Vector Spaces**
 - [x] Exercise 14
 - [x] Exercise 15
 - [x] Exercise 16
-- [ ] Exercise 17
+- [x] Exercise 17
 - [ ] Exercise 18
 - [ ] Exercise 19
 
@@ -349,3 +349,95 @@ T^2v_j = -Tu_j = -v_j \text{ and } T^2u_j = Tv_j = -u_j.
 $$
 
 Thus $T^2 = -I$.
+
+_Exercise 17_
+
+_(a)_
+Obviously $V$ closed under addition and complex scalar multiplication.
+One can easily check that the other properties in 1.19 are satisfied.
+
+_(b)_
+Let $n$ be the integer such that $\dim V = 2n$ and consider the following process.
+
+* Step $1$
+
+    Choose a nonzero $v_1 \in V$.
+    Then $v_1, Tv_1$ is linearly independent in $V$ as real vector space because $v_1$ is not an eigenvector of $T$ (because $T$ has no eigenvectors).
+    Set $U_1 = \operatorname{span}(v_1, Tv_1)$.
+    Then $\dim U_1 = 2$ and $U_1$ is invariant under $T$.
+
+* Step $j$
+
+    If $j = n + 1$, stop the process.
+    We have that
+
+    $$
+    \dim U_{j-1} = 2(j-1) \le 2n - 2 < \dim V,
+    $$
+
+    $U_{j-1}$ is invariant under $T$ and
+
+    $$
+    v_1, Tv_1, \dots, v_{j-1}, Tv_{j-1}
+    $$
+
+    is a basis of $U_{j-1}$.
+    Hence there exists a nonzero $w \in V$ such that $w \notin U_{j-1}$.
+    Since $T$ is surjective, there exists $v_j \in V$ such that $Tv_j = w$.
+    Thus $v_j \notin U_{j-1}$, because $U_{j-1}$ being invariant under $T$ would imply $w \in U_{j-1}$.
+    Moreover, the list
+
+    $$
+    v_1, Tv_1, \dots, v_j, Tv_j \tag{1}
+    $$
+
+    is linearly independent.
+    To see this, let $a_1, \dots, a_j, c_1, \dots, c_j \in \mathbb{R}$ such that
+
+    $$
+    a_1v_1 + c_1Tv_1 + \dots + a_jv_j + c_jTv_j = 0
+    $$
+
+    We already know that $v_j$ is not in the span of the previous vectors, so $c_j = 0$ implies $a_j = 0$ which implies that the rest of the $a$'s and $c$'s is $0$.
+    Assume by contradiction $c_j \neq 0$.
+    We can write the equation above as
+
+    $$
+    a_1v_1 + c_1Tv_1 + \dots + a_{j-1}v_{j-1} + c_{j-1}Tv_{j-1} = - a_jv_j - c_jTv_j. \tag{2}
+    $$
+
+    Applying $T$ to both sides we get
+
+    $$
+    a_1Tv_1 - c_1v_1 + \dots + a_{j-1}Tv_{j-1} - c_{j-1}v_{j-1} = - a_jTv_j + c_jv_j. \tag{3}
+    $$
+
+    Multiplying $(3)$ by $\frac{a_j}{c_j}$ and summing with $(2)$ shows us that
+
+
+    $$
+    \left(\frac{-a_j^2}{c_j} - c_j\right)Tv_j \in U_{j-1}.
+    $$
+
+    Hence the parentheses above equals $0$.
+    This means that $-a_j^2 = c_j^2$, which is only possible if $a_j = c_j = 0$ and contradicts our assumption that $c_j \neq 0$.
+    Therefore the list in $(1)$ is linearly independent.
+    Set
+
+    $$
+    U_j = \operatorname{span}(v_1, Tv_1, \dots, v_j, Tv_j).
+    $$
+
+    Then $\dim U_j = 2j$ and $U_j$ is invariant under $T$.
+
+At the end of the process, we will have constructed a subspace $U_n$ of $V$ which has a basis
+
+$$
+v_1, Tv_1, \dots, v_n, Tv_n
+$$
+
+and dimension $2n$.
+Thus $U_n = V$ and the above list is a basis of $V$.
+Clearly $v_1, \dots, v_n$ spans $V$ as a complex vector space.
+Futhermore, it is linearly independent in $V$ as a complex vector space, because if a (complex) linear combination of it equals $0$, then a linear combination of the list above equals $0$, which implies that the coefficients are $0$.
+Therefore $V$ as a complex vector space has dimension $n$, completing the proof.

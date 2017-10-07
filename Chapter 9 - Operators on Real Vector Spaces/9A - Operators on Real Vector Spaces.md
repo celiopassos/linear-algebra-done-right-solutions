@@ -19,8 +19,8 @@ Chapter 9: **Operators on Complex Vector Spaces**
 - [x] Exercise 15
 - [x] Exercise 16
 - [x] Exercise 17
-- [ ] Exercise 18
-- [ ] Exercise 19
+- [x] Exercise 18
+- [x] Exercise 19
 
 _Exercise 1_
 
@@ -441,3 +441,88 @@ Thus $U_n = V$ and the above list is a basis of $V$.
 Clearly $v_1, \dots, v_n$ spans $V$ as a complex vector space.
 Futhermore, it is linearly independent in $V$ as a complex vector space, because if a (complex) linear combination of it equals $0$, then a linear combination of the list above equals $0$, which implies that the coefficients are $0$.
 Therefore $V$ as a complex vector space has dimension $n$, completing the proof.
+
+_Exercise 18_
+
+The proof that (a) $\Rightarrow$ (b) below is basically a rewrite of the proof 5.27 with a few tweakings.
+
+Suppose (a) holds.
+We will prove (b) by induction on $\dim V$.
+First, if $\dim V = 1$, then the matrix of $T$ with respect to any basis only has one entry and thus (b) trivially holds.
+Assume that $\dim V > 1$ and that (a) implies (b) for all vector spaces of lower dimension.
+
+Let $\lambda \in \mathbb{R}$ be an eigenvalue of $T$, which exists by (a) and 9.11.
+Define
+
+$$
+U = \operatorname{range}(T - \lambda I).
+$$
+
+Because $\dim \operatorname{null}(T - \lambda I) \ge 1$, the Fundamental Theorem of Linear Maps implies that $\dim U < \dim V$.
+Futhermore, $U$ is invariant under $T$ and so $U_\mathbb{C}$ is invariant under $({T|\_U})\_\mathbb{C}$.
+All the eigenvalues of $({T|\_U})\_\mathbb{C}$ are real.
+To see this, suppose $\lambda \in \mathbb{C}$ is an eigenvalue of $({T|\_U})\_\mathbb{C}$ and $u_1 + iu_2$ a corresponding eigenvector for some $u_1, u_2 \in U$.
+Then
+
+$$
+\lambda(u_1 + iu_2) = ({T|\_U})\_\mathbb{C}(u_1 + iu_2) = (T|\_U)u_1 + i(T|\_U)u_2 = Tu_1 + iTu_2 = T_\mathbb{C}(u_1 + iu_2),
+$$
+
+which implies that $\lambda$ is an eigenvalue of $T_\mathbb{C}$ and thus must be real.
+By the induction hypothesis there exists a basis $u_1, \dots, u_m$ of $U$ with respect to which the matrix of $T|\_U$ is upper triangular.
+From 5.26, we get that
+
+$$
+Tu_j = (T|\_U)u_j \in \operatorname{span}(u_1, \dots, u_j). \tag{4}
+$$
+
+Extend it to a basis $u_1, \dots, u_m, v_1, \dots, v_n$ of $V$.
+For each $k$ we have
+
+$$
+Tv_k = (T - \lambda I)v_k + \lambda v_k.
+$$
+
+The definition of $U$ shows that $(T - \lambda I)v_k \in U$.
+Hence, the equation above shows that
+
+$$
+Tv_k \in \operatorname{span}(u_1, \dots, u_m, v_1, \dots, v_k). \tag{5}
+$$
+
+Using $(4)$, $(5)$ and 5.26, we conclude that the matrix of $T$ with respect to basis $u_1, \dots, u_m, v_1, \dots, v_n$ of $V$ is upper triangular.
+
+9.7 and 5.32 show that (b) implies (a).
+Hence the equivalence between (a) and (b) is stablished.
+Now it suffices to show that (a) and (c) are equivalent.
+
+Suppose (a) holds.
+Let $\lambda \in \mathbb{R}$ be an eigenvalue of $T_\mathbb{C}$ and let $d$ denote its multiplicity.
+Let $u_1 + iv_1, \dots, u_d + iv_d$ be a basis of $G(\lambda, T_\mathbb{C})$.
+For each $j = 1, \dots, d$, we have
+
+$$
+(T - \lambda)^{\dim V} u_j + i(T - \lambda)^{\dim V} v_j = ((T - \lambda)^{\dim V})\_\mathbb{C}(u_j + iv_j) = (T_\mathbb{C} - \lambda)^{\dim V}(u_j + iv_j) = 0.
+$$
+
+This implies that $u_1, v_1, \dots, u_d, v_d \in G(\lambda, T)$.
+Since $G(\lambda, T_\mathbb{C})$ is contained in the complex span of this list, it follows that the dimension of this complex span is at least $d$.
+9.4 (b) now implies that the dimension of the real span of $u_1, v_1, \dots, u_d, v_d$ is at least $d$.
+Hence $\dim G(\lambda, T) \ge d$.
+Since the sum of multiplicities of the generalized eigenspaces of $T$ is at most $\dim V$, it follows that the only way the dimensions will fit is if $\dim G(\lambda, T) = d$.
+
+Thus, summing all the generalized eigenspaces of $T$ we get a subspace of $V$ with dimension $\dim V$, namely $V$.
+Taking a basis of generalized eigenspace and putting this bases together gives a basis consisting of generalized eigenvectors of $V$.
+Thus (c) holds.
+
+Now suppose (c) holds.
+Then $T_\mathbb{C}$ has real eigenvalues, whose sum of multiplicities already equal $\dim V$.
+Hence $T_\mathbb{C}$ cannot have a nonreal eigenvalue.
+Thus (a) holds.
+
+_Exercise 19_
+
+By the same reasoning used in the proof 8.4, it follows that $\dim \operatorname{null} T^{n-1} \ge n - 1$.
+Thus, the multiplicty of $0$ as an eigenvalue of $T$, and $T_\mathbb{C}$ as well, is at least $n - 1$.
+Hence $T_\mathbb{C}$ has at most another eigenvalue.
+Since nonreal eigenvalues of $T_\mathbb{C}$ come in pairs (see 9.16), this other eigenvalue of $T_\mathbb{C}$ must be real.

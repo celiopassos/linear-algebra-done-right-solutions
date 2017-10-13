@@ -50,13 +50,13 @@ _(b)_
 It equals the sum of the products of the eigenvalues of $T$ with one term missing:
 
 $$
-\sum_{j=1}^n \prod_{k \neq j} \lambda_k.
+\sum_{j=1}^n \prod_{k \neq j} (-1)^{n-1}\lambda_k.
 $$
 
 More succinctly, assuming $0$ is not an eigenvalue of $T$:
 
 $$
-\sum_{j=1}^n \frac{\det T}{\lambda_j}.
+\sum_{j=1}^n (-1)^{n-1}\frac{\det T}{\lambda_j}.
 $$
 
 _Exercise 4_

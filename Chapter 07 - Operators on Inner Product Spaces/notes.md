@@ -22,6 +22,7 @@ $$
 
 Then $S$ is an isometry if and only if the list $Se_1, \dots, Se_n$ is orthonormal (see 7.42), which happens if and only if the columns of $\mathcal{M}(S)$ are also orthonormal (by the equation above).
 Note that the first $\langle \cdot, \cdot \rangle$ above is the inner product on $V$ and the second is the usual inner product on $\mathbb{F}^n$.
+<p align="right"> $\blacksquare$ </p>
 
 **Theorem 2.** (Rayleigh's principle)
 Suppose $V$ is a finite-dimensional real inner product space and $T \in \mathcal{L}(V)$ is self-adjoint with eigenvalues $\lambda_1 \ge \dots \ge \lambda_n$ (with each eigenvalue $\lambda$ repeated $\dim E(\lambda, T)$ times).
@@ -64,4 +65,19 @@ $$
 &= \frac{1}{||u||^2} \lambda_i ||u||^2\\\\
 &= \lambda_i.
 \end{aligned}
+$$
+<p align="right"> $\blacksquare$ </p>
+
+As a corollary of this we have the following result:
+
+**Corollary 1.**
+
+$$
+\min_{u \in V, u \neq 0} \frac{1}{||u||^2} \langle Tu, u \rangle = \lambda_n.
+$$
+
+Or, equivalently,
+
+$$
+\min_{u \in V, ||u|| = 1} \langle Tu, u \rangle = \lambda_n.
 $$

@@ -31,8 +31,10 @@ We will prove that $\operatorname{range} T = E(\lambda_1, T) \oplus \dots \oplus
 
 Suppose $v \in E(\lambda_1, T) \oplus \dots \oplus E(\lambda_m, T)$.
 Then $v = v_1 + \dots + v_m$ for some $v_1, \dots, v_m$, where each $v_j \in E(\lambda_j, T)$.
-Moreover, $v = T(\frac{1}{\lambda_1}v_1) + \dots + T(\frac{1}{\lambda_1}v_m)$, which implies that $v \in \operatorname{range}(T)$.
-Hence $E(\lambda_1, T) \oplus \dots \oplus E(\lambda_m, T) \subset \operatorname{range} T$.
+Moreover, $v = T(\frac{1}{\lambda_1}v_1) + \dots + T(\frac{1}{\lambda_m}v_m)$, which implies that $v \in \operatorname{range}(T)$.
+Hence
+
+$$E(\lambda_1, T) \oplus \dots \oplus E(\lambda_m, T) \subset \operatorname{range} T.$$
 
 For the inclusion in the other direction, suppose $v \in \operatorname{range} T$.
 Note that $\operatorname{range} T$ stays the same when we restrict $T$ to $E(\lambda_1, T) \oplus \dots \oplus E(\lambda_m, T)$.

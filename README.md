@@ -1,4 +1,4 @@
-# Linear Algebra Done Right: Solutions
+# Linear Algebra Done Right, 3rd Edition: Solutions
 
 Most solutions here are of my own authorship, but some were done with the help of this [site](http://linearalgebras.com/).
 The `notes.md` in each chapter folder (the ones that do have though) contain some theorems or lemmas.

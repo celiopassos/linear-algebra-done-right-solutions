@@ -41,16 +41,16 @@ Thus $T^*(x_1, \dots, x_n) = (x_2, \dots, x_n, 0)$.
 
 _Exercise 2_
 
-Suppose $\lambda$ is an eigenvalue of $T$ and $v$ a corresponding eigenvalue.
+Clearly, it suffices to prove one direction.
+Suppose $\lambda$ is an eigenvalue of $T$.
 Then
 
 $$
-\langle v, T^*v \rangle = \langle Tv, v \rangle = \lambda \langle v, v \rangle = \langle v, \overline{\lambda}v \rangle.
+\operatorname{null} (T^* - \overline{\lambda}I) = \operatorname{null} (T - \lambda I)^* = (\operatorname{range} (T - \lambda I))^\perp,
 $$
 
-Thus $T^*v = \overline{\lambda}$.
-
-The converse is about the same, because $(T^*)^\* = T$.
+where the last equality comes from 7.7.
+Now, since $\dim \operatorname{null} (T - \lambda I) > 0$, the subspace on the right has non zero dimension and the result follows.
 
 _Exercise 3_
 

@@ -10,7 +10,7 @@ Chapter 2: **Finite-Dimensional Vector Spaces**
 - [ ] Exercise 6
 - [ ] Exercise 7
 - [ ] Exercise 8
-- [ ] Exercise 9
+- [x] Exercise 9
 - [ ] Exercise 10
 - [ ] Exercise 11
 - [ ] Exercise 12
@@ -19,6 +19,17 @@ Chapter 2: **Finite-Dimensional Vector Spaces**
 - [x] Exercise 15
 - [x] Exercise 16
 - [ ] Exercise 17
+
+_Exercise 9_
+
+The result clearly holds if $v_1 + w, \dots, v_m + w$ is linearly independent, so assume it is not.
+By Exercise 10 in section 2A, $w \in \operatorname{span}(v_1, \dots, v_m)$ we can write
+$$
+w = a_1 v_1 + \cdots + a_m v_m,
+$$
+for some unique scalars $a_1, \dots, a_m \in \mathbb{R}$.
+Since $w$ is nonzero, we have $a_j \neq 0$ for at least one $j$.
+Removing $v_j + w$, we get a list of length $m-1$ which is linearly indepdent by previously cited exercise and the uniqueness of the scalars $a_i$.
 
 _Exercise 14_
 

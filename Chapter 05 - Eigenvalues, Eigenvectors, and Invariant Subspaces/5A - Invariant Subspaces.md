@@ -127,14 +127,37 @@ With the usual procedure, we find that $\lambda = 1$ or $\lambda = -1$ and it is
 _Exercise 10_
 
 _(a)_
-The eigenvalues are $1, \dots, n$ and their corresponding eigenvectors are the multiples of the vectors in the standard basis of $\mathbb{F}^n$.
+The eigenvalues are $1, \dots, n$ and their corresponding eigenvectors are the vectors in the standard basis of $\mathbb{F}^n$.
 
 _(b)_
-The span of each vector in the standard basis of $\mathbb{F}^n$.
+We claim that all subspaces invariant under $T$ are spans of vectors in the standard basis.
+
+Suppose $U$ is an invariant subspace of $T$ and $v = \sum_{k=1}^m a_{i_k}e_{i_k} \in U$, where $i_1 < \cdots < i_m$ and all $a_{i_k}$'s are nonzero.
+We will show that $e_{i_k} \in U$ for each $k$.
+First, all is clear if $m = 1$, so suppose $m > 1$.
+Note that
+$$
+Tv - i_1v = \sum_{k=2}^m a_{i_k}(i_k - i_1)e_{i_k} \in \operatorname{span}(e_{i_2}, \cdots, e_{i_m}).
+$$
+Also, $Tv - i_1v \in U$ because $v \in U$ and $U$ is a subspace.
+Moreover, the coefficients in the sum above are all nonzero.
+Repeating this $m-1$ times (subtracting $i_2(Tv-i_1v)$ from $Tv-i_1v$, ...), we're left with a nonzero vector in $\operatorname{span}(e_{i_m})$ which is also in $U$.
+In particular, $e_{i_m} \in U$, so $v - a_{i_m}e_{i_m} \in U$.
+Repeating again with this last vector, we find that $e_{i_{m-1}} \in U$.
+Continuing like this, we see that $e_{i_k} \in U$ for all $k$.
+
+Now, we have $\operatorname{span}(e_{i_1}, \dots, e_{i_m}) \subseteq U$.
+If this inclusion is not an equality, we can find another vector $w \in U$ which is not in the span of the $e_{i_k}$'s.
+Writing $w$ as a linear combination of vectors in the standard basis, we can find an integer $j$, distinct from all the $i_k$, such that the coefficient of $e_j$ is nonzero.
+Thus, if we repeat the previous procedure with $w$ instead of $v$, we see that $e_j \in U$, so $\operatorname{span}(e_{i_1}, \dots, e_{i_m}, e_j) \subseteq U$.
+If this inclusion is still not an equality, we can repeat this last procedure again and add another basis vector to the $\operatorname{span}$.
+Each time the dimension increases by $1$.
+Since $U$ is finite-dimensional, we must have equality at the some point.
 
 _Exercise 11_
 
-There is only one eigenvalue and its corresponding eigenvectors are the constant polynomials.
+Since degree of a polynomial always decreases after applying $T$, the polynomials $p$ with $\deg p \ge 1$ can never be eigenvalues.
+If $\deg p = 0$ (i.e. $p$ is a constant), then $Tp = 0$, so the only eigenvalue of $T$ is $0$.
 
 _Exercise 12_
 

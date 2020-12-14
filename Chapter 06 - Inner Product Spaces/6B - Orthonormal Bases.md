@@ -146,27 +146,25 @@ There $2^m$ such permutations.
 
 _Exercise 11_
 
-Let $w \in V$.
-Define $\varphi(v) = \langle v, w \rangle_1$ and $\psi(v) = \langle v, w \rangle_2$.
-Since $\varphi(v) = 0$ if and only if $\psi(v) = 0$, it follows that $\operatorname{null} \varphi =\operatorname{null} \psi$.
-By Theorem 1 in Chapter 3 notes we have
-
+Fix $w \in V$ and, without loss of generality, assume $\|w\|_2 = 1$.
+Then for all $v \in V$, $\langle v - \langle v, w \rangle_2 w, w \rangle_2 = 0$, which implies also that
+$\langle v - \langle v, w \rangle_2 w, w \rangle_1 = 0$.
+Therefore
 $$
-\operatorname{span}(\varphi) = (\operatorname{null} \varphi)^0 = (\operatorname{null} \psi)^0 = \operatorname{span}(\psi).
+\langle v, w \rangle_1 = \langle \langle v, w \rangle_2 w, w \rangle_1 = \|w\|_1^2 \langle v, w \rangle_2.
 $$
 
-Thus $\varphi = c\psi$ for some $c \in \mathbb{F}$.
-Hence, for each fixed $w$ we have $\langle v, w \rangle_1 = c\langle v, w \rangle_2$ for every $v \in V$.
-Chosing $v = w$ now implies that $c$ is real and positive.
+Hence, for each fixed $w$ we have $\langle v, w \rangle_1 = c\langle v, w \rangle_2$ for every $v \in V$ for some positive and real constant $c$ ($c = \|w\|_1^2$ in the above).
 Fix $w_1, w_2 \in V$ and let $c_1, c_2 \in \mathbb{F}$ such that
 
 $$
 \begin{aligned}
-\langle v, w_1 \rangle_1 &= c_1 \langle v, w_1 \rangle_2\\\\
-\langle v, w_2 \rangle_1 &= c_2 \langle v, w_2 \rangle_2.\\\\
+\langle v, w_1 \rangle_1 &= c_1 \langle v, w_1 \rangle_2,\\\\
+\langle v, w_2 \rangle_1 &= c_2 \langle v, w_2 \rangle_2,\\\\
 \end{aligned}
 $$
 
+for all $v \in V$.
 Pluging $v = w_2$ in the first equation and $v = w_1$ in the second yields
 
 $$

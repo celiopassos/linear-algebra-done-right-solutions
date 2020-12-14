@@ -6,3 +6,5 @@ The `notes.md` in each chapter folder (the ones that do have though) contain som
 To visualize the equations, I recommend Google Chrome with the extension [TeX All the Things](https://chrome.google.com/webstore/detail/tex-all-the-things/cbimabofgmfdkicghcadidpemeenbffn?utm_source=chrome-app-launcher-info-dialog) or [GitHub with MathJax](https://chrome.google.com/webstore/detail/github-with-mathjax/ioemnmodlmafdkllaclgeombjnmnbima).
 
 _Disclaimer_: do not take for granted that every solution posted here is correct. Everyone is susceptible to errors and even more so when you're just an undergraduate student, like me. In fact, if you see a mistake, or if a solution is not clear enough, post a new issue and I'll look into that.
+
+**Contributing**: lots of exercises are missing solutions and some could be rewritten, if you want fill some of these gaps, open an issue and I'll give you access to commit.

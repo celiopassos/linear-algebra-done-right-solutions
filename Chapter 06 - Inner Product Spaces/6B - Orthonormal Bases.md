@@ -146,15 +146,15 @@ There $2^m$ such permutations.
 
 _Exercise 11_
 
-Fix $w \in V$ and, without loss of generality, assume $\|w\|_2 = 1$.
+Fix $w \in V$ and, without loss of generality, assume $||w||_2 = 1$.
 Then for all $v \in V$, $\langle v - \langle v, w \rangle_2 w, w \rangle_2 = 0$, which implies also that
 $\langle v - \langle v, w \rangle_2 w, w \rangle_1 = 0$.
 Therefore
 $$
-\langle v, w \rangle_1 = \langle \langle v, w \rangle_2 w, w \rangle_1 = \|w\|_1^2 \langle v, w \rangle_2.
+\langle v, w \rangle_1 = \langle \langle v, w \rangle_2 w, w \rangle_1 = ||w||_1^2 \langle v, w \rangle_2.
 $$
 
-Hence, for each fixed $w$ we have $\langle v, w \rangle_1 = c\langle v, w \rangle_2$ for every $v \in V$ for some positive and real constant $c$ ($c = \|w\|_1^2$ in the above).
+Hence, for each fixed $w$ we have $\langle v, w \rangle_1 = c\langle v, w \rangle_2$ for every $v \in V$ for some positive and real constant $c$ ($c = ||w||_1^2$ in the above).
 Fix $w_1, w_2 \in V$ and let $c_1, c_2 \in \mathbb{F}$ such that
 
 $$

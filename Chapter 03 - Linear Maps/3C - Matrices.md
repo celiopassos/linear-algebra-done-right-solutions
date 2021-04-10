@@ -74,7 +74,7 @@ Then
 
 $$
 \begin{aligned}
-\sum\limits_{j=1}^m C_{j,k} w_k &= (S + T)v_k\\\\
+\sum\limits_{j=1}^m C_{j,k} w_j &= (S + T)v_k\\\\
 &= Sv_k + Tv_k\\\\
 &= \sum\limits_{j=1}^m A_{j,k} w_j + \sum\limits_{j=1}^m B_{j, k} w_j\\\\
 &= \sum\limits_{j=1}^m (A_{j,k} + B_{j, k}) w_j.

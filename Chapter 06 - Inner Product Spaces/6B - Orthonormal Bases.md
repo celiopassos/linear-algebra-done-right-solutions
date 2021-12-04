@@ -15,7 +15,7 @@ Chapter 6: **Inner Product Spaces**
 - [x] Exercise 11
 - [x] Exercise 12
 - [ ] Exercise 13
-- [ ] Exercise 14
+- [x] Exercise 14
 - [ ] Exercise 15
 - [ ] Exercise 16
 - [x] Exercise 17
@@ -231,6 +231,27 @@ $$
 \end{aligned}
 $$
 Therefore by putting $c=\sqrt{max(k^2,m^2)}$ we see that the induction statement holds for $n$. Hence, the statement is correct for every finite dimensional $V$. 
+
+_Exercise 14_
+
+Since $dimV=n$ in suffices to show that $v_1,\dots,v_n$ are linearly independent. To do so, suppose that the there are some scalars $\alpha_1,\dots,\alpha_n$ that some of them are nonzero and:
+$$
+\alpha_1 v_1 + \dots + \alpha_n v_n = 0
+$$
+Define $w=\alpha_1 e_1 + \dots + \alpha_n e_n$. Since some $\alpha_i$s are nonzero $||w||>0$. Then we can write:
+$$
+\begin{aligned}
+||w|| &= \sqrt{|\alpha_1|^2 + \dots + |\alpha_n|^2} \\\\
+&= ||\alpha_1 (e_1-v_1) + \dots + \alpha_n (e_n-v_n)|| \\\\
+&\leq ||\alpha_1 (e_1-v_1)|| + \dots + ||\alpha_n (e_n-v_n)|| \text{ (Triangle Inequality)} \\\\
+&< \frac{|\alpha_1| + \dots + |\alpha_n|}{\sqrt{n}}
+\end{aligned}
+$$
+However using Cauchy–Schwarz Inequality we have:
+$$
+n.(|\alpha_1|^2 + \dots + |\alpha_n|^2) \geq (|\alpha_1| + \dots + |\alpha_n|)^2
+$$
+This is a contradiction. So, none of $\alpha_i$s can be nonzero and $v_i$s are linearly independent.
 
 _Exercise 17_
 

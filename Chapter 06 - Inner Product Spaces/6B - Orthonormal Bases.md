@@ -186,7 +186,7 @@ Therefore, the constant is the same for all $v, w \in V$.
 
 _Exercise 12_
 
-We use induction of the dimension of our vector space $V$ to prove the statement.
+We use induction on the dimension of the vector space $V$ (we call it $n$) to prove the statement.
 
 For $n=1$ we have $V=span(v)$ for some $v \in V$. Suppose the contrary is correct. That is, for every positive $c$ in $F$ there exists two distinct members of $V$ like $u$ and $w$ such that:
 $$
@@ -194,11 +194,11 @@ $$
 $$
 So for some $\alpha$ and $\beta$ in $F$ we have:
 $$
-|\alpha|.||v||_1 \leq c|\alpha|.||v||_2 \text{ and } |\beta|.||v||_1 > |\beta|.||v||_2
+|\alpha|.||v||_1 \leq c|\alpha|.||v||_2 \text{ and } |\beta|.||v||_1 > c|\beta|.||v||_2
 $$
 that is a contradiction. Thus, the statement is correct for one-dimensional $V$.
 
-Now suppose that $dimV=n$ and the statement holds for vectors spaces with dimensions less than n. Moreover, suppose that the following lists are orthonormal bases of $V$ w.r.t $<.,.>_1$ and $<.,.>_2$ respectively:
+Now suppose that $dimV=n$ and the statement holds for vectors spaces with dimensions less than n. Moreover, suppose that the following lists are orthonormal bases of $V$ w.r.t $\langle .,. \rangle_1 \text{ and } \langle .,. \rangle_2$ :
 $$
 \begin{aligned}
 B_1 &= (e_1,e_2,\dots,e_n)\\\\
@@ -215,21 +215,22 @@ $$
 One can easily observe that the induction hypothesis and orthonormality result in:
 $$
 \begin{aligned}
-|\alpha_1|^2 + \dots |\alpha_{n-1}|^2 &\leq k^2 (|\beta_1|^2 + \dots |\beta_{n-1}|^2)\\
-\text{and } |\alpha_n|^2 &\leq m^2(|\beta_n|^2)
+|\alpha_1|^2 + \dots |\alpha_{n-1}|^2 &\leq k^2 (|\beta_1|^2 + \dots |\beta_{n-1}|^2) \\\\
+|\alpha_n|^2 &\leq m^2(|\beta_n|^2)
 \end{aligned}
 $$
 in which $k$ and $m$ are fixed positive integers. As a result:
+
 $$
 \begin{aligned}
-||v||_1^2 &= |\alpha_1|^2 + \dots |\alpha_{n-1}|^2+|\alpha_n|^2\\
-& \leq k^2 (|\beta_1|^2 + \dots |\beta_{n-1}|^2) + |\alpha_n|^2\\
-& \leq k^2 (|\beta_1|^2 + \dots |\beta_{n-1}|^2) + m^2(|\beta_n|^2)\\
-& \leq max\{k^2,m^2\}(|\beta_1|^2 + \dots |\beta_{n-1}|^2 + |\beta_n|^2)\\
-&= max\{k^2,m^2\} ||v||_2^2
+||v||^2_1 &= |\alpha_1|^2 + \dots |\alpha_{n-1}|^2+|\alpha_n|^2\\\\
+&\leq k^2 (|\beta_1|^2 + \dots |\beta_{n-1}|^2) + |\alpha_n|^2\\\\
+&\leq k^2 (|\beta_1|^2 + \dots |\beta_{n-1}|^2) + m^2(|\beta_n|^2)\\\\
+&\leq max(k^2,m^2)(|\beta_1|^2 + \dots |\beta_{n-1}|^2 + |\beta_n|^2)\\\\
+&= max(k^2,m^2) ||v||^2_2
 \end{aligned}
 $$
-Therefore by putting $c=\sqrt{max\{k^2,m^2\}}$ we see that the induction statement holds for $n$. Hence, the statement is correct for every finite dimensional $V$. 
+Therefore by putting $c=\sqrt{max(k^2,m^2)}$ we see that the induction statement holds for $n$. Hence, the statement is correct for every finite dimensional $V$. 
 
 _Exercise 17_
 

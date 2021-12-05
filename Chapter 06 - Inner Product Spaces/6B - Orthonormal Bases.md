@@ -13,9 +13,9 @@ Chapter 6: **Inner Product Spaces**
 - [x] Exercise 9
 - [x] Exercise 10
 - [x] Exercise 11
-- [ ] Exercise 12
+- [x] Exercise 12
 - [ ] Exercise 13
-- [ ] Exercise 14
+- [x] Exercise 14
 - [ ] Exercise 15
 - [ ] Exercise 16
 - [x] Exercise 17
@@ -184,12 +184,80 @@ Hence $c_1 = \bar{c_2}$.
 Because both are real, it follows that $c_1 = c_2$.
 Therefore, the constant is the same for all $v, w \in V$.
 
+_Exercise 12_
+
+We use induction on the dimension of the vector space $V$ (we call it $n$) to prove the statement.
+
+For $n=1$ we have $V=span(v)$ for some $v \in V$. Suppose the contrary is correct. That is, for every positive $c$ in $F$ there exists two distinct members of $V$ like $u$ and $w$ such that:
+$$
+||u||_1 \leq c||u||_2 \text{ and } ||w||_1 > c||w||_2
+$$
+So for some $\alpha$ and $\beta$ in $F$ we have:
+$$
+|\alpha|.||v||_1 \leq c|\alpha|.||v||_2 \text{ and } |\beta|.||v||_1 > c|\beta|.||v||_2
+$$
+that is a contradiction. Thus, the statement is correct for one-dimensional $V$.
+
+Now suppose that $dimV=n$ and the statement holds for vectors spaces with dimensions less than n. Moreover, suppose that the following lists are orthonormal bases of $V$ w.r.t $\langle .,. \rangle_1 \text{ and } \langle .,. \rangle_2$ :
+$$
+\begin{aligned}
+B_1 &= (e_1,e_2,\dots,e_n)\\\\
+B_2 &= (f_1,f_2,\dots,f_n)
+\end{aligned}
+$$
+So, every $v \in V$ has the following representations:
+$$
+\begin{aligned}
+v &= \alpha_1v_1 + \dots + \alpha_n v_n\\\\
+v &= \beta_1v_1 + \dots + \beta_n v_n
+\end{aligned}
+$$
+One can easily observe that the induction hypothesis and orthonormality result in:
+$$
+\begin{aligned}
+|\alpha_1|^2 + \dots |\alpha_{n-1}|^2 &\leq k^2 (|\beta_1|^2 + \dots |\beta_{n-1}|^2) \\\\
+|\alpha_n|^2 &\leq m^2(|\beta_n|^2)
+\end{aligned}
+$$
+in which $k$ and $m$ are fixed positive integers. As a result:
+
+$$
+\begin{aligned}
+||v||^2_1 &= |\alpha_1|^2 + \dots |\alpha_{n-1}|^2+|\alpha_n|^2\\\\
+&\leq k^2 (|\beta_1|^2 + \dots |\beta_{n-1}|^2) + |\alpha_n|^2\\\\
+&\leq k^2 (|\beta_1|^2 + \dots |\beta_{n-1}|^2) + m^2(|\beta_n|^2)\\\\
+&\leq max(k^2,m^2)(|\beta_1|^2 + \dots |\beta_{n-1}|^2 + |\beta_n|^2)\\\\
+&= max(k^2,m^2) ||v||^2_2
+\end{aligned}
+$$
+Therefore by putting $c=\sqrt{max(k^2,m^2)}$ we see that the induction statement holds for $n$. Hence, the statement is correct for every finite dimensional $V$. 
+
+_Exercise 14_
+
+Since $dimV=n$ in suffices to show that $v_1,\dots,v_n$ are linearly independent. To do so, suppose that the there are some scalars $\alpha_1,\dots,\alpha_n$ that some of them are nonzero and:
+$$
+\alpha_1 v_1 + \dots + \alpha_n v_n = 0
+$$
+Define $w=\alpha_1 e_1 + \dots + \alpha_n e_n$. Since some $\alpha_i$s are nonzero $||w||>0$. Then we can write:
+$$
+\begin{aligned}
+||w|| &= \sqrt{|\alpha_1|^2 + \dots + |\alpha_n|^2} \\\\
+&= ||\alpha_1 (e_1-v_1) + \dots + \alpha_n (e_n-v_n)|| \\\\
+&\leq ||\alpha_1 (e_1-v_1)|| + \dots + ||\alpha_n (e_n-v_n)|| \text{ (Triangle Inequality)} \\\\
+&< \frac{|\alpha_1| + \dots + |\alpha_n|}{\sqrt{n}}
+\end{aligned}
+$$
+However using Cauchy–Schwarz Inequality we have:
+$$
+n.(|\alpha_1|^2 + \dots + |\alpha_n|^2) \geq (|\alpha_1| + \dots + |\alpha_n|)^2
+$$
+This is a contradiction. So, none of $\alpha_i$s can be nonzero and $v_i$s are linearly independent.
+
 _Exercise 17_
 
 _(a)_
 For additivity, suppose $u_1, u_2 \in V$.
 Then, for $v \in V$, we have
-
 $$
 (\Phi(u_1 + u_2))(v) = \langle v, u_1 + u_2 \rangle = \langle v, u_1 \rangle + \langle v, u_2 \rangle = (\Phi u_1)(v) + (\Phi u_2)(v).
 $$

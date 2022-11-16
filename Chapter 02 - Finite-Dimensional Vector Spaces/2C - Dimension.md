@@ -31,6 +31,14 @@ for some unique scalars $a_1, \dots, a_m \in \mathbb{R}$.
 Since $w$ is nonzero, we have $a_j \neq 0$ for at least one $j$.
 Removing $v_j + w$, we get a list of length $m-1$ which is linearly indepdent by previously cited exercise and the uniqueness of the scalars $a_i$.
 
+_Exercise 13_
+
+Let $U \in \mathbb{C}^6$, $W \in \mathbb{C}^6$, and $\operatorname{dim} U = \operatorname{dim} W = 4$.
+
+We have that $\operatorname{dim} (U + W) = \operatorname{dim} U + \operatorname{dim} V - \operatorname{dim} U \cap V$, which implies that $\operatorname{dim} U \cap V = \operatorname{dim} U + \operatorname{dim} W - \operatorname{dim} (U + W) = 8 - \operatorname{dim} (U + W)$.
+
+We know, that $\operatorname{dim} (U + W) \le \operatorname{dim} \mathbb{C}^6 = 6$, which in turn means that $\operatorname{dim} (U \cap V) \ge 8 - 6 = 2$, so basis of $U \cap V$ consists of 2 or more vectors, and since basis is linearly list of vectors independent, we can conclude that we have proved the statement.
+
 _Exercise 14_
 
 We will prove by induction on $m$.
@@ -99,4 +107,4 @@ U_3 &= \{(x, 0.5x) | x \in \mathbb{R}\}
 \end{aligned}
 $$
 
-We have that  $\operatorname{dim} U_1 =  \operatorname{dim} U_2 = \operatorname{dim} U_3 = 1$,  $\operatorname{dim} U_1 \cap U_2 = \operatorname{dim} U_1 \cap U_3 = \operatorname{dim} U_2 \cap U_3 = 0$, $\operatorname{dim} U_1 \cap U_2 \cap U_3 = 0$. So, if we apply formula, we get that $\operatorname{dim} U_1 + U_2 + U_3 = 1 + 1 + 1 - 0 - 0 - 0 + 0 = 3$, but this is wrong, since $\operatorname{dim} U_1 + U_2 + U_3 = \operatorname{dim} \mathbb{R}^2 = 2$.
+We have that  $\operatorname{dim} U_1 =  \operatorname{dim} U_2 = \operatorname{dim} U_3 = 1$,  $\operatorname{dim} (U_1 \cap U_2) = \operatorname{dim} (U_1 \cap U_3) = \operatorname{dim} (U_2 \cap U_3) = 0$, $\operatorname{dim} (U_1 \cap U_2 \cap U_3) = 0$. So, if we apply formula, we get that $\operatorname{dim} (U_1 + U_2 + U_3) = 1 + 1 + 1 - 0 - 0 - 0 + 0 = 3$, but this is wrong, since $\operatorname{dim} (U_1 + U_2 + U_3) = \operatorname{dim} \mathbb{R}^2 = 2$.

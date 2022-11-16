@@ -18,7 +18,7 @@ Chapter 2: **Finite-Dimensional Vector Spaces**
 - [x] Exercise 14
 - [x] Exercise 15
 - [x] Exercise 16
-- [ ] Exercise 17
+- [x] Exercise 17
 
 _Exercise 9_
 
@@ -85,3 +85,18 @@ Moreover, if a linear combination of this list equals $0$, then a linear combina
 But, $U_1 + \dots + U_m$ being a direct sum forces each $u_j$ to equal $0$ and, thus, the coefficients of the basis vectors of $U_j$ must also equal $0$, proving that the list is linear independent.
 
 Therefore, this list is a basis of $V$ and its length is $\operatorname{dim} U_1 + \dots + \operatorname{dim} U_m$, as desired.
+
+_Exercise 17_
+
+The statement is not true. 
+
+Suppose it was: let us conisder 
+$$
+\begin{aligned}
+U_1 &= \{(x, 2x) | x \in \mathbb{R}\}\\
+U_2 &= \{(x,x) | x \in \mathbb{R}\}\\
+U_3 &= \{(x, 0.5x) | x \in \mathbb{R}\}
+\end{aligned}
+$$
+
+We have that  $\operatorname{dim} U_1 =  \operatorname{dim} U_2 = \operatorname{dim} U_3 = 1$,  $\operatorname{dim} U_1 \cap U_2 = \operatorname{dim} U_1 \cap U_3 = \operatorname{dim} U_2 \cap U_3 = 0$, $\operatorname{dim} U_1 \cap U_2 \cap U_3 = 0$. So, if we apply formula, we get that $\operatorname{dim} U_1 + U_2 + U_3 = 1 + 1 + 1 - 0 - 0 - 0 + 0 = 3$, but this is wrong, since $\operatorname{dim} U_1 + U_2 + U_3 = \operatorname{dim} \mathbb{R}^2 = 2$.

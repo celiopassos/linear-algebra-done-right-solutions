@@ -80,7 +80,7 @@ Tv_j &= \nu_j, \text{ for } j=1, \dots, m
 \end{aligned}
 $$
 
-Because $Su_1, \dots, Su_n, \nu_1, \dots, \nu_m$ is linearly independent, it follows that $\operatorname{null} T = \\{0\\}$.
+Because $Su_1, \dots, Su_n, \nu_1, \dots, \nu_m$ is linearly independent, it follows that $\operatorname{null} T = \{0\}$.
 Hence $T$ is injective and, therefore, invertible.
 
 _Exercise 4_

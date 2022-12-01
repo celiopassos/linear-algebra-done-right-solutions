@@ -401,7 +401,7 @@ c_n\\\\
 \end{pmatrix}
 $$
 
-For somo $c_1, \dots, c_n \in \mathbb{F}$.
+For some $c_1, \dots, c_n \in \mathbb{F}$.
 Thus
 
 $$

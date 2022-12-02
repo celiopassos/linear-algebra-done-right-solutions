@@ -37,8 +37,8 @@ $$
 \end{aligned}
 $$
 
-where the second line follows because $T$ is linear and the third by definition of $\operatorname{graph of} T$.
-Hence $\operatorname{graph of} T$ is closed under addition.
+Where the second line follows because $T$ is linear and the third by definition of $\operatorname{graph of} T$.
+Hence, $\operatorname{graph of} T$ is closed under addition.
 Similarly, it also closed under scalar multiplication.
 Therefore, $\operatorname{graph of} T$ is a subspace of $V \times W$.
 
@@ -58,7 +58,7 @@ $$
 
 Because $T$ is function, if $(v, w), (v, \hat{w}) \in \operatorname{graph of} T$ then $w = \hat{w}$.
 This, together with $(1)$ and $(2)$, implies that $T(v_1 + v_2) = Tv_1 + Tv_2$.
-Hence $T$ satiesfies the additivity property of linear maps.
+Hence, $T$ satisfies the additivity property of linear maps.
 Similarly, $T$ satisfies the homogeneity property.
 Therefore, $T$ is indeed a linear map.
 
@@ -83,7 +83,7 @@ $$
 T\big((x_1, x_2, x_3, \dots), (y_1, y_2, y_3, \dots)\big) = (x_1, y_1, x_2, y_2, x_3, y_3, \dots).
 $$
 
-Thus $T$ is obviously surjective.
+Thus, $T$ is obviously surjective.
 To prove injectivity, let
 
 $$
@@ -102,7 +102,7 @@ $$
 (x_1, y_1, x_2, y_2, x_3, y_3, \dots) = (z_1, w_1, z_2, w_2, z_3, w_3).
 $$
 
-Therefore $x_j = z_j$ and $y_j = w_j$ for each $j$.
+Therefore, $x_j = z_j$ and $y_j = w_j$ for each $j$.
 Hence
 
 $$
@@ -110,7 +110,7 @@ $$
 $$
 
 and so $T$ is injective.
-Thus $T$ is an isomorphism, as desired.
+Thus, $T$ is an isomorphism, as desired.
 
 _Exercise 4_
 
@@ -190,7 +190,7 @@ Let $v_1 + U, ..., v_k + U$ be a basis of $V/U$. Consider x = $\sum\limits_{i=1}
 
 Now, consider any $v \in V$. Let us prove that there $\exists u: v = \sum\limits_{i=1}^kc_iv_i + u$. Indeed, consider $v + u_0: u_0 \in U$. $v + u_0 \in v + U$, so $v + u_0 = \sum\limits_{i=1}^kc_iv_i + u_1$, where $v + U = \sum\limits_{i=1}^kc_i(v_i + U)$ is representation of $v + U$ as linear combination of basis vectors of $V/U$. So, we have that $v + u_0 = \sum\limits_{i=1}^kc_iv_i + u_1$, and so $v = \sum\limits_{i=1}^kc_iv_i + u_1 - u_0 = \sum\limits_{i=1}^kc_iv_i + u$, where $u = u_1 - u_0 \in U$. We have proven, that any vector $v$ can be represented as $\sum\limits_{i=1}^kc_iv_i + u$, where $u \in U$.
 
-Now, let us show that this representation is unique. Indeed, consider $v \in V$, and let $v = \sum\limits_{i=1}^kc_iv_i + u = \sum\limits_{i=1}^kd_iv_i + u'$. Then, $0 = v - v = \sum\limits_{i=1}^kc_iv_i + u - (\sum\limits_{i=1}^kd_iv_i + u') = \sum\limits_{i=1}^k(c_i - d_i)v_i + u - u'$, hence we get $u' - u = \sum\limits_{i=1}^k(c_i - d_i)v_i$. But the left part of the equation belongs to $U$, and this means that the right part of the equoation must be 0, as we have proven earlier. So, $c_i = d_i$, and hence $u = u'$, so the respresenation is indeed unique.
+Now, let us show that this representation is unique. Indeed, consider $v \in V$, and let $v = \sum\limits_{i=1}^kc_iv_i + u = \sum\limits_{i=1}^kd_iv_i + u'$. Then, $0 = v - v = \sum\limits_{i=1}^kc_iv_i + u - (\sum\limits_{i=1}^kd_iv_i + u') = \sum\limits_{i=1}^k(c_i - d_i)v_i + u - u'$, hence we get $u' - u = \sum\limits_{i=1}^k(c_i - d_i)v_i$. But the left part of the equation belongs to $U$, and this means that the right part of the equation must be 0, as we have proven earlier. So, $c_i = d_i$, and hence $u = u'$, so the representation is indeed unique.
 
 We next want to prove that such a mapping $T$: $v = (\sum\limits_{i=1}^kc_iv_i + u) \to (u, \sum\limits_{i=1}^kc_i(v_i + U))$ is isomorphism, and to do this, we need to show that $T$ is linear.
 
@@ -208,13 +208,13 @@ We have already proven in the previous task that $v_1,...,v_m$ are linearly inde
 
 _Exercise 14_
 
-a) It is clear that if $(0, 0,...) \in U$, $v \in U \implies \lambda v \in U$ and $v_1,v_2 \in U \implies v_1 + v_2 \in U$ since $v_1 + v_2$ will still have finite number of non-zero coefficients.
+a) It is clear that if $(0, 0,...) \in U$, $v \in U \implies \lambda v \in U$ and $v_1,v_2 \in U \implies v_1 + v_2 \in U$ since $v_1 + v_2$ will still have a finite number of non-zero coefficients.
 
 b) Denote $v_i \in \mathbb{F}^\infty$: $v_i[j] = 1$ if $j = p_i^n$, where $p_i$ is the i'th prime number, and $n \in \mathbb{N}$. It is clear, that every $v_i$ has non-zero coefficients on different positions than any other $v_j$, so $\sum\limits_{i=1}^nc_iv_i = 0 \implies c_1=...=c_n0$ for any $n$. It is also clear, that $v_i \notin U$ since there are infinitely many non-zero coefficients in $v_i$. Now, consider $v_1 + U,...,v_n+U$ for some $n \in \mathbb{N}$. If they were linearly independent in $\mathbb{F}^\infty/U$, then there should exist non-zero coefficients $c_1...c_n$: $\sum\limits_{i=1}^nc_iv_i \in U$. But this linear combination will have infinitely many non-zero coefficients, and hence it cannot be in $U$. This means that $v_1 + U,...,v_n+U$ are linearly independent for any $n$, and so $\mathbb{F}^\infty/U$ is infinite-dimensional. 
 
 _Exercise 15_
 
-Using funcdamental theorem of linear maps, we can write $\operatorname{dim}V = \operatorname{dim}\operatorname{null}\varphi + \operatorname{dim}\operatorname{range}\varphi$. Since $\varphi \neq 0$, we have that $\operatorname{dim}\operatorname{range}\varphi > 0$, and $\operatorname{range}\varphi \subset \mathbb{F}$, so $\operatorname{dim}\operatorname{range}\varphi = 1$. Hence, $\operatorname{dim}\operatorname{null}\varphi = \operatorname{dim}V - 1$. So, the dimension of the quotient space is $\operatorname{dim}V/\operatorname{null}\varphi = \operatorname{dim}V - \operatorname{dim}\operatorname{null}\varphi = 1$.
+Using fundamental theorem of linear maps, we can write $\operatorname{dim}V = \operatorname{dim}\operatorname{null}\varphi + \operatorname{dim}\operatorname{range}\varphi$. Since $\varphi \neq 0$, we have that $\operatorname{dim}\operatorname{range}\varphi > 0$, and $\operatorname{range}\varphi \subset \mathbb{F}$, so $\operatorname{dim}\operatorname{range}\varphi = 1$. Hence, $\operatorname{dim}\operatorname{null}\varphi = \operatorname{dim}V - 1$. So, the dimension of the quotient space is $\operatorname{dim}V/\operatorname{null}\varphi = \operatorname{dim}V - \operatorname{dim}\operatorname{null}\varphi = 1$.
 
 _Exercise 16_
 

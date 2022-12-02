@@ -56,11 +56,11 @@ $$
 a_1T(v_1) + a_2T(v_2) + \ldots + a_mT(v_m) = 0
 $$
 
-We know that $Tv_1,...,Tv_m$ are linearly independent, which imples that the equation above can hold only when $a_1 = a_2 = ... = a_m$ = 0. But this means, that the original equation holds only under the same conditions, which means that $v_1,...,v_m$ are linearly independent.
+We know that $Tv_1,...,Tv_m$ are linearly independent, which implies that the equation above can hold only when $a_1 = a_2 = ... = a_m$ = 0. But this means, that the original equation holds only under the same conditions, which means that $v_1,...,v_m$ are linearly independent.
 
 _Exercise 8_
 
-I tried to come up with something simple, and I think that $\varphi(x, y) = \operatorname{sign}(x)\sqrt{|xy|}$ is a good choice. We can easiliy show, that $\varphi(ax,ay) = \operatorname{sign}(ax)\sqrt{|a^2xy|} = \operatorname{sign}(ax)|a|\sqrt{|xy|} = a\operatorname{sign}(x)\sqrt{|xy|} = a\varphi(x,y)$. However, it is obvious that $\varphi$ is not a linear map, since $\varphi(x + 0, y_1 + y_2) = \operatorname{sign}(x)\sqrt{|x(y_1 + y_2)|} \neq \operatorname{sign}(x)\sqrt{|xy_1|} + \operatorname{sign}(0)\sqrt{|0y_2|} = \operatorname{sign}(x)\sqrt{|xy_1|}$
+I tried to come up with something simple, and I think that $\varphi(x, y) = \operatorname{sign}(x)\sqrt{|xy|}$ is a good choice. We can easily show, that $\varphi(ax,ay) = \operatorname{sign}(ax)\sqrt{|a^2xy|} = \operatorname{sign}(ax)|a|\sqrt{|xy|} = a\operatorname{sign}(x)\sqrt{|xy|} = a\varphi(x,y)$. However, it is obvious that $\varphi$ is not a linear map, since $\varphi(x + 0, y_1 + y_2) = \operatorname{sign}(x)\sqrt{|x(y_1 + y_2)|} \neq \operatorname{sign}(x)\sqrt{|xy_1|} + \operatorname{sign}(0)\sqrt{|0y_2|} = \operatorname{sign}(x)\sqrt{|xy_1|}$
 
 _Exercise 9_
 
@@ -112,13 +112,13 @@ $$
 a_1 T_1 v_1 + \dots + a_n T_n v_1 = w.
 $$
 
-Hence $w \in \operatorname{span}(T_1 v_1,\dots,T_n v_n)$. Because $w$ was arbitrary, we have that $W$ is a subspace of $\operatorname{span}(T_1 v_1,\dots,T_n v_1)$, which is finite-dimensional. By 2.26, $W$ is also finite-dimensional and we get a contradiction.
+Hence, $w \in \operatorname{span}(T_1 v_1,\dots,T_n v_n)$. Because $w$ was arbitrary, we have that $W$ is a subspace of $\operatorname{span}(T_1 v_1,\dots,T_n v_1)$, which is finite-dimensional. By 2.26, $W$ is also finite-dimensional, and we get a contradiction.
 
 _Exercise 13_
 
 If $v_k = 0$ for some $k$ when we can choose any nonzero vector as $w_k$.
 So assume $v_k \neq 0$ for each $k$.
-Let $n$ be the smallest integer such that $v_1, \dots, v_n$ is linearly indepedent.
+Let $n$ be the smallest integer such that $v_1, \dots, v_n$ is linearly independent.
 Then we can write
 
 $$
@@ -155,7 +155,7 @@ T(a_1v_1 + \dots + a_nv_n) &= a_1v_1 + \dots + a_{n-1}v_{n-1}.
 \end{aligned}
 $$
 
-By 3.5 $S$ and $T$ are well defined linear maps. But
+By 3.5 $S$ and $T$ are well-defined linear maps. But
 
 $$
 \begin{align*}
@@ -164,4 +164,4 @@ TSv_n &= Tv_1 = v_1
 \end{align*}.
 $$
 
-Hence $ST \neq TS$.
+Hence, $ST \neq TS$.

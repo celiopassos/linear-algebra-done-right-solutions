@@ -46,11 +46,11 @@ _Exercise 3_
 
 (a) $v_1,...,v_m$ span $V$ implies that $T$ is surjective, because then any vector $v \in V$ can be represented as $v = z_1v_1 + ... + z_mv_m$, and this means that $\operatorname{range}T = V$.
 
-(b) $v_1,...,v_m$ being linearly indepenent implies that $T$ is injective: indeed, $z_1v_1 + ... + z_mv_m = 0$ implies $z_1 = ... = z_m = 0$, so $\operatorname{null} T = \{0\}$, and we have proved in 3.16 that injectivity is equivalent to having kernal space equal to $\{0\}$. 
+(b) $v_1,...,v_m$ being linearly independent implies that $T$ is injective: indeed, $z_1v_1 + ... + z_mv_m = 0$ implies $z_1 = ... = z_m = 0$, so $\operatorname{null} T = \{0\}$, and we have proved in 3.16 that injectivity is equivalent to having kernel space equal to $\{0\}$. 
 
 _Exercise 4_
 
-Denote $U = \{T \in \mathcal(\mathbb{R}^5,\mathbb{R}^4) | \operatorname{dim}\operatorname{null}T > 2\}$. Consider $T_1: (x_1,...,x_5) \to (x_1, x_2, 0, 0)$ and $T_2: (x_1,...,x_5) \to (0, 0, x_3, x_4)$. We can easiliy verify that $\operatorname{dim}\operatorname{null} T_1 = \operatorname{dim}\operatorname{null} T_2 = 3$, but $T_1 + T_2$ has $\operatorname{dim}\operatorname{null} T_1 + T_2 = 1$, so this means that $U$ is not closed under addition, so it is not a vector subspace.
+Denote $U = \{T \in \mathcal(\mathbb{R}^5,\mathbb{R}^4) | \operatorname{dim}\operatorname{null}T > 2\}$. Consider $T_1: (x_1,...,x_5) \to (x_1, x_2, 0, 0)$ and $T_2: (x_1,...,x_5) \to (0, 0, x_3, x_4)$. We can easily verify that $\operatorname{dim}\operatorname{null} T_1 = \operatorname{dim}\operatorname{null} T_2 = 3$, but $T_1 + T_2$ has $\operatorname{dim}\operatorname{null} T_1 + T_2 = 1$, so this means that $U$ is not closed under addition, so it is not a vector subspace.
 
 _Exercise 5_
 
@@ -161,11 +161,11 @@ _Exercise 18_
 
 $\Rightarrow$: suppose $\operatorname{dim} V \ge \operatorname{dim} W$. Let us denote a basis of V as $v_1,..,v_n$, a basis of $W$ as $w_1,...,w_m$, with $n \le m$. We can build the surjective map setting $Tv_i = w_i ,\ i = 1..m$, and $Tv_i = 0, \ i > m$. We obviously get $\operatorname{range}T = W$, so $T$ is surjective.
 
-$\Leftarrow$: suppose $T$ is surjective, we need to show, that $\operatorname{dim} V \ge \operatorname{dim} W$. Since $T$ is surjective, $\operatorname{range}T = W$, so $\operatorname{dim}\operatorname{range}T = \operatorname{dim}W$. Using the fundamental theorem of linear maps, we have $\operatorname{dim}V = \operatorname{dim}\operatorname{null}T + \operatorname{dim}W$, which implies that $\operatorname{dim}\operatorname{null}T = \operatorname{dim}V - \operatorname{dim}W$. $\operatorname{dim}\operatorname{null}T \ge 0$ by difenition of dimensionality, so $\operatorname{dim}V \ge \operatorname{dim}W$.
+$\Leftarrow$: suppose $T$ is surjective, we need to show, that $\operatorname{dim} V \ge \operatorname{dim} W$. Since $T$ is surjective, $\operatorname{range}T = W$, so $\operatorname{dim}\operatorname{range}T = \operatorname{dim}W$. Using the fundamental theorem of linear maps, we have $\operatorname{dim}V = \operatorname{dim}\operatorname{null}T + \operatorname{dim}W$, which implies that $\operatorname{dim}\operatorname{null}T = \operatorname{dim}V - \operatorname{dim}W$. $\operatorname{dim}\operatorname{null}T \ge 0$ by definition of dimensionality, so $\operatorname{dim}V \ge \operatorname{dim}W$.
 
 _Exercise 19_
 
-By the fundamental theorem of linear maps, $\operatorname{dim}\operatorname{null}T = \operatorname{dim} V - \operatorname{dim} \operatorname{range} T \ge \operatorname{dim} V - \operatorname{dim} W$, because $\operatorname{range} T$ is a subspace of $W$ so its dimensionalty is not greater than that of containing finite-dimensional space.
+By the fundamental theorem of linear maps, $\operatorname{dim}\operatorname{null}T = \operatorname{dim} V - \operatorname{dim} \operatorname{range} T \ge \operatorname{dim} V - \operatorname{dim} W$, because $\operatorname{range} T$ is a subspace of $W$, so its dimensionality is not greater than that of containing finite-dimensional space.
 
 So, if $U = \operatorname{null} T$, we get that $\operatorname{dim} U \ge \operatorname{dim} V -\operatorname{dim} W$.
 
@@ -224,7 +224,7 @@ TSw &= TS(a_1 w_1 + \dots + a_m w_m)\\\\
 \end{aligned}
 $$
 
-Thus $TS$ is the identity map on $W$.
+Thus, $TS$ is the identity map on $W$.
 
 Conversely, suppose $TS$ is the identity map on $W$. Let $w \in W$, we have $TSw = w$. Since $Sw \in V$, it follows that there is a vector in $V$ that $T$ maps to $w$. Since $w$ was arbitrary, we have that $T$ is surjective.
 
@@ -242,7 +242,7 @@ $$
 \end{aligned}
 $$
 
-Where the third line follows because $\operatorname{range}T \subseteq V$. We need only to prove that $\operatorname{dim}\operatorname{range}S \ge \operatorname{dim}\operatorname{range}ST$. Suppose that $w \in \operatorname{range}ST$. Then there exists $u \in U$ such that $STu = w$. Since $Tu \in V$, it follows that for every vector $w \in \operatorname{range}ST$ there is another vector in $V$ that $S$ maps to $w$. Therefore $\operatorname{range}ST \subseteq \operatorname{range}S$, which implies $\operatorname{dim}\operatorname{range}S \ge \operatorname{dim}\operatorname{range}ST$.
+Where the third line follows because $\operatorname{range}T \subseteq V$. We need only to prove that $\operatorname{dim}\operatorname{range}S \ge \operatorname{dim}\operatorname{range}ST$. Suppose that $w \in \operatorname{range}ST$. Then there exists $u \in U$ such that $STu = w$. Since $Tu \in V$, it follows that for every vector $w \in \operatorname{range}ST$ there is another vector in $V$ that $S$ maps to $w$. Therefore, $\operatorname{range}ST \subseteq \operatorname{range}S$, which implies $\operatorname{dim}\operatorname{range}S \ge \operatorname{dim}\operatorname{range}ST$.
 
 _Exercise 23_
 
@@ -275,7 +275,7 @@ $$
 
 Let $\nu = a_1 v_1 + \dots + a_n v_n$.
 We have that $0 = T_1 v - T_1 \nu = T_1(v - \nu)$.
-Hence $v - \nu \in \operatorname{null} T_1$.
+Hence, $v - \nu \in \operatorname{null} T_1$.
 But $v = (v - \nu) + \nu$, therefore $v \in \operatorname{null} T_1 + \operatorname{span}(v_1, \dots, v_n)$, implying $V \subset \operatorname{null} T_1 + \operatorname{span}(v_1, \dots, v_n)$.
 The inclusion in the other direction is clearly true, hence $V = \operatorname{null} T_1 + \operatorname{span}(v_1, \dots, v_n)$.
 
@@ -307,7 +307,7 @@ T_2 v &= T_2 (c_1 v_1 + \dots + c_n v_n + u)\\\\
 \end{aligned}
 $$
 
-Hence $T_2 = S T_1$, as desired.
+Hence, $T_2 = S T_1$, as desired.
 
 Conversely, suppose $T_2 = ST_1$.
 Let $u \in \operatorname{null} T_1$.
@@ -317,11 +317,11 @@ $$
 0 = S(0) = ST_1 u = T_2 u
 $$
 
-Hence $u \in \operatorname{null} T_2$, as desired.
+Hence, $u \in \operatorname{null} T_2$, as desired.
 
 _Exercise 25_
 
-Let $T = T_1$ and consider the same notatition from 3.22.
+Let $T = T_1$ and consider the same notation from 3.22.
 
 Suppose $\operatorname{range} T_1 \subset \operatorname{range} T_2$.
 Let $\nu_1, \dots, \nu_n \in V$ be an inverse image of $T_1 v_1, \dots, T_1 v_n$ when $T_2$ is applied (this inverse image exists because of the initial assumption).
@@ -348,7 +348,7 @@ T_1 v &= T_1(a_1 u_1 + \dots + a_m u_m + b_1 v_1 + \dots b_n v_n)\\\\
 \end{aligned}
 $$
 
-Hence $T_1 = T_2S$.
+Hence, $T_1 = T_2S$.
 
 Conversely, suppose $T_1 = T_2S$.
 Let $w \in \operatorname{range} T_1$.
@@ -394,16 +394,15 @@ _Exercise 26_
 
 Let $T: P_m(R) \to P_{m-1}(R)$ such that $Tp = Dp$.
 Suppose $p \in \operatorname{null} T$.
-Since $T$ reduces the degree of every nonconstant polynomial by $1$ and $\deg 0 = -\infty$, it follows that $p$ can only be constant. Hence $\operatorname{dim} \operatorname{null} T = 1$. By the Fundamental Theorem of Linear Maps $T$ is surjective. Because $m$ was arbitrary, so is $D$.
+Since $T$ reduces the degree of every non-constant polynomial by $1$ and $\deg 0 = -\infty$, it follows that $p$ can only be constant. Hence, $\operatorname{dim} \operatorname{null} T = 1$. By the Fundamental Theorem of Linear Maps $T$ is surjective. Because $m$ was arbitrary, so is $D$.
 
 _Exercise 27_
 
-Consider linear map $D: P(\mathbb R) \mapsto P(\mathbb R): Dq = 5q'' + 3q'$. It is clear, that for every $d \in \mathbb{R}$ there is $p \in \operatorname{range}D:\ \operatorname{deg}p = d$. But we know, that any set of polynoms with degrees from 0 to $d$ spans $P_d(\mathbb{R})$, so $P_d(\mathbb{R}) \subset \operatorname{range}D$
-. Since $d$ is arbitrary, we conclude that $P(\mathbb{R}) \subset \operatorname{range}D$, but at the same time $\operatorname{range}D \subset P(\mathbb{R})$, which means that $\operatorname{range}D = P(\mathbb{R})$, so $D$ is surjective.
+Consider linear map $D: P(\mathbb R) \mapsto P(\mathbb R): Dq = 5q'' + 3q'$. It is clear, that for every $d \in \mathbb{R}$ there is $p \in \operatorname{range}D:\ \operatorname{deg}p = d$. But we know, that any set of polynomials with degrees from 0 to $d$ spans $P_d(\mathbb{R})$, so $P_d(\mathbb{R}) \subset \operatorname{range}D$. Since $d$ is arbitrary, we conclude that $P(\mathbb{R}) \subset \operatorname{range}D$, but at the same time $\operatorname{range}D \subset P(\mathbb{R})$, which means that $\operatorname{range}D = P(\mathbb{R})$, so $D$ is surjective.
 
 _Exercise 28_
 
-Define $S_j \in \mathcal{L}(\operatorname{range}T, \mathbb{F})$ such that $S_j(w_j) = 1$ and $S_j(w_k) = 0$ for $k \neq j$. $S_j$ is well defined by 3.5 and we have that
+Define $S_j \in \mathcal{L}(\operatorname{range}T, \mathbb{F})$ such that $S_j(w_j) = 1$ and $S_j(w_k) = 0$ for $k \neq j$. $S_j$ is well-defined by 3.5, and we have that
 
 $$
 S_j(c_1 w_1 + \dots + c_m w_m) = c_j
@@ -424,11 +423,11 @@ _Exercise 29_
 Suppose $v \in V$.
 Since $\operatorname{dim} \operatorname{range} \varphi = 1$, it follows that $\varphi(u)$ is a basis of $\operatorname{range} \varphi$.
 There exists $\lambda \in \mathbb{F}$ such that $\varphi(v) = \lambda \varphi(u)$, which implies $\varphi(v - \lambda u) = 0$.
-Hence $v - \lambda u \in \operatorname{null} \varphi$ and $\lambda u \in \{au: a \in \mathbb{F}\}$.
+Hence, $v - \lambda u \in \operatorname{null} \varphi$ and $\lambda u \in \{au: a \in \mathbb{F}\}$.
 But $v = (v - \lambda u) + \lambda u$, therefore $v \in \operatorname{null} \varphi + \{au: a \in \mathbb{F}\}$, proving the inclusion in one direction.
 The inclusion in the opposite direction is clearly true.
-Thus $V = \operatorname{null} \varphi + \{au: a \in \mathbb{F}\}$.
-Since $\varphi(u) \neq 0$, it follows that $\varphi(\lambda  u) = 0$ if and only $\lambda = 0$. Therefore $\operatorname{null} \varphi \cap \{au: a \in \mathbb{F}\} = \{0\}$, proving that the sum is a direct one.
+Thus, $V = \operatorname{null} \varphi + \{au: a \in \mathbb{F}\}$.
+Since $\varphi(u) \neq 0$, it follows that $\varphi(\lambda  u) = 0$ if and only $\lambda = 0$. Therefore, $\operatorname{null} \varphi \cap \{au: a \in \mathbb{F}\} = \{0\}$, proving that the sum is a direct one.
 
 _Exercise 30_
 

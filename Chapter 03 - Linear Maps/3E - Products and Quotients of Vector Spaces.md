@@ -151,7 +151,7 @@ Let $A_1,A_2$ be two affine subsets of $V$, and suppose $A_1\cap A_2 \neq \empty
 
 _Exercise 10_
 
-This can be easiliy done through induction. We have already proven that for two subsets it is true. Now, suppose the statement is true for any number of subsets less, than n. Then, we can rewrite $A_1\cap A_2 \cap ... \cap A_n$ as $B \cap A_n$, where $B = A_1\cap A_2 \cap...\cap A_{n-1}$. By induction, $B$ is either empty or is an affine subset. In the first case, the overall intersection is also empty. In the latter case, we can use the base of our induction and conclude, that $B \cap A_n$ is either an affine subset itself, or is empty.
+This can be easily done through induction. We have already proven that for two subsets it is true. Now, suppose the statement is true for any number of subsets less, than n. Then, we can rewrite $A_1\cap A_2 \cap ... \cap A_n$ as $B \cap A_n$, where $B = A_1\cap A_2 \cap...\cap A_{n-1}$. By induction, $B$ is either empty or is an affine subset. In the first case, the overall intersection is also empty. In the latter case, we can use the base of our induction and conclude, that $B \cap A_n$ is either an affine subset itself, or is empty.
 
 _Exercise 11_
 

@@ -50,8 +50,8 @@ Define $\varphi,\psi,\omega \in \mathcal{L}(\mathbb{R^{[0,1]}}, \mathbb{F})$ suc
 
 $$
 \begin{aligned}
-\varphi(f) &= f(0)\\\\
-\psi(f) &= \pi f(0) + f(1)\\\\
+\varphi(f) &= f(0)\\\
+\psi(f) &= \pi f(0) + f(1)\\\
 \omega(f) &= f(0) - if(1)
 \end{aligned}
 $$
@@ -66,7 +66,7 @@ _Exercise 4_
 
 Let $u_1, \dots, u_n$ be a basis of $U$.
 Extend it to a basis $u_1, \dots, u_n, v_1, \dots, v_m$ of $V$ and let $\omega_1, \dots, \omega_n, \varphi_1, \dots, \varphi_m$ be its dual basis.
-By definition, we have that $\varphi_i(u) = 0$, for all $u \in U$ and all $i \in \\{ 1, \dots, m \\}$.
+By definition, we have that $\varphi_i(u) = 0$, for all $u \in U$ and all $i \in \{ 1, \dots, m \}$.
 
 _Exercise 5_
 
@@ -82,7 +82,7 @@ By definition of $\Gamma$, we have
 
 $$
 \begin{aligned}
-(\varphi(v_1), \dots, \varphi(v_m)) &= (\psi(v_1), \dots, \psi(v_m))\\\\
+(\varphi(v_1), \dots, \varphi(v_m)) &= (\psi(v_1), \dots, \psi(v_m))\\\
 \end{aligned}
 $$
 
@@ -94,7 +94,7 @@ Conversely, suppose $\Gamma$ is injective.
 Let $U = \operatorname{span}(v_1, \dots, v_m)$ and suppose by contradiction that $U \neq V$.
 By _Exercise 4_, there is a _non-zero_ linear functional $\varphi$ in $V'$ such that $\varphi(u) = 0$ for every $u \in U$.
 We have $\Gamma(\varphi) = 0$, hence $\varphi \in \operatorname{null}\Gamma$.
-But $\operatorname{null}\Gamma = \\{0\\}$ (since $\Gamma$ is injective), we get a contradiction.
+But $\operatorname{null}\Gamma = \{0\}$ (since $\Gamma$ is injective), we get a contradiction.
 
 _(b)_
 Suppose $v_1, \dots, v_m$ is linearly independent.
@@ -355,7 +355,7 @@ $$
 \begin{aligned}
 (T'(\varphi))(x^3) &= \varphi \circ T(x^3)\\\\
 &= \varphi(x^5 + 6x)\\\\
-&= \int_0^1 x^5 + 6x \\,dx\\\\
+&= \int_0^1 x^5 + 6x \ dx\\\\
 &= (\frac{x^6}{6} + 3x^2) \biggr\rvert_{0}^{1}
 \end{aligned}
 $$
@@ -418,24 +418,26 @@ Hence $R$ satisfies the desired property of taking $T$ to $T'$.
 We but need to prove that $\operatorname{dim} \operatorname{null} R = 0$, since $\mathcal{L}(V, W)$ and $\mathcal{L}(W', V')$ have the same dimension.
 Suppose that $T \in \operatorname{null} R$.
 We have that $0 = RT = T'$.
-By _Exercise 15_, $T = 0$, therefore $\operatorname{null} R =  \\{ 0 \\}$ as desired.
+By _Exercise 15_, $T = 0$, therefore $\operatorname{null} R =  \{ 0 \}$ as desired.
 
 _Exercise 17_
 
-Because $U \subset \operatorname{null} \varphi$ implies that $\varphi(u) = 0$ for all $u \in U$.
+Because $\varphi(u) = 0$ for all $u \in U$ implies that $U \subset \operatorname{null} \varphi$.
 
 _Exercise 18_
 
-Suppose $U = \\{0\\}$.
+Suppose $U = \{0\}$.
 By 3.106, we have that $\operatorname{dim} U^0 = \operatorname{dim} V = \operatorname{dim} V'$.
 Since $U^0$ is a subspace of $V'$, it follows that $U^0 = V$.
 
 Conversely, suppose $U^0 = V'$.
-Using 3.016 again, it follows that $\operatorname{dim} U = 0$, hence $U = \\{0\\}$.
+Using 3.016 again, it follows that $\operatorname{dim} U = 0$, hence $U = \{0\}$.
 
 _Exercise 19_
 
-This is very similar to _Exercise 18_.
+$\Leftarrow$: Let $U^0 = \{0\}$. Let us prove that $U = V$. Suppose it is not true, so $U \neq V$, $U \subset V$. There exists basis of $U$ $u_1,...,u_n$, and it can be extended to the basis of $V$ with $v_1,...,v_m$, and $m > 0$ since $U \neq V$. Consider $\varphi \in V': \forall i \varphi(u_i) = 0$, and $\forall i \varphi(v_i) = 1$. Then, it is clear that $\varphi \in U^0$, but $\varphi \neq 0$ since for instance $\varphi(v_1) = 1 \neq 0$. But this contradicts to the condition $U^0 = \{0\}$, so the hypothesis was wrong and $U = V$.
+
+$\Rightarrow$: let $U = V$. $U^0 = \{\varphi \in V': \varphi(u) = 0 \forall u \in U\}$. If $\varphi \in U^0$, it maps to 0 every vector in $U$, and hence any vector in $V$. By definition, $\varphi = 0$, and so in fact $U^0 = \{0\}$.
 
 _Exercise 20_
 
@@ -530,7 +532,7 @@ $$
 \varphi = c_1 \psi_1 + \dots + c_m \psi_m + a_1 \varphi_1 + \dots + a_n \varphi_n
 $$
 
-For every $j \in \\{ 1, \dots, m \\}$, we have $\psi_j(u_j) = c_j$.
+For every $j \in \{ 1, \dots, m \}$, we have $\psi_j(u_j) = c_j$.
 But $\varphi \in U^0$, that implies $c_j = 0$ and, hence, $\varphi \in \operatorname{span}(\varphi_1, \dots, \varphi_m)$.
 Thus $U^0 \subset \operatorname{span}(\varphi_1, \dots, \varphi_m)$.
 
@@ -546,7 +548,7 @@ $$
 
 _Exercise 25_
 
-Let $B = \\{v \in V: \varphi(v) = 0 \text{ for every } \varphi \in U^0\\}$.
+Let $B = \{v \in V: \varphi(v) = 0 \text{ for every } \varphi \in U^0\}$.
 
 Suppose that $u \in U$.
 By definition, $\varphi(u) = 0$ for all $\varphi \in U^0$.
@@ -576,10 +578,10 @@ We have that
 
 $$
 \begin{aligned}
-U &= \\{v \in V: v \in U\\}\\\\
-&= \\{v \in V: v \in \bigcap\limits_{\varphi \in \Gamma} \operatorname{null} \varphi\\}\\\\
-&= \\{v \in V: v \in \operatorname{null} \varphi \text{ for every } \varphi \in \Gamma\\}\\\\
-&= \\{v \in V: \varphi(v) = 0 \text{ for every } \varphi \in \Gamma\\}\\\\
+U &= \{v \in V: v \in U\}\\
+&= \{v \in V: v \in \bigcap\limits_{\varphi \in \Gamma} \operatorname{null} \varphi\}\\
+&= \{v \in V: v \in \operatorname{null} \varphi \text{ for every } \varphi \in \Gamma\}\\
+&= \{v \in V: \varphi(v) = 0 \text{ for every } \varphi \in \Gamma\}\\
 \end{aligned}
 $$
 
@@ -587,7 +589,7 @@ By _Exercise 25_, $\Gamma = U^0$.
 Therefore
 
 $$
-\Gamma = U^0 = \\{v \in V: \varphi(v) = 0 \text{ for every } \varphi \in \Gamma\\}^0\\\\
+\Gamma = U^0 = \{v \in V: \varphi(v) = 0 \text{ for every } \varphi \in \Gamma\}^0\\
 $$
 
 _Exercise 27_
@@ -596,11 +598,11 @@ We have
 
 $$
 \begin{aligned}
-\operatorname{range} T &= \\{p \in \mathcal{P_5}(\mathbb{R}): \psi(p) = 0 \text{ for every } \psi \in (\operatorname{range} T)^0\\}\\\\
-&= \\{p \in \mathcal{P_5}(\mathbb{R}): \psi(p) = 0 \text{ for every } \psi \in \operatorname{null} T'\\}\\\\
-&= \\{p \in \mathcal{P_5}(\mathbb{R}): \psi(p) = 0 \text{ for every } \psi \in \operatorname{span}(\varphi)\\}\\\\
-&= \\{p \in \mathcal{P_5}(\mathbb{R}): \varphi(p) = 0\\}\\\\
-&= \\{p \in \mathcal{P_5}(\mathbb{R}): p(8) = 0\\}\\\\
+\operatorname{range} T &= \{p \in \mathcal{P_5}(\mathbb{R}): \psi(p) = 0 \text{ for every } \psi \in (\operatorname{range} T)^0\}\\
+&= \{p \in \mathcal{P_5}(\mathbb{R}): \psi(p) = 0 \text{ for every } \psi \in \operatorname{null} T'\}\\
+&= \{p \in \mathcal{P_5}(\mathbb{R}): \psi(p) = 0 \text{ for every } \psi \in \operatorname{span}(\varphi)\}\\
+&= \{p \in \mathcal{P_5}(\mathbb{R}): \varphi(p) = 0\}\\
+&= \{p \in \mathcal{P_5}(\mathbb{R}): p(8) = 0\}\\
 \end{aligned}
 $$
 
@@ -668,6 +670,14 @@ $$
 
 Applying $\varphi_j$ to both sides of the equation above gives $a_j = 0$, for each $j = 1, \dots, n$. Hence $v_1, \dots, v_n$ is linearly independent and, therefore, a basis of $V$.
 
+_Exercise 32_
+
+$1 \Rightarrow 2, 3$: Suppose $T$ is invertible, then since $V$ is finite-dimensional, $T$ is injective and surjective. This implies, that $\operatorname{range}T = V$. On the other hand, $\operatorname{range}T = \operatorname{span}(Tv_1,...,Tv_n)$, and hence $V = \operatorname{span}(Tv_1,...,Tv_n)$. Since $\operatorname{dim}V = n$, all the vectors forming span should be independent, so indeed columns of $\mathcal{M}(T)$ are independent. 
+
+$1 \implies 4$: since $\mathcal{M}(T)^T$ is the matrix of the dual map $T'$, and its range is equal to the range of $T$ and hence equal $n$, we conduct that columns of $\mathcal{M}(T)^T$ are linearly independent and span $\mathbb{F}^{n,1}$, which implies that rows of $\mathcal{M}(T)$ are linearly independent and span $\mathbb{F}^{1,n}$.
+
+$5 \Rightarrow 1$: Finally, suppose that rows of $\mathcal{M}(T)$ span $F^{1,n}$. This means they are linearly independent, and this implies $T'\psi_1,...,T'\psi_n$ is linearly independent list in $V'$, where $\psi_1,...,\psi_n$ is dual basis to u_1,...,u_n. This means, that $\operatorname{range}T' = V'$, which implies $\operatorname{range}T = V$, and this means that $T$ is surjective hence invertible.
+
 _Exercise 33_
 
 Let $t \in \mathcal{L}(\mathbb{F}^{m,n}, \mathbb{F}^{n,m})$ denote the linear map that takes a matrix to its transpose.
@@ -708,6 +718,59 @@ $$
 $$
 
 Because $A$ has zero in all its entries, it follows that $A = 0$ and, therefore, $\operatorname{null} t = \\{ 0 \\}$, which implies that $t$ is injective.
+
+_Exercise 34_
+
+(a) 
+
+1. It is clear, that $\Lambda 0 = 0$, because $ \forall \varphi \in \mathcal{L}(V, \mathbb{F}) (\Lambda 0)(\varphi) = \varphi(0) = 0$
+2. $\forall \varphi \ \Lambda(v + u)(\varphi) = \varphi(v + u) = \varphi(v) + \varphi(u) = \Lambda v (\varphi) + \Lambda u(\varphi)$, so $\Lambda(v + u) = \Lambda v + \Lambda u$
+3. $\forall \varphi \ \Lambda(\lambda v)(\varphi) = \varphi(\lambda v) = \lambda \varphi(v) = \lambda\Lambda v(\varphi)$, hence $\Lambda(\lambda v) = \lambda \Lambda v$
+
+So, $\Lambda$ is indeed a linear map
+
+(b) Let us prove that $T'' \circ \Lambda = \Lambda \circ T$.
+
+This is rather simple, but for me personally it is a bit hard to imagine this entities without explicitely stating their types, so I will do it now.
+
+$V': V \to \mathbb{F}$
+
+$T': V' \to V' = (V \to \mathbb{F}) \to (V \to \mathbb{F})$
+
+$V'': V' \to \mathbb{F} = (V \to \mathbb{F}) \to \mathbb{F}$
+
+$T'': V'' \to V'' = (V' \to \mathbb{F}) \to (V' \to \mathbb{F}) = ((V \to \mathbb{F}) \to \mathbb{F}) \to ((V \to \mathbb{F}) \to \mathbb{F})$
+
+Now, let us jump to the proof itself. $\forall v \in V$ we have
+
+$$(T'' \circ \Lambda)(v) = T''(\Lambda v) = (\Lambda v)\circ T'$$
+where the second equality comes from the definition of $T''$. This implies that $\forall v \in V, \forall \varphi \in V'$
+
+$$
+\begin{align}
+((T'' \circ \Lambda)(v))(\varphi) &= ((\Lambda v)\circ T')(\varphi) \\
+&= (\Lambda v)(T'(\varphi)) \\
+&= (\Lambda v)(\varphi \circ T) \\
+&= (\varphi \circ T)(v) \\
+&= \varphi(Tv)
+\end{align}
+$$
+
+On the other hand,
+
+$$
+\begin{align}
+((\Lambda \circ T)(v))(\varphi) &= (\Lambda(Tv))(\varphi) = \varphi(Tv)
+\end{align}
+$$
+
+So, since for every $\varphi, v$ the values are equal, we conclude, that the functions are equal.
+
+(c) let $v, u \in V$ and $\Lambda u = \Lambda v$. Then $\forall \varphi \in V' \ (\Lambda v)(\varphi) = (\Lambda u)(\varphi) = \varphi(v) = \varphi(u)$. Suppose $v_1,...,v_n$ is a basis of $V$ and $\varphi_1,...,\varphi_n$ is the corresponding dual basis of $V'$. Then $v = \sum\limits_{i=1}^nc_iv_i$, $u = \sum\limits_{i=1}^nd_iv_i$. We have that $\varphi_i(v) = \varphi_i(u)$, hence $c_i = d_i$, and so $v = u$. Therefore, $\Lambda$ is injective.
+
+We also have, that $\operatorname{dim}V'' = \operatorname{dim}(\mathcal{L}(V', \mathbb{F})) = 1\cdot\operatorname{dim}(V') = 1\cdot1\cdot \operatorname{dim}(V) = \operatorname{dim}V$. 
+
+So, since $\operatorname{dim}V = \operatorname{dim}V''$ and $\Lambda$ is injective, it means that $\Lambda$ is isomorphism.
 
 _Exercise 35_
 
@@ -762,13 +825,37 @@ We have
 
 $$
 \begin{aligned}
-\operatorname{null} i' &= \\{\varphi \in V': i'(\varphi) = 0\\}\\\\
-&= \\{\varphi \in V': i'(\varphi)(u) = 0 \text{ for every } u \in U\\}\\\\
-&= \\{\varphi \in V': \varphi \circ i(u) = 0 \text{ for every } u \in U\\}\\\\
-&= \\{\varphi \in V': \varphi(u) = 0 \text{ for every } u \in U\\}\\\\
-&= \\{\varphi \in V': \varphi \in U^0\\}\\\\
+\operatorname{null} i' &= \{\varphi \in V': i'(\varphi) = 0\}\\\\
+&= \{\varphi \in V': i'(\varphi)(u) = 0 \text{ for every } u \in U\}\\\\
+&= \{\varphi \in V': \varphi \circ i(u) = 0 \text{ for every } u \in U\}\\\\
+&= \{\varphi \in V': \varphi(u) = 0 \text{ for every } u \in U\}\\\\
+&= \{\varphi \in V': \varphi \in U^0\}\\\\
 &= U^0\\\\
 \end{aligned}
 $$
 
 _(b)_
+
+$\forall u \in U, \varphi \in U' i'(\varphi)(u) = \varphi(i(u)) = \varphi(u)$, hence $i'(\varphi) = \varphi$. So, $U' = \operatorname{range}i'$.
+
+_(c)_
+
+Suppose $\varphi, \psi \in V'$, and $\tilde{i'}(\varphi + U^0) = \tilde{i'}(\psi + U^0)$. This means, that $i'(\varphi) - i'(\psi) \in U^0$, which implies $\forall u \in U\ i'(\varphi)(u) - i'(\psi)(u) = 0$, which means that $\forall u \in U\ \varphi(i(u)) - \psi(i(u)) = 0$, which means that $\forall u \in U \ \varphi(u) - \psi(u) = 0$, and so $\varphi - \psi \in U^0$, which means that $\varphi + U^0 = \psi + U^0$ holds in $V/U^0$. So, $\tilde{i'}$ is injective. 
+
+We also can verify that $\operatorname{dim}V'/U^0 = \operatorname{dim}V' - \operatorname{dim}U^0 = \operatorname{dim}V' - (\operatorname{dim}V - \operatorname{dim}U^0) = \operatorname{dim}U^0$.
+
+So, $\tilde{i'}$ is isomorphism.
+
+_Exercise 37_
+
+_(a)_
+
+By definition, $\pi$ is injective, so $\pi'$ is surjective.
+
+_(b)_
+
+We know that $\operatorname{range}\pi' = (\operatorname{null} \pi)^0$, hence we need to prove, that $U = (\operatorname{null}\pi)$, and this is obviously true.
+
+_(с)_
+
+$\operatorname{dim}\operatorname{range}\pi' = \operatorname{dim}U^0 = \operatorname{dim}V - \operatorname{dim}U$, and $\operatorname{dim}(V/U)' = \operatorname{dim}(V/U) = \operatorname{dim}V - \operatorname{U}$, and hence $\pi'$ is injective, we can conclude, that it is isomirphism.

@@ -6,7 +6,7 @@ Chapter 5: **Eigenvalues, Eigenvectors and Invariant Subspaces**
 - [x] Exercise 2
 - [x] Exercise 3
 - [x] Exercise 4
-- [ ] Exercise 5
+- [x] Exercise 5
 - [x] Exercise 6
 - [x] Exercise 7
 - [x] Exercise 8
@@ -14,9 +14,9 @@ Chapter 5: **Eigenvalues, Eigenvectors and Invariant Subspaces**
 - [x] Exercise 10
 - [x] Exercise 11
 - [x] Exercise 12
-- [ ] Exercise 13
-- [ ] Exercise 14
-- [ ] Exercise 15
+- [x] Exercise 13
+- [x] Exercise 14
+- [x] Exercise 15
 - [x] Exercise 16
 
 _Exercise 1_

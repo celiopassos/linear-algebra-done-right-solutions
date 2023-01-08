@@ -5,25 +5,25 @@ Chapter 6: **Inner Product Spaces**
 
 - [x] Exercise 1
 - [x] Exercise 2
-- [ ] Exercise 3
+- [x] Exercise 3
 - [x] Exercise 4
 - [x] Exercise 5
 - [x] Exercise 6
 - [x] Exercise 7
 - [x] Exercise 8
-- [ ] Exercise 9
-- [ ] Exercise 10
+- [x] Exercise 9
+- [x] Exercise 10
 - [x] Exercise 11
 - [x] Exercise 12
 - [x] Exercise 13
 - [x] Exercise 14
 - [x] Exercise 15
-- [ ] Exercise 16
-- [ ] Exercise 17
-- [ ] Exercise 18
+- [x] Exercise 16
+- [x] Exercise 17
+- [x] Exercise 18
 - [x] Exercise 19
 - [x] Exercise 20
-- [ ] Exercise 21
+- [x] Exercise 21
 - [x] Exercise 22
 - [x] Exercise 23
 - [x] Exercise 24
@@ -42,6 +42,24 @@ It does not satisfy homogeneity on the first slot when $\lambda$ is negative.
 _Exercise 2_
 
 It does not satisfy the definiteness property if we let the first and third slots equal zero but the second non-zero.
+
+_Exercise 3_
+
+Let $v \in V: \langle v,v\rangle > 0$. Suppose $\exists u \in V: \langle u, u \rangle < 0$. It is clear, that $u,v$ are linearly independent: suppose they are not. Then $u = \lambda v$ for some $\lambda \in \mathbb{F}$, which implies that $\langle u, u \rangle = \lambda^2\langle v, v \rangle \ge 0$, and this is a contradiction.
+
+Consider vectors of the form $u + \lambda v$ for $\lambda \in \mathbb{F}$. Let us look for such $\lambda$ that $\langle (u + \lambda v), (u + \lambda v) \rangle = 0$. To find such $\lambda$, we need to solve 
+
+$$
+\langle u, u \rangle + 2 \lambda \langle u, v \rangle + \lambda^2\langle v, v \rangle = 0
+$$
+
+This is quadratic equation with respect to $\lambda$, so 
+
+$$
+\lambda_{1,2} = \frac{-2\langle u, v \rangle \plusmn \sqrt{(4\langle u, v \rangle^2 - 4\langle u, u \rangle\langle v, v \rangle)}}{2\langle v, v \rangle}
+$$
+
+The value in the denominator is known to be positive, and the value under the root is positive as well, hence $\lambda_{1,2}$ are well-defined. So, there is a vector $u + \lambda_1v$: it's squared norm is 0. However, this vector can't be 0 itself since we proved $u,v$ are linearly independent. So, we got a contradiction, hence $u$ doesn't exist.
 
 _Exercise 4_
 
@@ -148,6 +166,45 @@ $$
 
 Thus $u - v = 0$, which implies that $u = v$.
 
+_Exercise 9_
+
+Using Cauchy-Schwartz inequality, we have that $|\langle u, v \rangle| < ||u||||v|| \le 1$, so the right-hand side of the inequality we are interested in is at least positive. We can then apply square to both sides of the inequality, so it is equivalent to 
+
+$$
+(1 - ||u||^2)(1 - ||v||^2) \le (1 - |\langle u, v \rangle|)^2
+$$
+
+We can strengthen this inequality substituting $||u||||v||$ instead of $|\langle u, v \rangle|$. 
+
+$$
+(1 - ||u||^2)(1 - ||v||^2) \le (1 - ||u||||v||)^2
+$$
+
+Which is equivalent to 
+
+$$
+-||u||^2 -||v||^2 \le -2||u||||v||
+$$
+
+But this is obviously correct, since 
+
+$$
+0 \le -2||u||||v|| + ||u||^2 + ||v||^2 = (||v|| - ||u||)^2
+$$
+
+_Exercise 10_
+
+$u = \lambda(1,3)$. Since $v$ should be orthogonal to (1,3), $v = \beta(-3, 1)$. Since $u + v = (1,2)$, we get the following system
+
+$$
+\begin{cases}
+    \lambda - 3\beta = 1 \\
+    3\lambda + \beta = 2 
+\end{cases}
+$$
+
+So, $\lambda = 0.7$, $\beta = -0.1$.
+
 _Exercise 11_
 
 Let $u = \left(\sqrt{a}, \sqrt{b}, \sqrt{c}, \sqrt{d}\right)$ and $v = \left(\frac{1}{\sqrt{a}}, \frac{1}{\sqrt{b}}, \frac{1}{\sqrt{c}}, \frac{1}{\sqrt{d}}\right)$.
@@ -204,6 +261,40 @@ $$
 
 where the second line follows from the Cauchy-Schwarz Inequality.
 
+_Exercise 16_
+
+We can use the parallelogram equality:
+
+$$
+16 + 36 = 2(9 + ||v||^2)
+$$
+
+So, $||v|| = \sqrt{17}$, since $||v|| \ge 0$.
+
+_Exercise 17_
+
+This is clearly wrong. Suppose $v = (-1,-1)$, then $||v|| = -1 < 0$, which contradicts definition of norm as $||v|| = \sqrt(v,v) > 0$.
+
+_Exercise 18_
+
+First let us notice, that it should be true that $(-1)^p > 0$, because else we can easily construct a vector $(x,-x)$ such that it has zero norm, however it is not zero itself. This implies, that $\forall x \in \mathbb{F}\ x^p = |x|^p = (-x)^p$.
+
+Now, consider two vectors $u = (x, x)$ and $v = (x, -x)$, with $x > 0$. Using the parallelogram equation, we obtain
+
+$$
+||(2x, 0)||^2 + ||(0,2x)||^2 = 2(||(x,x)||^2 + ||(x,-x)||^2)
+$$
+
+It is clear, that $||(0, 2x)|| = ||(2x, 0)|| = ((2x)^p)^{\frac{1}{p}} = 2x$. On the otehr hand, $||(x,x)|| = ||(x,-x)|| = (2x^p)^{\frac{1}{p}} = 2^{\frac{1}{p}}x$.
+
+Hence, we end up with equation
+
+$$
+8x^2 = 4\cdot 2^{\frac{2}{p}}x^2
+$$
+
+After contracting $4x^2$, we get $2 = 2^{\frac{2}{p}}$, and $p = 2$ is the only solution to this equation with respect to $p$.
+
 _Exercise 19_
 
 We have
@@ -232,6 +323,10 @@ $$
 $$
 
 Dividing by $4$ yields the desired result.
+
+_Exercise 21_
+
+Suppose $U$ is a complex vector space, then we can use inner product definition through the norm function defined in the previous exercise. All is left is to check that such defined function will in fact satisfy all the properties of inner product.
 
 _Exercise 22_
 
@@ -304,3 +399,44 @@ Thus $\langle f'(t), f(t) \rangle = 0$.
 _(c)_
 
 If $f(t)$ describes a trajectory on the surface of a sphere centered at the origin, then $f'(t)$ is perpendicular to $f(t)$.
+
+_Exercise 27_
+
+Let us select $u' = w - \frac{1}{2}(u + v)$, $v' = \frac{1}{2}(v - u)$, then we need to prove that
+
+$$
+||u'||^2 = \frac{||u' + v'||^2 + ||u' - v'||^2}{2} - \frac{4||v'||^2}{4}
+$$
+
+which can be easily regrouped to form parallelogram equality.
+
+_Exercise 28_
+
+Suppose there exist two such points $u,v$. Suppose $||w - u|| = ||w - v|| = c$. Consider $x = \frac{1}{2}(v + u) \in C$. Then, from the previous exercise, we know, that
+
+$$
+||w - x||^2 = c^2 - \frac{1}{4}||u-v||^2 < c^2 
+$$
+
+Since $u\neq v$, we end up with $x$ being closer to $w$, then $v,u$, which is a contradiction.
+
+_Exercise 29_
+
+_(a)_
+We need to check 4 properties:
+
+1. The distance from point to itself should be zero: $d(x,x) = ||x - x|| = ||0|| = 0$.
+2. Positivity: if $x \neq y$, $d(x,y) = ||x - y|| > 0$, which holds because of definitieness of inner product.
+3. Symmetry is obvious: $d(x,y) = ||x - y|| = |-1|||y - x|| = ||y - x|| = d(y,x)$
+4. Triangle inequality: $||x - z|| \le ||x - y|| + ||y - z||$, which follows from triangle inequality for norms with $u = y - z$, $v = x - y$.
+
+_(b)_
+
+Suppose $x_1,...,x_n,...$ is a Cauchy sequence, so $\forall \varepsilon >0 \exists N: m,n > N \implies d(x_m,x_n) < \varepsilon$. We will choose orthonormal basis $e_1,...,e_n$, and represent $x_i = \sum\limits_{r=1}^nc_{ir}e_r$. Writing down Cauchy sequence condition, we have that given arbitrary $\varepsilon >0$ we can find $N \in \mathbb{N}$ such, that if $i,j > \mathbb{N}$, we have $||\sum\limits_{r=1}^n(c_{ir} - c_{jr})e_r|| < \varepsilon$, which implies $\sum\limits_{r=1}^n|c_{ir} - c_{jr}| < \varepsilon$, and so $|c_{ir} - c_{jr}| < \varepsilon$ for any $r=1..n$.
+
+This means, that $\{c_{1r}, c_{2r}, ....\}$ is a Cauchy sequence in $\mathbb{F}$, and if $\mathbb{F}$ is real or complex numbers, then it converges to an element of $\mathbb{F}$, denote it $c_r$. Then, it is easy to show that $d(x_i, c) \rightarrow 0$, with $i \to \infty$, where $c = \sum\limits_{i=1}^nc_ie_i \in V$.
+
+_(c)_
+
+By the same logic, we can operate orthonormal basis of $U$, and hence the limit $c$ will be also in $U$, so it will be closed subset of $V$.
+

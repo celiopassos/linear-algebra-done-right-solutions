@@ -5,7 +5,7 @@ Chapter 6: **Inner Product Spaces**
 - [x] Exercise 1
 - [x] Exercise 2
 - [x] Exercise 3
-- [ ] Exercise 4
+- [x] Exercise 4
 - [x] Exercise 5
 - [x] Exercise 6
 - [x] Exercise 7
@@ -98,6 +98,47 @@ $$
 
 As in the proof of 6.37, we see that the matrix of $T$ with respect to this basis is upper triangular.
 
+_Exercise 4_
+
+First, let us prove that $\operatorname{sin}mx$ is orthogonal to $\operatorname{cos}nx$:
+
+$$
+\begin{align}
+\int\limits_{-\pi}^\pi \operatorname{sin}mx\operatorname{cos}nx\ dx &= \frac{1}{2}\int\limits_{-\pi}^\pi \operatorname{sin}(mx + nx)\ dx = -\frac{1}{m + n}\operatorname{cos}(m+n)x \Big|_{-\pi}^\pi = 0
+\end{align}
+$$
+
+Hence, $\int\limits_{-\pi}^\pi \operatorname{sin}mx\operatorname{cos}nx\ dx = 0$.
+
+Now, consider $\operatorname{cos}mx$, $\operatorname{cos}nx$
+
+$$
+\begin{align}
+\int\limits_{-\pi}^\pi \operatorname{cos}mx\operatorname{cos}nx\ dx &= \frac{1}{m}\operatorname{sin}mx\operatorname{cos}nx \Big|_{-\pi}^\pi + \frac{n}{m}\int\limits_{-\pi}^\pi \operatorname{sin}mx\operatorname{sin}nx\ dx\\
+ &= \frac{n}{m}\int\limits_{-\pi}^\pi \operatorname{sin}mx\operatorname{sin}nx\ dx\\
+  &= -\frac{n}{m^2}\operatorname{cos}mx\operatorname{sin}nx \Big|_{-\pi}^\pi + \frac{n^2}{m^2}\int\limits_{-\pi}^\pi \operatorname{cos}mx\operatorname{cos}nx\ dx\\
+  &= \frac{n^2}{m^2}\int\limits_{-\pi}^\pi \operatorname{cos}mx\operatorname{cos}nx\ dx
+  \end{align}
+$$
+
+So
+
+$$
+(1 - \frac{n^2}{m^2})\int\limits_{-\pi}^\pi \operatorname{cos}mx\operatorname{cos}nx\ dx = 0
+$$
+
+If $n \neq m$, then $(1 - \frac{n^2}{m^2}) \neq 0$, so the integral itself is zero. Since this integral is also equal to $\frac{m}{n}\int\limits_{-\pi}^\pi \operatorname{sin}mx\operatorname{sin}nx\ dx$, we can conclude that it is also 0 when $m \neq n$.
+
+When $m = n$, we have 
+
+$$
+\int\limits_{-\pi}^\pi \operatorname{sin}^2mx\ dx = \int\limits_{-\pi}^\pi \operatorname{cos}^2mx\ dx = \int\limits_{-\pi}^\pi \frac{1}{2}(1 + \operatorname{cos}2mx)\ dx = \frac{x}{2} \Big|_{-\pi}^\pi + \frac{1}{4m}\operatorname{sin}2mx\Big|_{-\pi}^\pi = \pi
+$$
+
+It is also obvious, that $f(x) = 1$ is orthogonal to $\operatorname{cos}nx$ and to $\operatorname{sin}nx$, and $||1|| = 2\pi$.
+
+So, we see that these functions are in fact orthogonal, and to normalize them, we need to divide each of them by $\sqrt{pi}$, except 1, which should be divied by $\sqrt{2\pi}$.
+
 _Exercise 5_
 
 Applying the Gram-Schmidt Procedure, we get the following basis
@@ -136,13 +177,43 @@ v_k = \langle v_k, e_1 \rangle e_1 + \dots + \langle v_k, e_{k-1} \rangle e_{k-1
 $$
 
 But the right hand side is exactly what we subtract from $v_k$ when calculating $e_k$, hence the Gram-Schmidt Procedure cannot continue because we can't divide by $0$.
-If, however, you discard $v_k$ (and every other vector to which happens the same thing), you end up producing an orthonormal basis whose span equals $\operatorname{span}(v_1, \dots, v_m)$.
+If, however, you discard $v_k$ (and every other vector to which happens the same thing), you end up producing an orthonormal list of vectors, whose span equals $\operatorname{span}(v_1, \dots, v_m)$.
 
 _Exercise 10_
 
-Just apply the Gram-Schmidt Procedure once on $v_1, \dots, v_m$ to get the orthonormal an $e_1, \dots, e_m$.
-Note that, if we switch the order of this list without relabeling the vectors, we still have $\operatorname{span}(v_1, \dots, v_j) = \operatorname{span}(e_1, \dots, e_j)$ for all $j \in \\{1, \dots, m\\}$, because the vectors themselves remain the same.
-There $2^m$ such permutations.
+We can prove this using induction. If $m = 1$, then we need to find $e_1 = \lambda_1v_1$ such that $||e_1|| = 1$, so $\lambda^2||v_1||^2 = 1$, and $\lambda = \pm \frac{1}{||v_1||}$, and there are $2^1$ possible orthonormal lists of vectors such that $\operatorname{span}(e_1) = \operatorname{span}(v_1)$.
+
+Suppose the statement is correct for $m - 1$ vectors, let us prove it for $m$ vectors. Each of the $2^{m-1}$ orthonormal lists can be extended using Gramm-Schmidt algorithm to orthonormal list of $m$ vectors. We will fix any particular orthonormal list of size $m-1$, and try to extend it to a list of size $m$. Since $\operatorname{span}(e_1,...,e_{m-1}) = \operatorname{span}(v_1,..,v_{m-1})$, we get that $\operatorname{span}(v_1,..,v_{m-1}, v_m) = \operatorname{span}(e_1,...,e_{m-1}, v_m)$. Since we want $\operatorname{span}(v_1,..,v_{m-1}, v_m) = \operatorname{span}(e_1,...,e_{m-1}, e_m)$, we can write 
+
+$$
+e_m = c_1e_1 + ... + c_{m-1}e_{m-1} + dv_m
+$$
+
+$\langle e_m, e_i \rangle = 0 \implies c_i + d\langle v_m, e_i\rangle = 0$, so $c_i = -d\langle v_m, e_i \rangle$, and we can write
+
+$$
+e_m = d(v_m - \langle v_m, e_1\rangle e_1 - ... - \langle v_m, e_{m-1}\rangle e_{m-1})
+$$
+
+Since we also want to constrain $e_m$ to be a unit vector, we can write
+
+$$
+||e_m||^2 = 1 = d^2(||v_m||^2 - \sum\limits_{i=1}^{m-1}\langle v_m,e_i \rangle^2)
+$$
+
+So, 
+
+$$
+d = \pm\frac{1}{\sqrt{||v_m||^2 - \sum\limits_{i=1}^{m-1}\langle v_m,e_i \rangle^2}}
+$$
+
+And hence
+
+$$
+e_m = \pm\frac{v_m - \sum\limits_{i=1}^{m-1}\langle v_m, e_i\rangle e_i}{\sqrt{||v_m||^2 - \sum\limits_{i=1}^{m-1}\langle v_m,e_i \rangle^2}}
+$$
+
+For any choice of $e_1,...,e_{m-1}$ we therefore get two distinct options for $e_m$, which means that in total there are $2^{m-1}\cdot 2 = 2^m$ different orthonormal lists satisfying the conditions.
 
 _Exercise 11_
 
@@ -232,6 +303,18 @@ $$
 $$
 Therefore by putting $c=\sqrt{max(k^2,m^2)}$ we see that the induction statement holds for $n$. Hence, the statement is correct for every finite dimensional $V$. 
 
+_Exercise 13_
+
+We can apply Gramm-Schmidt orthogonalization to $v_1,..,v_m$ and get orthonormal linearly independent list of vectors $e_1,..,e_m$, which will also be a basis of subspace $U = \operatorname{span}(v_1,...,v_m)$.
+
+Now, since $\operatorname{span}(v_1,...,v_i) = \operatorname{span}(e_1,...,e_j)$, we can write $v_i = \sum\limits_{j=1}^i\langle v_i, e_j \rangle e_j$. We now consider $w = \sum\limits_{i=1}^mc_ie_i$ and iteratively solve for $c_i$ so, that $\langle w, v_i \rangle = 1$
+
+$$
+c_i = \frac{1}{\langle e_i, v_i \rangle} - \sum\limits_{j=1}^{i-1}\frac{c_j\langle e_j, v_i \rangle}{\langle e_i, v_i \rangle}
+$$
+
+$\langle e_i, v_i \rangle \neq 0$, since this would imply $v_i \in \operatorname{span}(e_1,...,e_{i-1}) = \operatorname{span}(v_1,...,v_{m-1})$.
+
 _Exercise 14_
 
 Since $dimV=n$ in suffices to show that $v_1,\dots,v_n$ are linearly independent. To do so, suppose that the there are some scalars $\alpha_1,\dots,\alpha_n$ that some of them are nonzero and:
@@ -249,9 +332,62 @@ $$
 $$
 However using Cauchy–Schwarz Inequality we have:
 $$
-n.(|\alpha_1|^2 + \dots + |\alpha_n|^2) \geq (|\alpha_1| + \dots + |\alpha_n|)^2
+n\cdot(|\alpha_1|^2 + \dots + |\alpha_n|^2) \geq (|\alpha_1| + \dots + |\alpha_n|)^2
 $$
 This is a contradiction. So, none of $\alpha_i$s can be nonzero and $v_i$s are linearly independent.
+
+_Exercise 15_
+
+Suppose such $g(x)$ exists.
+
+Consider $f(x) = 1$. It follows that $1 = \int\limits_{-1}^1g(x)dx$.
+
+Consider now series of functions $\{f_n(x)\}$, where 
+
+$$
+f_n(x) = \begin{cases}
+    1, |x| > \frac{1}{n}\\
+    |2nx| - 1, |x| \le \frac{1}{n}
+\end{cases}
+$$
+
+It is clear, that such defined $f_n(x)$ are continuous real-valued functions.
+
+We have $f_n(0) = -1$, and so
+
+$$
+\begin{align}
+-1 &= \int\limits_{-1}^1g(x)f_n(x)dx \\
+&= \int\limits_{-1}^{-\frac{1}{n}}g(x)dx + \int\limits_{\frac{1}{n}}^{1}g(x)dx + \int\limits_{-\frac{1}{n}}^{\frac{1}{n}}g(x)(|2nx| - 1)dx \\
+&= \int\limits_{-1}^{1}g(x)dx - \int\limits_{-\frac{1}{n}}^{\frac{1}{n}}g(x)dx + \int\limits_{-\frac{1}{n}}^{\frac{1}{n}}g(x)(|2nx| - 1)dx \\
+&= 1 + 2\int\limits_{-\frac{1}{n}}^{\frac{1}{n}}(|nx| - 1)g(x)dx
+\end{align}
+$$
+
+So we conclude, that 
+
+$$
+\int\limits_{-\frac{1}{n}}^{\frac{1}{n}}(1 - |nx|)g(x)dx = 1
+$$
+
+Since $g(x)$ is continuous, it is limited on $[-1,1]$, so $\exists M \in \mathbb{R}: |g(x)| < M$ for any $x \in [-1,1]$.
+
+So, applying modulo to the both sides of the equation we can write
+
+$$
+\begin{align}
+ 1 &= |\int\limits_{-\frac{1}{n}}^{\frac{1}{n}}(1 - |nx|)g(x)dx|\\
+ &\le \int\limits_{-\frac{1}{n}}^{\frac{1}{n}}|(1 - |nx|)||g(x)|dx\\
+ &\le M\int\limits_{-\frac{1}{n}}^{\frac{1}{n}}|(1 - |nx|)|dx \\
+ &= 2M\int\limits_{0}^{\frac{1}{n}}(1 - nx)dx\\
+ &= 2M(\frac{1}{n} - n\frac{n^2}{2})\\
+ &= \frac{M}{n}
+\end{align}
+$$
+
+It is obvious then, that as soon as $n > M$, we end up with contradiction $1 \le \frac{M}{n}$ implies, that $n \le M$.
+
+So, $g(x)$ does not exist.
 
 _Exercise 17_
 

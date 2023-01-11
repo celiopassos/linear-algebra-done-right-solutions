@@ -19,7 +19,7 @@ Chapter 6: **Inner Product Spaces**
 
 _Exercise 1_
 
-Suppose $w \in \\{v_1, \dots, v_m\\}^\perp$.
+Suppose $w \in \{v_1, \dots, v_m\}^\perp$.
 Let $v = \in \operatorname{span}(v_1, \dots, v_m)$.
 We have that
 

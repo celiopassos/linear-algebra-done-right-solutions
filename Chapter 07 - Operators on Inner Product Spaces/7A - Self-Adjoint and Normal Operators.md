@@ -11,7 +11,7 @@ Chapter 7: **Operators on Inner Product Spaces**
 - [x] Exercise 7
 - [x] Exercise 8
 - [x] Exercise 9
-- [ ] Exercise 10
+- [x] Exercise 10
 - [x] Exercise 11
 - [x] Exercise 12
 - [x] Exercise 13
@@ -65,20 +65,20 @@ $$
 where the second equality follows because $Tu \in U$.
 Thus $T^*w \in U^\perp$.
 
-The converse is the same, because $(T^*)^\* = T$ and $(U^\perp)^\perp = U$.
+The converse is the same, because $(T^*)^* = T$ and $(U^\perp)^\perp = U$.
 
 _Exercise 4_
 
-Since $(T^\*)^\* = T$, the statements in (a) and (b) are equivalent, so we give a single proof.
+Since $(T^*)^* = T$, the statements in (a) and (b) are equivalent, so we give a single proof.
 
 This follows directly from 7.7 (b) and 6.46 (b).
 We have
 
 $$
 \begin{aligned}
-T \text{ is injective } &\iff \operatorname{null} T = 0\\\\
-&\iff (\operatorname{range} T^\*)^\perp = \\{0\\}\\\\
-&\iff \operatorname{range} T^\* = V\\\\
+T \text{ is injective } &\iff \operatorname{null} T = 0\\
+&\iff (\operatorname{range} T^*)^\perp = \{0\}\\
+&\iff \operatorname{range} T^* = V\\
 &\iff T^* \text{ is surjective. }
 \end{aligned}
 $$
@@ -122,9 +122,9 @@ We have
 
 $$
 \begin{aligned}
-\langle Tp, q \rangle &= \langle a_1 x, q \rangle\\\\
-&= a_1 \int_0^1 b_0x + b_1x^2 + b_2x^3\\:dx\\\\
-&= a_1 \left(\frac{b_0}{2}x^2 + \frac{b_1}{3}x^3 + \frac{b_2}{4}x^4\right)\biggr\rvert_0^1\\\\
+\langle Tp, q \rangle &= \langle a_1 x, q \rangle\\
+&= a_1 \int_0^1 b_0x + b_1x^2 + b_2x^3 dx\\
+&= a_1 \left(\frac{b_0}{2}x^2 + \frac{b_1}{3}x^3 + \frac{b_2}{4}x^4\right)\biggr\rvert_0^1\\
 &= a_1 \left(\frac{b_0}{2} + \frac{b_1}{3} + \frac{b_2}{4}\right).
 \end{aligned}
 $$
@@ -142,20 +142,20 @@ _(b)_
 
 _Exercise 7_
 
-Keep in mind that, by 7.6 (c), $(ST)^\* = T^\*S^\*$.
+Keep in mind that, by 7.6 (e), $(ST)^* = T^*S^*$.
 
 Suppose $ST$ is self adjoint.
 Then
 
 $$
-ST = (ST)^\* = T^\*S^\* = TS.
+ST = (ST)^* = T^*S^* = TS.
 $$
 
 Conversely, suppose $ST = TS$.
 Then
 
 $$
-ST = TS = T^\*S^\* = (ST)^\*.
+ST = TS = T^*S^* = (ST)^*.
 $$
 
 _Exercise 8_
@@ -164,7 +164,7 @@ Suppose $S, T \in \mathcal{L}(V)$ are self-adjoint.
 Then
 
 $$
-(S + T) = S + T = S^\* + T^\* = (S + T)^\*,
+(S + T) = S + T = S^* + T^* = (S + T)^*,
 $$
 
 proving that $S + T$ is self-adjoint.
@@ -172,14 +172,108 @@ Let $\lambda \in \mathbb{R}$.
 Then
 
 $$
-(\lambda T) = \lambda T = \lambda T^\* = (\overline{\lambda}T)^\* = (\lambda T)^\*,
+(\lambda T) = \lambda T = \lambda T^* = (\overline{\lambda}T)^* = (\lambda T)^*,
 $$
 
 proving that $\lambda T$ is self adjoint.
 
 _Exercise 9_
 
-From the previous exercise, we see that $(\lambda T) = (\overline{\lambda}T)^\*$. Therefore, if $\lambda$ is not real, we cannot have $(\lambda T) = (\lambda T)^\*$
+From the previous exercise, we see that $(\lambda T) = (\overline{\lambda}T)^*$. Therefore, if $\lambda$ is not real, we cannot have $(\lambda T) = (\lambda T)^*$
+
+_Exercise 10_
+
+It is clear that $0$ is normal operator (since $0^* = 0$) and if $S$ is normal operator, $\lambda S$ is also normal, since $(\lambda S)^* = \overline{\lambda}S^*$, and so $(\lambda S)^*(\lambda S) = |\lambda|^2S^*S = |\lambda|^2SS^* = (\lambda S)(\lambda S)^*$. So, our only option to prove that subset of all normal operators is not a subspace is to prove that there exist two normal operators such, that their sum is not a normal operator.
+What we want is to find such two normal $S,T \in \mathcal{L}(V)$, that $S+T$ is not normal.
+
+This means
+
+$$
+(S+T)(S+T)^* \neq (S+T)^*(S+T) \\
+SS^* + ST^* + TS^* + TT^* \neq S^*S + S^*T + T^*S + T^*T \\
+ST^* + TS^* \neq S^*T + T^*S
+$$
+
+Where the last transition is possible since $T,S$ are normal, so $S^*S = SS^*$ and $T^*T = TT^*$.
+
+We can start with considering vector space with dimension $n = 2$ and then generalizing the result.
+
+Suppose we have an orthonormal basis $e_1,...,e_n$ and consider operators having the following matrices with respect to this basis:
+
+$$
+\mathcal{M}(T) = \begin{pmatrix}
+  0 & 1 \\
+  -1 & 0
+\end{pmatrix}
+$$
+
+$$
+\mathcal{M}(S) = \begin{pmatrix}
+  a & b \\
+  b & c
+\end{pmatrix}
+$$
+
+with $a,b,c \in \mathbb{R}$.
+
+So, $S^* = S$, and $T^*$ has matrix 
+
+$$
+\mathcal{M}(T^*) = \begin{pmatrix}
+  0 & -1 \\
+  1 & 0
+\end{pmatrix}
+$$
+
+We need to find such $a,b,c$ that 
+
+$$
+ST^* + TS \neq ST + T^*S \implies \\
+S(T^* - T) \neq (T^* - T)S
+$$
+
+$\mathcal{M}(T^* - T) = \begin{pmatrix}
+  0 & -2\\
+  2 & 0
+\end{pmatrix} = -2\mathcal{M}(T)$
+
+So, we are looking for $S$ such that
+
+$$
+-2ST = -2TS \implies \\
+ST = TS
+$$
+
+$$
+\mathcal{M}(ST) = \begin{pmatrix}
+  a & b \\
+  b & c
+\end{pmatrix} \begin{pmatrix}
+  0 & 1 \\
+  -1 & 0
+\end{pmatrix} = \begin{pmatrix}
+  -b & a \\
+  -c & b
+\end{pmatrix}
+$$
+
+$$
+\mathcal{M}(TS) = \begin{pmatrix}
+  0 & 1 \\
+  -1 & 0
+\end{pmatrix}\begin{pmatrix}
+  a & b \\
+  b & c
+\end{pmatrix} = \begin{pmatrix}
+  b & c \\
+  -a & -b
+\end{pmatrix}
+$$
+
+So, if $b = 0, a = 1, c = -1$, we achieve the desired result.
+
+Now, let us generalize the solution. For an arbitrary finite-dimensional vector space $V$, we can select any 2-dimensional subspace $U \subset V$ of it with some orthonormal basis, and select $\tilde T,\tilde S$ such that $\tilde T|_U = T$, $\tilde S|_U = S$, and $\tilde T|_{U^\perp} = \tilde S|_{U^\perp} = I$. It is easy to see, that operators, defined in such a way will be normal, and that since $(S+T)$ is not normal, it follows that $\tilde T + \tilde S$ is not normal.
+
 
 _Exercise 11_
 
@@ -245,7 +339,7 @@ We have
 
 $$
 \begin{aligned}
-\langle (z_1, z_2, z_3, z_4), T^\*(x_1, x_2, x_3, x_4) \rangle
+\langle (z_1, z_2, z_3, z_4), T^*(x_1, x_2, x_3, x_4) \rangle
 &= \langle T(z_1, z_2, z_3, z_4), (x_1, x_2, x_3, x_4) \rangle\\\\
 &= \langle (z_4, z_1, z_2, z_3), (x_1, x_2, x_3, x_4) \rangle\\\\
 &= z_4\overline{x_1} + z_1\overline{x_2} + z_2\overline{x_3} + z_3\overline{x_4}\\\\
@@ -254,7 +348,7 @@ $$
 $$
 
 Thus $T^*(z_1, z_2, z_3, z_4) = (z_2, z_3, z_4, z_1)$.
-Note that $T$ is normal ($T^\*T$ and $TT^\*$ equal the identity), however $T \neq T^\*$.
+Note that $T$ is normal ($T^*T$ and $TT^*$ equal the identity), however $T \neq T^*$.
 
 _Exercise 14_
 
@@ -280,7 +374,7 @@ We have
 
 $$
 \begin{aligned}
-\langle w_1, T^\*w_2 \rangle &= \langle Tw_1, w_2 \rangle\\\\
+\langle w_1, T^*w_2 \rangle &= \langle Tw_1, w_2 \rangle\\\\
 &= \langle \langle w_1, u \rangle x, w_2 \rangle\\\\
 &= \langle w_1, u \rangle \langle x, w_2 \rangle\\\\
 &= \langle w_1, \overline{\langle x, w_2 \rangle} u \rangle\\\\
@@ -288,14 +382,14 @@ $$
 \end{aligned}
 $$
 
-Hence $T^\*v = \langle v, x \rangle u$.
+Hence $T^*v = \langle v, x \rangle u$.
 
 _(a)_
 Suppose $T$ is selft-adjoint.
 Then
 
 $$
-\langle v, u \rangle x - \langle v, x \rangle u = Tv - T^\*v = 0,
+\langle v, u \rangle x - \langle v, x \rangle u = Tv - T^*v = 0,
 $$
 
 for all $v \in V$.
@@ -312,11 +406,11 @@ $$
 Tv &= \langle v, u \rangle x\\\\
 &= \langle v, cx \rangle \frac{1}{c}u\\\\
 &= \langle v, x \rangle u\\\\
-&= T^\* v.
+&= T^* v.
 \end{aligned}
 $$
 
-Therefore $T = T^\*$.
+Therefore $T = T^*$.
 
 _(b)_
 Again, we can assume $u$ and $x$ are both non-zero in both directions of the proof.
@@ -325,9 +419,9 @@ We have
 
 $$
 \begin{aligned}
-\langle \langle v, u \rangle x, x \rangle u &= T^\*(\langle v, u \rangle x)\\\\
-&= T^\*Tv\\\\
-&= TT^\*v\\\\
+\langle \langle v, u \rangle x, x \rangle u &= T^*(\langle v, u \rangle x)\\\\
+&= T^*Tv\\\\
+&= TT^*v\\\\
 &= T(\langle v, x \rangle u)\\\\
 &= \langle \langle v, x \rangle u, u \rangle x.
 \end{aligned}
@@ -341,18 +435,18 @@ Then
 
 $$
 \begin{aligned}
-&= TT^\*v\\\\
+&= TT^*v\\\\
 &= T(\langle v, x \rangle u)\\\\
 &= \langle \langle v, x \rangle u, u \rangle x\\\\
 &= \langle \langle v, x \rangle x, cx \rangle cx\\\\
 &= \langle \langle v, cx \rangle x, x \rangle cx\\\\
 &= \langle \langle v, u \rangle x, x \rangle u\\\\
-&= T^\*(\langle v, u \rangle x)\\\\
-&= T^\*Tv.
+&= T^*(\langle v, u \rangle x)\\\\
+&= T^*Tv.
 \end{aligned}
 $$
 
-Hence $TT^\* = T^\*T$.
+Hence $TT^* = T^*T$.
 
 _Exercise 16_
 
@@ -360,16 +454,16 @@ Suppose $u \in \operatorname{null} T$.
 Then, by 7.20,
 
 $$
-0 = ||Tu|| = ||T^\*u||,
+0 = ||Tu|| = ||T^*u||,
 $$
 
-which implies that $u \in \operatorname{null} T^\*$.
-Hence $\operatorname{null} T = \operatorname{null} T^*$ (because $(T^\*)^\* = T$ and the same argument can be repeated).
+which implies that $u \in \operatorname{null} T^*$.
+Hence $\operatorname{null} T = \operatorname{null} T^*$ (because $(T^*)^* = T$ and the same argument can be repeated).
 Now we have
 
 $$
 \begin{aligned}
-\operatorname{range} T &= (\operatorname{null} T^\*)^\perp\\\\
+\operatorname{range} T &= (\operatorname{null} T^*)^\perp\\\\
 &= (\operatorname{null} T)^\perp\\\\
 &= \operatorname{range} T^*,
 \end{aligned}
@@ -380,10 +474,10 @@ where the first and last equality follow from items (d) and (b) of 7.7.
 _Exercise 17_
 
 Suppose $w \in \operatorname{range} T$ and $w \neq  0$.
-By 7.7 (d), we see that $w \in (\operatorname{null} T^\*)^\perp$.
-In the previous exercise, we saw that $\operatorname{null} T = \operatorname{null} T^\*$,
+By 7.7 (d), we see that $w \in (\operatorname{null} T^*)^\perp$.
+In the previous exercise, we saw that $\operatorname{null} T = \operatorname{null} T^*$,
 thus $w \in (\operatorname{null} T)^\perp$.
-Since $\operatorname{null} T \cap (\operatorname{null} T)^\perp = \\{0\\}$, it follows that $w \notin \operatorname{null} T$.
+Since $\operatorname{null} T \cap (\operatorname{null} T)^\perp = \{0\}$, it follows that $w \notin \operatorname{null} T$.
 
 With this reasoning in mind, one can easily see (or show by induction on $k$) that if $v \notin \operatorname{null} T$ then $v \notin \operatorname{null} T^{k}$ for any positive integer $k$.
 Therefore, taking the contrapositive of this statement, we see that $\operatorname{null} T^k \subset \operatorname{null} T$.
@@ -396,7 +490,7 @@ $$
 \operatorname{range} T^k &= (\operatorname{null} (T^k)^*)^\perp\\\\
 &= (\operatorname{null} T^k)^\perp\\\\
 &= (\operatorname{null} T)^\perp\\\\
-&= \operatorname{range} T^\*\\\\
+&= \operatorname{range} T^*\\\\
 &= \operatorname{range} T,
 \end{aligned}
 $$
@@ -426,12 +520,12 @@ $$
 Taking the transpose, we see that $T^*$ is defined by
 
 $$
-T^\*e_1 = e_1 - e_2,
-T^\*e_2 = e_1 - e_2.
+T^*e_1 = e_1 - e_2,
+T^*e_2 = e_1 - e_2.
 $$
 
-Note that $||Te_1|| = ||T^\*e_1||$ and $||Te_2|| = ||T^\*e_2||$.
-However $\mathcal{M}(T^\*)\mathcal{M}(T) \neq \mathcal{M}(T)\mathcal{M}(T^\*)$, thus $T$ is not normal.
+Note that $||Te_1|| = ||T^*e_1||$ and $||Te_2|| = ||T^*e_2||$.
+However $\mathcal{M}(T^*)\mathcal{M}(T) \neq \mathcal{M}(T)\mathcal{M}(T^*)$, thus $T$ is not normal.
 
 _Exercise 19_
 
@@ -440,7 +534,7 @@ Thus $(z_1, z_2, z_3) \in \operatorname{null} T$ and we have
 
 $$
 \begin{aligned}
-0 &= \langle T^\*(z_1, z_2, z_3), (1, 1, 1) \rangle\\\\
+0 &= \langle T^*(z_1, z_2, z_3), (1, 1, 1) \rangle\\\\
 &= \langle (z_1, z_2, z_3), T(1, 1, 1) \rangle\\\\
 &= \langle (z_1, z_2, z_3), (2, 2, 2) \rangle\\\\
 &= 2z_1 + 2z_2 + 3z_3.
@@ -456,8 +550,8 @@ Then
 
 $$
 \begin{aligned}
-((\Phi_V \circ T^*)(w))(v) &= (\Phi_V(T^\*w))(v)\\\\
-&= \langle v, T^\*v \rangle\\\\
+((\Phi_V \circ T^*)(w))(v) &= (\Phi_V(T^*w))(v)\\\\
+&= \langle v, T^*v \rangle\\\\
 &= \langle Tv, w \rangle.
 \end{aligned}
 $$
@@ -485,7 +579,7 @@ Then, for any $v, w \in V$, we have
 
 $$
 \begin{aligned}
-\langle v, D^\*w \rangle &= \langle Dv, w \rangle\\\\
+\langle v, D^*w \rangle &= \langle Dv, w \rangle\\\\
 &= \left\langle D\left(\left\langle v, \frac{1}{\sqrt{2\pi}} \right\rangle \frac{1}{\sqrt{2\pi}} + \sum_{j=1}^n (\langle v, e_j \rangle e_j + \langle v, f_j \rangle f_j)\right), w \right\rangle\\\\
 &= \left\langle \sum_{j=1}^n (-j\langle v, e_j \rangle f_j + j\langle v, f_j \rangle e_j), \left\langle w, \frac{1}{\sqrt{2\pi}} \right\rangle \frac{1}{\sqrt{2\pi}} + \sum_{j=1}^n (\langle w, e_j \rangle e_j + \langle w, f_j \rangle f_j) \right\rangle\\\\
 &= \sum_{j=1} (-j\langle v, e_j \rangle \langle w, f_j \rangle + j\langle v, f_j \rangle \langle w, e_j \rangle)\\\\
@@ -494,9 +588,9 @@ $$
 \end{aligned}
 $$
 
-Hence $D^\* = -D$.
+Hence $D^* = -D$.
 Obviously $D$ is normal but not self-adjoint.
 
 _(b)_
 Note that $T = D^2$.
-Thus $T^\* = (DD)^\* = D^\*D\^* = (-D)(-D) = D^2 = T$.
+Thus $T^* = (DD)^* = D^*D^* = (-D)(-D) = D^2 = T$.

@@ -12,7 +12,7 @@ Chapter 8: **Operators on Complex Vector Spaces**
 - [x] Exercise 8
 - [x] Exercise 9
 - [x] Exercise 10
-- [ ] Exercise 11
+- [x] Exercise 11
 - [x] Exercise 12
 - [x] Exercise 13
 - [x] Exercise 14
@@ -212,6 +212,30 @@ $$
 
 3.78 now implies that $\operatorname{null} T^{n-1} + \operatorname{range} T^{n-1}$ is a direct sum.
 
+_Exercise 11_
+
+This is not correct. Indeed, consider $V = \mathbb{C}^2$ and $T$ with matrix 
+
+$$
+\begin{pmatrix}
+1 & x \\
+0 & 1
+\end{pmatrix}
+$$
+
+It is clear that 1 is the only eigenvalue of $T$, and that $v = (1, 0)$ is the corresponding eigenvector if $x \neq 0$, with all other eigenvectors being linear combinations of this one. 
+
+$T^2$ has a similar matrix:
+
+$$
+\begin{pmatrix}
+1 & 2x \\
+0 & 1
+\end{pmatrix}
+$$
+
+,and so it also has just one linearly independent eigenvector, so there is no basis of $\mathbb{C}^2$ in which its matrix is diagonal.
+
 _Exercise 12_
 
 Suppose $v_1, \dots, v_n$ is such basis.
@@ -233,11 +257,11 @@ Note that $\mathcal{N}$ is also normal and that $\mathcal{N}^2 = 0$.
 Then, for all $v \in V$,
 
 $$
-||\mathcal{N}^\*\mathcal{N}v||^2 = ||\mathcal{N}\mathcal{N}v|| = 0,
+||\mathcal{N}^*\mathcal{N}v||^2 = ||\mathcal{N}\mathcal{N}v|| = 0,
 $$
 
 where the first equality comes from 7.20.
-Thus $\mathcal{N}\^*\mathcal{N} = 0$.
+Thus $\mathcal{N}^*\mathcal{N} = 0$.
 Therefore
 
 $$

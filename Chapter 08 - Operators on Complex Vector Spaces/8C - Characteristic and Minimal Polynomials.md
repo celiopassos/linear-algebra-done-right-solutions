@@ -533,7 +533,7 @@ x_0 &= a_1 + a_2\lambda + ... + \lambda^{n-1}
 \end{align}
 $$
 
-and so all the eigenvalues of the operator are zeros of the above polynomial. However, it is not yet clear whether this polynomial is minimal or characteristic polynomial of given operator, since the multiplicities of roots may differ in those two polynomials, even though all the mentioned polynomials have the same set of roots. We will now try to prove, that this polynomial is in fact minimal (and hence, characteristic, because it is monomial and its degree is n).
+and so all the eigenvalues of the operator are zeros of the above polynomial. However, it is not yet clear whether this polynomial is minimal or characteristic polynomial of given operator, since the multiplicities of roots may differ in those two polynomials, even though all the mentioned polynomials have the same set of roots. We will now try to prove, that this polynomial is in fact minimal (and hence, characteristic, because it is monic and its degree is n).
 
 First let us prove that minimal polynomial has in fact degree $n$. To do it, we will prove lemma: $A^j$ has a form 
 
@@ -558,9 +558,9 @@ To prove this statement, we can use induction. Suppose this is true for $A^j$, c
 
 Consider now minimal polynomial $p(z)$, and suppose its least power term having non-zero coefficient is $c_jz^j$ (such monomial exists since $p(z) \neq 0$). This means, that $p(A)$ matrix gets $c_j \neq 0$ as a coefficient in position $(j + 1,1)$. By the above lemma, no powers of $A$ in range $0..n$ except $A^j$ and $A^{n}$ can have non-zero coefficient in this position, so to make it $p(A)_{j+1,1}$ zero, we must add properly scaled $A^{n}$. This implies, that $p(z)$ has a degree of at least $n$. On the other hand, we know that characteristic polynomial has a degree of $n$ by Cayley–Hamilton theorem, and that minimal polynomial has a degree not greater than that of characteristic polynomial. This implies, that $\operatorname{deg}p(z) = n$.
 
-Now that we proved minimal polynomial has a degree of $n$, it must be that minimal polynomial and characteristic polynomial are the same, since they have the same degree, minimal polynomial divides characteristic polynomial and they both are monomial.
+Now that we proved minimal polynomial has a degree of $n$, it must be that minimal polynomial and characteristic polynomial are the same, since they have the same degree, minimal polynomial divides characteristic polynomial and they both are monic.
 
-Finally, we have already understood, that minimal polynomial contains term $z^n$ (since it has a degree $n$ and is monomial, so the coefficient is 1). Suppose $p(z) = z^n + c_{n-1}z^{n-1} + ... + c_1z + c_0$ We know that $p(A) = 0$, which implies, that $0 = p(A)_{i,1} = A^n_{i,1} + c_{i - 1}A^{i-1} = -a_{i-1} + c_{i - 1}$, where the last two equations follow from the above lemma. 
+Finally, we have already understood, that minimal polynomial contains term $z^n$ (since it has a degree $n$ and is monic, so the coefficient is 1). Suppose $p(z) = z^n + c_{n-1}z^{n-1} + ... + c_1z + c_0$ We know that $p(A) = 0$, which implies, that $0 = p(A)_{i,1} = A^n_{i,1} + c_{i - 1}A^{i-1} = -a_{i-1} + c_{i - 1}$, where the last two equations follow from the above lemma. 
 
 This means, that $c_{i-1} = a_{i-1}$, and so in fact minimal and characteristic polynomials are both 
 

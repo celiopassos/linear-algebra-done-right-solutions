@@ -6,7 +6,7 @@ Chapter 5: **Eigenvalues, Eigenvectors and Invariant Subspaces**
 - [x] Exercise 2
 - [x] Exercise 3
 - [x] Exercise 4
-- [ ] Exercise 5
+- [x] Exercise 5
 - [x] Exercise 6
 - [x] Exercise 7
 - [x] Exercise 8
@@ -14,17 +14,17 @@ Chapter 5: **Eigenvalues, Eigenvectors and Invariant Subspaces**
 - [x] Exercise 10
 - [x] Exercise 11
 - [x] Exercise 12
-- [ ] Exercise 13
-- [ ] Exercise 14
-- [ ] Exercise 15
+- [x] Exercise 13
+- [x] Exercise 14
+- [x] Exercise 15
 - [x] Exercise 16
 
 _Exercise 1_
 
-If $\operatorname{null} T = \\{0\\}$ (because it implies surjectivity) or $\operatorname{range} T = \\{0\\}$ the result is obvious.
+If $\operatorname{null} T = \{0\}$ (because it implies surjectivity) or $\operatorname{range} T = \{0\}$ the result is obvious.
 Assume both contain non-zero vectors.
 
-Since $\operatorname{null} T \neq \\{0\\}$, we have that $0$ is an eigenvalue of $T$ and that $E(0, T) = \operatorname{null} T$.
+Since $\operatorname{null} T \neq \{0\}$, we have that $0$ is an eigenvalue of $T$ and that $E(0, T) = \operatorname{null} T$.
 Let $\lambda_1, \dots, \lambda_m$ denote the other distinct eigenvalues of $T$.
 Now 5.41 implies that $V = \operatorname{null} T \oplus E(\lambda_1, T) \oplus \dots \oplus E(\lambda_m, T)$.
 We will prove that $\operatorname{range} T = E(\lambda_1, T) \oplus \dots \oplus E(\lambda_m, T)$.
@@ -82,7 +82,7 @@ _Exercise 4_
 
 Let $T \in \mathcal{L}(\mathbb{F}^\infty)$ be the forward shift operator.
 
-Then $\operatorname{null} T = \\{0\\}$, which implies (c).
+Then $\operatorname{null} T = \{0\}$, which implies (c).
 However $T$ is not surjective, therefore (b) is false.
 
 _Exercise 5_
@@ -95,7 +95,22 @@ $$
 V = \operatorname{null} (T - \lambda I) \oplus \operatorname{range} (T - \lambda I). \tag{1}
 $$
 
-Conversely, suppose (1) holds. (to be continued)
+Conversely, suppose (1) holds.
+Denote $\lambda_1,...,\lambda_m$ to be all distinct eigenvalues of $T$.
+
+We first prove that $\operatorname{null}(T-\lambda_iI) \subset \operatorname{range}(T-\lambda_jI)$, if $i \neq j$. Suppose $v \in \operatorname{null}(T-\lambda_iI)$. We know, that $V = \operatorname{null}(T - \lambda_jI)\oplus \operatorname{range}(T - \lambda_jI)$, so 
+
+$$
+v = u + w\\
+u \in \operatorname{null}(T-\lambda_jI)\\
+w \in \operatorname{range}(T-\lambda_jI)
+$$
+
+Now, $Tv = \lambda_i v = \lambda_i(u + w) = \lambda_ju + Tw$, hence $(T - \lambda_iI)w = (\lambda_i - \lambda_j)u$, so $(T - \lambda_iI)w \in \operatorname{range}(T - \lambda_iI)$ and $w \in \operatorname{null}(T - \lambda_iI)$, which implies that $w = 0$, because from the definition of direct sum we know, that $\operatorname{null}(T - \lambda_iI) \cap \operatorname{range}(T - \lambda_iI) = \{0\}$.
+
+We will now prove that $V = \bigcup\limits_{i}\operatorname{range}(T - \lambda_iI)$. Suppose this is not true, so there is $v \notin \operatorname{null}(T-\lambda_iI),\ i = 1...m$. This implies $v \neq 0$, and that $v \in \operatorname{range}(T - \lambda_iI),\ i=1...m$, and so $v \in \bigcap\limits_{i}\operatorname{range}(T - \lambda_iI)$. We can note, that for any $i$ $\operatorname{range}(T - \lambda_iI)$ is invariant under $T$, because if $v \in \operatorname{range}(T - \lambda_iI)$, $\exists w: v = Tw - \lambda_iw$, hence $Tv = T(-\lambda_i)Tw \in \operatorname{range}(T - \lambda_iI)$. So, $U = \bigcap\limits_i\operatorname{range}(T - \lambda_iI)$ is also invariant under $T$. This implies, $T_{|U}$ is an operator on $U$, and since $U \neq \{0\}$ and is finite-dimensional, $T_{|U}$ has an eigenvalue $\lambda$, and this is also an eigenvalue of $T$. But this implies that $\lambda = \lambda_i$, and so the corresponding eigenvector belongs both to $\operatorname{null}(T - \lambda_iI)$ and to $\operatorname{range}(T - \lambda_iI)$, which contradicts with the fact, that $V$ is a direct sum of these two subspaces.
+
+So, $V = \bigcup\limits_{i}\operatorname{range}(T - \lambda_iI)$. It is clear, that $\bigcup\limits_{i}\operatorname{range}(T - \lambda_iI) \subset \operatorname{range}(T - \lambda_1I) + ... + \operatorname{range}(T - \lambda_mI)$, and the opposite inclusion is correct as well, since $\operatorname{range}(T - \lambda_1I) + ... + \operatorname{range}(T - \lambda_mI) \subset V$. Finally, we have proven, that $\operatorname{range}(T - \lambda_iI) \cap \operatorname{range}(T - \lambda_jI) = \{0\}$, which completes the proof.
 
 _Exercise 6_
 
@@ -220,6 +235,32 @@ S^{-1}TS(a_1 v_1 + a_2 v_2 + a_3 v_3) &= S^{-1}T(a_1 w_1 + a_2 w_2 + a_3 w_3)\\\
 $$
 
 Therefore $R = S^{-1}TS$.
+
+_Exercise 13_
+
+Suppose $R$ and $T$ are diagonalizable, and $R = \operatorname{diag}(2,6,7,7)$, $T = \operatorname{diag}(2,2,6,7)$ for natural basises. This means that $\operatorname{dim}E(7, T) = 1$ and $\operatorname{dim}E(7, R) = 2$. Denote $e_1,...,e_4$ as basis vectors. Suppose desired invertible $S$ exists, then
+
+$Re_3 = 7e_3 = S^{-1}TSe_3$, and so $7Se_3 = TSe_3$, which means that $Se_3 \in E(7, T)$. By the same reasoning, $Se_4 \in E(7, T)$. Since $e_3,e_4$ are linearly independent and $S$ is injective, $Se_3, Se_4$ are also linearly independent, which implies that $\operatorname{dim}(E(7, T)) \ge 2$, which is a contradiction.
+
+_Exercise 14_
+
+Consider operator with the following matrix in standard basis
+
+$$
+A = \begin{pmatrix}
+    6 & 0 & 0 \\
+    0 & 7 & 1 \\
+    0 & 0 & 7
+\end{pmatrix}
+$$
+
+Since this is an upper triangular matrix, it is clear that 6 and 7 are the only eigenvalues of $T$. We see that $\operatorname{dim}\operatorname{null}(T - 6I) = 1$, because $u = (T - 6I)e_2 = e_2, v = (T - 6I)e_3 = e_2 + e_3$, and $v,u\in \operatorname{range}(T-6I)$ and $v,u$ are linearly independent, so $\operatorname{dim}\operatorname{range}(T-6I) \ge 2$, so by the fundamental theorem of linear maps $\operatorname{dim}\operatorname{null}(T-6I) \le 1$. 
+
+By the same reasoning, $\operatorname{dim}\operatorname{null}(T-6I) \le 1$. If there were 3 linearly independent eigenvectors of $T$, at least two of them would correspond to the same eigenvalue, but we see that for both eigenspaces this leads to a contradiction.
+
+_Exercise 15_
+
+We are looking for a vector $v: Tv = 8v + w$, where $w = (17, \sqrt 5, w\pi)$. This implies $(T - 8I)v = w$. We know, that 8 is not an eigenvalue of $T$, therefore $T - 8I$ is injective and hence surjective, so, $\forall w \in V \exists v: (T - 8I)v = w$, which completes the proof. 
 
 _Exercise 16_
 

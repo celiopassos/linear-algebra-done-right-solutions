@@ -182,4 +182,4 @@ j & 0
 \end{pmatrix}
 $$
 
-for some $j \in \\{1, \dots, n\\}$.
+for some $j \in \{1, \dots, n\}$.

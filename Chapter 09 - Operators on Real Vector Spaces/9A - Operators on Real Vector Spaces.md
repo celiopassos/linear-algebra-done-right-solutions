@@ -112,21 +112,21 @@ Then
 
 $$
 \begin{aligned}
-(S + T)\_\mathbb{C}(u + iv) &= (S + T)u + i(S + T)v\\\\
+(S + T)_\mathbb{C}(u + iv) &= (S + T)u + i(S + T)v\\\\
 &= (Su + iSv) + (Tu + iTv)\\\\
 &= S_\mathbb{C}(u + iv) + T_\mathbb{C}(u + iv).
 \end{aligned}
 $$
 
-Thus $(S + T)\_\mathbb{C} = S_\mathbb{C} + T_\mathbb{C}$.
+Thus $(S + T)_\mathbb{C} = S_\mathbb{C} + T_\mathbb{C}$.
 Now suppose $\lambda \in \mathbb{R}$.
 Then
 
 $$
-(\lambda T)\_\mathbb{C}(u + iv) = \lambda Tu + \lambda iTv = \lambda(Tu + iTv) = \lambda T_\mathbb{C}(u + iv).
+(\lambda T)_\mathbb{C}(u + iv) = \lambda Tu + \lambda iTv = \lambda(Tu + iTv) = \lambda T_\mathbb{C}(u + iv).
 $$
 
-Therefore $(\lambda T)\_\mathbb{C} = \lambda T_\mathbb{C}$.
+Therefore $(\lambda T)_\mathbb{C} = \lambda T_\mathbb{C}$.
 
 _Exercise 6_
 
@@ -169,12 +169,12 @@ The other direction is obvious from 9.9 and the definitions.
 
 _Exercise 8_
 
-If $T_\mathbb{C}$ had a nonreal eigenvalue $\lambda$, then by 9.11 and 9.16 it would have $4$ eigenvalues, namely $5, 7, \lambda, \overline{\lambda}$, which is a contradiction because the dimension of $(\mathbb{R}^3)\_\mathbb{C}$ equals $3$ (see 9.4 (b)) and $\mathbb{T}_C$ has at most $3$ eigenvalues (see 5.13).
+If $T_\mathbb{C}$ had a nonreal eigenvalue $\lambda$, then by 9.11 and 9.16 it would have $4$ eigenvalues, namely $5, 7, \lambda, \overline{\lambda}$, which is a contradiction because the dimension of $(\mathbb{R}^3)_\mathbb{C}$ equals $3$ (see 9.4 (b)) and $\mathbb{T}_C$ has at most $3$ eigenvalues (see 5.13).
 
 _Exercise 9_
 
 Suppose by contradiction that $T \in \mathcal{L}(\mathbb{R}^7)$ is such that $T^2 + T + I$ is nilpotent.
-Then by Exercise 7 $(T^2 + T + I)\_\mathbb{C}$ is also nilpotent and its minimal polynomial is of the form $z^j$ for some positive integer $j$ (because $0$ is its only eigenvalue, see Exercise 7 in section 8A and 8.49).
+Then by Exercise 7 $(T^2 + T + I)_\mathbb{C}$ is also nilpotent and its minimal polynomial is of the form $z^j$ for some positive integer $j$ (because $0$ is its only eigenvalue, see Exercise 7 in section 8A and 8.49).
 We have
 
 $$
@@ -252,7 +252,7 @@ It is easy to check that $v$ is of the form $v = u + w$ where $u \in G(\lambda, 
 We have
 
 $$
-0 = (T_\mathbb{C} - \lambda I)^j(T_\mathbb{C} - \overline{\lambda}I)^jv = (T_\mathbb{C} - \lambda I)^j(T_\mathbb{C} - \overline{\lambda}I)u + (T_\mathbb{C} - \lambda I)^j(T_\mathbb{C} - \overline{\lambda}I)^jw.
+0 = (T_\mathbb{C} - \lambda I)^j(T_\mathbb{C} - \overline{\lambda}I)^jv = (T_\mathbb{C} - \lambda I)^j(T_\mathbb{C} - \overline{\lambda}I)^ju + (T_\mathbb{C} - \lambda I)^j(T_\mathbb{C} - \overline{\lambda}I)^jw.
 $$
 
 Since each generalized eigenspace is invariant under $T_\mathbb{C}$ and every vector in $V$ (the left side of the equation) can be written uniquely as linear combination of generalized eigenvectors that correspond to distinct eigenvalues, the equation above implies that
@@ -286,10 +286,16 @@ Therefore the left side is even.
 One easily checks that
 
 $$
-(\operatorname{null} (T^2 + bT + cI))\_\mathbb{C} = \operatorname{null} (T_\mathbb{C}^2 + bT_\mathbb{C} + Ic).
+(\operatorname{null} (T^2 + bT + cI))_\mathbb{C} = \operatorname{null} (T_\mathbb{C}^2 + bT_\mathbb{C} + Ic).
 $$
 
 Now 9.4 (b) yields the desired result.
+
+**Alternative proof**:
+
+Denote $N = T^2 + bT + cI$ and consider $U = \operatorname{null}N^j$ It is obvious, that $S = N_{|U}$ is nilpotent, hence by the previous problem, $T$ has no eigenvalues on $U$, which means that all the eigenvalues of $T_{\mathbb{C}}$ are not real. Let $\Lambda$ be the set of eigenvalues of $T$, and denote $\Lambda_+ = \{a + bi \in \Lambda: b > 0\}$, $\Lambda_- = \{a + bi \in \Lambda: b > 0\}$. By 9.17, for each $\lambda \in \Lambda_+$ there exists $\overline{\lambda} \in \Lambda_-$, and it has the same multiplicity. 
+
+This means, that $U = G(\lambda_1,T)\oplus ... \oplus G(\lambda_m,T) \oplus G(\overline \lambda_1,T)\oplus ... \oplus G(\overline \lambda_m,T)$. For each $i$, $\operatorname{dim}G(\lambda_i,T) = \operatorname{dim}G(\overline \lambda_i,T)$, so each pair of adjoint generalized eigenspaces add even number to dimensionality of $U$. This means, that $\operatorname{dim}U$ is even, as desired.
 
 _Exercise 14_
 
@@ -459,21 +465,21 @@ U = \operatorname{range}(T - \lambda I).
 $$
 
 Because $\dim \operatorname{null}(T - \lambda I) \ge 1$, the Fundamental Theorem of Linear Maps implies that $\dim U < \dim V$.
-Futhermore, $U$ is invariant under $T$ and so $U_\mathbb{C}$ is invariant under $({T|\_U})\_\mathbb{C}$.
-All the eigenvalues of $({T|\_U})\_\mathbb{C}$ are real.
-To see this, suppose $\lambda \in \mathbb{C}$ is an eigenvalue of $({T|\_U})\_\mathbb{C}$ and $u_1 + iu_2$ a corresponding eigenvector for some $u_1, u_2 \in U$.
+Futhermore, $U$ is invariant under $T$ and so $U_\mathbb{C}$ is invariant under $({T|_U})_\mathbb{C}$.
+All the eigenvalues of $({T|_U})_\mathbb{C}$ are real.
+To see this, suppose $\lambda \in \mathbb{C}$ is an eigenvalue of $({T|_U})_\mathbb{C}$ and $u_1 + iu_2$ a corresponding eigenvector for some $u_1, u_2 \in U$.
 Then
 
 $$
-\lambda(u_1 + iu_2) = ({T|\_U})\_\mathbb{C}(u_1 + iu_2) = (T|\_U)u_1 + i(T|\_U)u_2 = Tu_1 + iTu_2 = T_\mathbb{C}(u_1 + iu_2),
+\lambda(u_1 + iu_2) = ({T|_U})_\mathbb{C}(u_1 + iu_2) = (T|_U)u_1 + i(T|_U)u_2 = Tu_1 + iTu_2 = T_\mathbb{C}(u_1 + iu_2),
 $$
 
 which implies that $\lambda$ is an eigenvalue of $T_\mathbb{C}$ and thus must be real.
-By the induction hypothesis there exists a basis $u_1, \dots, u_m$ of $U$ with respect to which the matrix of $T|\_U$ is upper triangular.
+By the induction hypothesis there exists a basis $u_1, \dots, u_m$ of $U$ with respect to which the matrix of $T|_U$ is upper triangular.
 From 5.26, we get that
 
 $$
-Tu_j = (T|\_U)u_j \in \operatorname{span}(u_1, \dots, u_j). \tag{4}
+Tu_j = (T|_U)u_j \in \operatorname{span}(u_1, \dots, u_j). \tag{4}
 $$
 
 Extend it to a basis $u_1, \dots, u_m, v_1, \dots, v_n$ of $V$.
@@ -502,7 +508,7 @@ Let $u_1 + iv_1, \dots, u_d + iv_d$ be a basis of $G(\lambda, T_\mathbb{C})$.
 For each $j = 1, \dots, d$, we have
 
 $$
-(T - \lambda)^{\dim V} u_j + i(T - \lambda)^{\dim V} v_j = ((T - \lambda)^{\dim V})\_\mathbb{C}(u_j + iv_j) = (T_\mathbb{C} - \lambda)^{\dim V}(u_j + iv_j) = 0.
+(T - \lambda)^{\dim V} u_j + i(T - \lambda)^{\dim V} v_j = ((T - \lambda)^{\dim V})_\mathbb{C}(u_j + iv_j) = (T_\mathbb{C} - \lambda)^{\dim V}(u_j + iv_j) = 0.
 $$
 
 This implies that $u_1, v_1, \dots, u_d, v_d \in G(\lambda, T)$.

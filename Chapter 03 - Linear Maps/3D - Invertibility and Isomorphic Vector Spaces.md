@@ -37,7 +37,7 @@ $$
 (ST)(T^{-1}S^{-1}) = STT^{-1}S^{-1} = SS^{-1} = I
 $$
 
-Hence $ST$ is invertible and $(ST)^{-1} = T^{-1}S^{-1}$.
+Hence, $ST$ is invertible and $(ST)^{-1} = T^{-1}S^{-1}$.
 
 _Exercise 2_
 
@@ -53,7 +53,7 @@ $$
 
 Neither $S$ and $T$ are surjective, hence both are in $N$.
 But $S + T = I$ and $I$ is clearly invertible.
-Thus $S + T \notin N$ and $N$ is not closed under addition.
+Thus, $S + T \notin N$ and $N$ is not closed under addition.
 
 _Exercise 3_
 
@@ -66,7 +66,7 @@ Tu_1 = Su_1 = Su_2 = Tu_2
 $$
 
 Because $T$ is injective, it follows that $u_1 = u_2$.
-Therefore $S$ is also injecitve.
+Therefore, $S$ is also injective.
 
 Conversely, suppose $S$ is injective.
 Let $u_1, \dots, u_n$ be a basis of $U$ and extend it to a basis $u_1, \dots, u_n, v_1, \dots, v_m$ of $V$.
@@ -80,8 +80,8 @@ Tv_j &= \nu_j, \text{ for } j=1, \dots, m
 \end{aligned}
 $$
 
-Because $Su_1, \dots, Su_n, \nu_1, \dots, \nu_m$ is linearly independent, it follows that $\operatorname{null} T = \\{0\\}$.
-Hence $T$ is injective and, therefore, invertible.
+Because $Su_1, \dots, Su_n, \nu_1, \dots, \nu_m$ is linearly independent, it follows that $\operatorname{null} T = \{0\}$.
+Hence, $T$ is injective and, therefore, invertible.
 
 _Exercise 4_
 
@@ -106,9 +106,9 @@ $$
 T_2(v - (a_1 v_1 + \dots + a_n v_n)) = T_2 v - T_2 (a_1 v_1 + \dots + a_n v_n) = T_2 v - T_2 v = 0
 $$
 
-Thus $v - (a_1 v_1 + \dots + a_n v_n) \in \operatorname{null} T_2$.
-But $v = (v - (a_1 v_1 + \dots + a_n v_n)) + (a_1 v_1 + \dots + a_n v_n)$.
-Hence $v \in \operatorname{null} T_2 \oplus \operatorname{span}(v_1, \dots, v_n)$ and $V \subset \operatorname{null} T_2 \oplus \operatorname{span}(v_1, \dots, v_n)$.
+Thus, $v - (a_1 v_1 + \dots + a_n v_n) \in \operatorname{null} T_2$.
+We can write trivially correct statement $v = (v - (a_1 v_1 + \dots + a_n v_n)) + (a_1 v_1 + \dots + a_n v_n)$.
+Hence, $v \in \operatorname{null} T_2 \oplus \operatorname{span}(v_1, \dots, v_n)$ and $V \subset \operatorname{null} T_2 \oplus \operatorname{span}(v_1, \dots, v_n)$.
 
 Clearly, $\operatorname{null} T_2 \oplus \operatorname{span}(v_1, \dots, v_n) \subset V$, therefore $V = \operatorname{null} T_2 \oplus \operatorname{span}(v_1, \dots, v_n)$.
 
@@ -119,7 +119,7 @@ Sw_j = T_1 v_j, \text{ for } j = 1, \dots, n
 $$
 
 Because $\operatorname{null} T_1 \oplus \operatorname{span}(v_1, \dots, v_n)$ is also a direct sum, it follows that $T_1 v_1, \dots, T_1 v_n$ is linearly independent.
-Thus $S$ is injective.
+Thus, $S$ is injective.
 Let $v \in V$.
 There is $u \in \operatorname{null} T_1$ and $a_1, \dots, a_n \in F$ such that
 
@@ -141,7 +141,7 @@ T_1 v &= T_1 (u + a_1 v_1 + \dots + a_n v_n)\\\\
 \end{aligned}
 $$
 
-Hence $T_1 = S T_2$, as desired.
+Hence, $T_1 = S T_2$, as desired.
 
 Conversely, suppose $S$ is an invertible operator on $W$ such that $T_1 = ST_2$.
 
@@ -153,7 +153,7 @@ $$
 $$
 
 Because $S$ is invertible, it follows that $T_2 v = 0$.
-Hence $v \in \operatorname{null} T_2$.
+Hence, $v \in \operatorname{null} T_2$.
 
 For the inclusion in the other direction, let $v \in \operatorname{null} T_2$.
 We have
@@ -162,7 +162,7 @@ $$
 0 = ST_2 v = T_1 v
 $$
 
-Hence $v \in \operatorname{null} T_1$ and, therefore $\operatorname{null} T_1 = \operatorname{null} T_2$.
+Hence, $v \in \operatorname{null} T_1$ and, therefore $\operatorname{null} T_1 = \operatorname{null} T_2$.
 
 _Exercise 5_
 
@@ -171,7 +171,7 @@ Let $u_1, \dots, u_n$ be a basis of $\operatorname{null} T_1$ and extend it to a
 By the same reasoning used in the proof of 3.22, it follows that $T_1 v_1, \dots, T_1 v_m$ is a basis of $\operatorname{range} T_1$.
 Let $\nu_1, \dots, \nu_m \in V$ be an inverse image of this last basis when $T_2$ is applied and $\mu_1, \dots, \mu_n$ a basis of $\operatorname{null} T_2$.
 Since $T_2 \nu_1, \dots, T_2 \nu_m$ is linearly independent, we have that $\operatorname{span}(\nu_1, \dots, \nu_m) \cap \operatorname{null} T_2 = \\{0\\}$.
-Therefore $\nu_1, \dots, \nu_m, \mu_1, \dots, \mu_n$ is a basis of $V$ and, because of this, the following linear map is invertible.
+Therefore, $\nu_1, \dots, \nu_m, \mu_1, \dots, \mu_n$ is a basis of $V$ and, because of this, the following linear map is invertible.
 
 Define $S \in \mathcal{L}(V)$ by
 
@@ -204,7 +204,7 @@ T_1 v &= T_1 (a_1 u_1 + \dots + a_n u_n + c_1 v_1 + \dots + c_m v_m)\\\\
 \end{aligned}
 $$
 
-Hence $T_1 = T_2 S$.
+Hence, $T_1 = T_2 S$.
 
 For the implication in the other direction, suppose $S \in \mathcal{L}(V)$ is an invertible operator such that $T_1 = T_2 S$.
 
@@ -256,8 +256,8 @@ $$
 \end{aligned}
 $$
 
-Hence $\operatorname{dim} \operatorname{null} T_1 \ge \operatorname{dim} \operatorname{null} T_2$.
-Therefore $\operatorname{dim} \operatorname{null} T_1 = \operatorname{dim} \operatorname{null} T_2$.
+Hence, $\operatorname{dim} \operatorname{null} T_1 \ge \operatorname{dim} \operatorname{null} T_2$.
+Therefore, $\operatorname{dim} \operatorname{null} T_1 = \operatorname{dim} \operatorname{null} T_2$.
 
 Conversely, suppose $\operatorname{dim} \operatorname{null} T_1 = \operatorname{dim} \operatorname{null} T_2$.
 Let $u_1, \dots, u_n$ and $\mu_1, \dots, \mu_n$ be bases of $\operatorname{null} T_1$ and $\operatorname{null} T_2$, respectively.
@@ -294,9 +294,9 @@ $$
 0 = Sv + Tv = (S + T)v
 $$
 
-Hence $E$ is closed under addition.
+Hence, $E$ is closed under addition.
 Similarly, $E$ is closed under scalar multiplication.
-Therefore $E$ is indeed a subspace of $\mathcal{L}(V, W)$
+Therefore, $E$ is indeed a subspace of $\mathcal{L}(V, W)$
 
 _(b)_
 Let $U$ be a subspace of $V$ such that $V = U \oplus \operatorname{span}(v)$ and let $u_1, \dots, u_n$ be a basis of $U$.
@@ -344,10 +344,10 @@ Sv &= 0\\\\
 \end{aligned}
 $$
 
-We have that $S \in E$ and it is easy to see that $\Lambda(S) = T$.
-Hence $\Lambda$ is surjective, that is, an isomorphism between $E$ and $L(U, W)$.
+We have that $S \in E$, and it is easy to see that $\Lambda(S) = T$.
+Hence, $\Lambda$ is surjective, that is, an isomorphism between $E$ and $L(U, W)$.
 
-Therefore $\operatorname{dim} E = \operatorname{dim} U \operatorname{dim} W = (\operatorname{dim} V - 1) \operatorname{dim} W$.
+Therefore, $\operatorname{dim} E = \operatorname{dim} U \operatorname{dim} W = (\operatorname{dim} V - 1) \operatorname{dim} W$.
 
 _Exercise 8_
 
@@ -360,8 +360,8 @@ $$
 U = span(v_1, \dots, v_n)
 $$
 
-It easy to see that $T\lvert_U$ is both injective and surjective.
-Hence $T\lvert_U$ is an isomorphism of $U$ onto $W$.
+It is easy to see that $T\lvert_U$ is both injective and surjective.
+Hence, $T\lvert_U$ is an isomorphism of $U$ onto $W$.
 
 _Exercise 9_
 
@@ -379,11 +379,11 @@ This follows quickly from _Exercise 9_ and because $I$ is invertible.
 _Exercise 11_
 
 By _Exercise 9_ and _10_ it follows that $S$, $T$ and $U$ are all invertible.
-Multplying both sides of $STU = I$ from the left by $S^{-1}$ and then from the right by $U^{-1}$ we get $T = S^{-1}U^{-1} = (US)^{-1}$, which implies $T^{-1} = US$.
+Multiplying both sides of $STU = I$ from the left by $S^{-1}$ and then from the right by $U^{-1}$ we get $T = S^{-1}U^{-1} = (US)^{-1}$, which implies $T^{-1} = US$.
 
 _Exercise 12_
 
-Suppose $V = \mathcal{P}(\mathbb{R})$ and let $S$ be the integration map (with the constant of integration equal to zero), $T$ the diferentiation map and $U$ the identity. $STU = I$ but $T$ is clearly not invertible.
+Suppose $V = \mathcal{P}(\mathbb{R})$ and let $S$ be the integration map (with the constant of integration equal to zero), $T$ the differentiation map and $U$ the identity. $STU = I$ but $T$ is clearly not invertible.
 
 _Exercise 13_
 
@@ -401,7 +401,7 @@ c_n\\\\
 \end{pmatrix}
 $$
 
-For somo $c_1, \dots, c_n \in \mathbb{F}$.
+For some $c_1, \dots, c_n \in \mathbb{F}$.
 Thus
 
 $$
@@ -438,7 +438,7 @@ $$
 STv = S(cI)v = cSIv = cSv = (cI)Sv = TSv
 $$
 
-Hence $ST = TS$.
+Hence, $ST = TS$.
 
 Conversely, suppose that $ST = TS$ for any $S \in \mathcal{L}(V)$.
 Let $v$ be a non-zero vector in $V$ and $S$ an operator on $V$ such that $v$ is a basis of $\operatorname{null} S$ (it is easy to show a map like this exists).
@@ -448,7 +448,7 @@ $$
 0 = T(Sv) = S(Tv)
 $$
 
-Hence $Tv \in \operatorname{null} S$. But $\operatorname{null} S = \operatorname{span}(v)$, therefore $Tv = cv$ for some $c \in \mathbb{F}$.
+Hence, $Tv \in \operatorname{null} S$. But $\operatorname{null} S = \operatorname{span}(v)$, therefore $Tv = cv$ for some $c \in \mathbb{F}$.
 We but need to show that this scalar $c$ is the same for any $v$.
 
 Let $u \in V$ such that $u = av$, where $a \in \mathbb{F}$.
@@ -458,7 +458,7 @@ $$
 Tu = T(av) = aTv = acv = cav = cu
 $$
 
-Hence $c$ is the same for any multiple of $v$.
+Hence, $c$ is the same for any multiple of $v$.
 Let $w \in V$ such that $w$ is not a scalar multiple of $v$, i.e, $v$ and $w$ are linearly independent.
 There is a scalar $b$ such that $Tw = bw$ and a scalar $d$ such that
 
@@ -517,7 +517,7 @@ $$
 R_jTS_j v_k = R_jT0 = 0.
 $$
 
-Thus $R_1TS_1 + \dots + R_nTS_n$ equals the identity and is in $\mathcal{E}$, since $\mathcal{E}$ is closed under addition.
+Thus, $R_1TS_1 + \dots + R_nTS_n$ equals the identity and is in $\mathcal{E}$, since $\mathcal{E}$ is closed under addition.
 
 _Exercise 18_
 
@@ -529,7 +529,7 @@ _(a)_
 Let $P = \mathcal{P}_m(\mathbb{R})$ for some positive integer $m$.
 Suppose $p \in P$.
 We have $m \ge \deg p \ge \deg Tp$.
-Therefore $Tp \in P$.
+Therefore, $Tp \in P$.
 $T$ restricted to $P$ is an operator on $P$ and, since $T$ is injective, $T$ restricted to $P$ is also injective and, thus, surjective.
 This means that $T$ maps to every polynomial with degree less or equal than $m$.
 Because $m$ was arbitrary, it follows that $T$ is surjective.

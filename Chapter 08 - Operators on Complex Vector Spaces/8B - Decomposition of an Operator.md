@@ -46,7 +46,7 @@ Hence every eigenvalue of $T$ is an eigenvalue of $S^{-1}TS$.
 We will prove these eigenvalues have the same multiplicity and it will follow that $S^{-1}TS$ cannot have other eigenvalues (by 8.26).
 
 Suppose $\lambda_1, \dots, \lambda_m$ are the distinct eigenvalues of $T$.
-Fix $k \in \\{1, \dots, m\\}$.
+Fix $k \in {1, \dots, m}$.
 Let $v_1, \dots, v_d$ be a basis of $G(\lambda_k, T)$.
 There exist $u_1, \dots, u_d \in V$ such that $Su_j = v_j$ for each $j = 1, \dots, d$.
 It easy to check that the $u$'s are linearly independent.
@@ -112,7 +112,7 @@ I + N &= (I + a_1N + a_2N^2 + a_3N^3 + a_4N^4)\\\\
 \end{aligned}
 $$
 
-for some $a_1, a_2, a_3, a_4 \mathbb{F}$.
+for some $a_1, a_2, a_3, a_4 \in \mathbb{F}$.
 Choose
 
 $$
@@ -162,8 +162,8 @@ Similarly, the span of the next $d_2$ vectors after this list is also invariant 
 Continuing in this fashion, we see that there are $m$ distinct lists of consecutive vectors, with no intersections, in the chosen basis whose spans are invariant under $S$ and $T$.
 
 Let $U_1, \dots, U_m$ denote such spans.
-Clearly $\mathcal{M}(S|\_{U_j}) = A_j$ and $\mathcal{M}(T|\_{U_j}) = B_j$ for each $j$.
-Hence $\mathcal{M}(S|\_{U_j}T|\_{U_j}) = A_jB_j$ and so it easy to see that $\mathcal{M}(ST)$ (which equals $AB$) has the desired form.
+Clearly $\mathcal{M}(S|_{U_j}) = A_j$ and $\mathcal{M}(T|_{U_j}) = B_j$ for each $j$.
+Hence $\mathcal{M}(S|_{U_j}T|_{U_j}) = A_jB_j$ and so it easy to see that $\mathcal{M}(ST)$ (which equals $AB$) has the desired form.
 
 _Exercise 10_
 
@@ -195,7 +195,7 @@ Let $\lambda_1, \dots, \lambda_m$ denote the distinct eigenvalues of $T$.
 We have
 
 $$
-T = T|\_{G(\lambda_1, T)}P_{G(\lambda_1, T)} + \dots + T|\_{G(\lambda_m, T)}P_{G(\lambda_m, T)}.
+T = T|_{G(\lambda_1, T)}P_{G(\lambda_1, T)} + \dots + T|_{G(\lambda_m, T)}P_{G(\lambda_m, T)}.
 $$
 
 For each $j = 1, \dots, m$, we can write $T|_{G(\lambda_j, T)} = \lambda_j I + N_j$ where $N_j$ is a nilpotent operator under which $G(\lambda_j, T)$ is invariant (see 8.21 (c)).
@@ -204,16 +204,16 @@ Therefore
 $$
 \begin{aligned}
 T &= (\lambda_1 I + N_1)P_{G(\lambda_1, T)} + \dots + (\lambda_m I + N_m)P_{G(\lambda_m, T)}\\\\
-&= \underbrace{\lambda_1 P_{G(\lambda_1, T)} + \dots + \lambda_m P_{G(\lambda_m, T)}}\_\text{(4)} + \underbrace{N_1P_{G(\lambda_1, T)} + \dots + N_mP_{G(\lambda_m, T)}}\_\text{(5)}.
+&= \underbrace{\lambda_1 P_{G(\lambda_1, T)} + \dots + \lambda_m P_{G(\lambda_m, T)}}_\text{(4)} + \underbrace{N_1P_{G(\lambda_1, T)} + \dots + N_mP_{G(\lambda_m, T)}}_\text{(5)}.
 \end{aligned}
 $$
 
-Fix $k \in \\{1, \dots, n\\}$.
-Then $v_k \in G(\lambda_j, T)$ for some $j \in \\{1, \dots m\\}$.
-$(\*)$ shows that $(4)$ maps $v_k$ to $\lambda_j v_k$.
+Fix $k \in \{1, \dots, n\}$.
+Then $v_k \in G(\lambda_j, T)$ for some $j \in \{1, \dots m\}$.
+$(*)$ shows that $(4)$ maps $v_k$ to $\lambda_j v_k$.
 Hence $v_1, \dots, v_n$ is a basis of eigenvectors of $(4)$ and so $(4)$ is diagonalizable.
-$(\*)$ also shows that $(5)$ maps $v_k$ to $N_j v_k$.
-But $G(\lambda_j, T)$ is invariant under $N_j$, so $(\*)$ actually implies that $(5)$ raised to the power of $\operatorname{dim} V$ maps $v_k$ to $N_j^{\dim V}v_k$ which equals $0$.
+$(*)$ also shows that $(5)$ maps $v_k$ to $N_j v_k$.
+But $G(\lambda_j, T)$ is invariant under $N_j$, so $(*)$ actually implies that $(5)$ raised to the power of $\operatorname{dim} V$ maps $v_k$ to $N_j^{\dim V}v_k$ which equals $0$.
 Therefore $(5)$ is nilpotent.
 It is easy to see that $(4)$ and $(5)$ commute (they map $v_k$ to $\lambda_j N_j v_k$, no matter the order), which completes the proof.
 

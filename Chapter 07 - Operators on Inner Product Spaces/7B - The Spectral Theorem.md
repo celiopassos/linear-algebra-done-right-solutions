@@ -177,7 +177,7 @@ Obviously $T^9 = T^8 = 0$, however $T^2e_1 = e_3$ and $Te_1 = e_2$, therefore $T
 _Exercise 9_
 
 Suppose that $T$ is a normal operator on $V$.
-Let $e_1, \dots, e_n$ be an orthonormal basis of $V$ consisting of eigenvalues of $T$ and let $\lambda_1, \dots, \lambda_n$ denote their corresponding eigenvalues.
+Let $e_1, \dots, e_n$ be an orthonormal basis of $V$ consisting of eigenvectors of $T$ and let $\lambda_1, \dots, \lambda_n$ denote their corresponding eigenvalues.
 Define $S$ by
 
 $$
@@ -248,9 +248,9 @@ Now suppose that $\operatorname{dim} V > 1$ and that (a) implies (b) for all com
 
 Choose an eigenvector $u$ of $T$ with $||u|| = 1$ (the existence of an eigenvalue is guaranteed by 5.21).
 Let $U = \operatorname{span}(u)$.
-Since $U$ is invariant under $T$, it follows by Exercise 3 in section 7A that $U^\perp$ is invariant under $T^\*$.
+Since $U$ is invariant under $T$, it follows by Exercise 3 in section 7A that $U^\perp$ is invariant under $T^*$.
 By 6.50 $\operatorname{dim} U^\perp = \operatorname{dim} V - 1$.
-Thus, by the induction hypothesis there exists an orthonormal basis of $U^\perp$ consisting of eigenvectors of $T^\*|_{U^\perp}$, which are also eigenvectors of $T$, by 7.21.
+Thus, by the induction hypothesis there exists an orthonormal basis of $U^\perp$ consisting of eigenvectors of $T^*|_{U^\perp}$, which are also eigenvectors of $T$, by 7.21.
 Moreover, adjoining $u$ to this basis produces an orthornomal basis of $V$ consisting of eigenvectors of $T$.
 Therefore (b) holds.
 

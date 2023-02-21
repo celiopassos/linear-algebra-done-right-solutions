@@ -10,7 +10,7 @@ Chapter 7: **Operators on Inner Product Spaces**
 - [x] Exercise 8
 - [x] Exercise 9
 - [x] Exercise 10
-- [ ] Exercise 11
+- [x] Exercise 11
 - [x] Exercise 12
 - [x] Exercise 13
 - [x] Exercise 14
@@ -18,19 +18,19 @@ Chapter 7: **Operators on Inner Product Spaces**
 - [x] Exercise 16
 - [x] Exercise 17
 - [x] Exercise 18
-- [ ] Exercise 19
-- [ ] Exercise 20
+- [x] Exercise 19
+- [x] Exercise 20
 
 _Exercise 1_
 
-A quick calculation shows that $T^\*Tv = ||x||^2\langle v, u \rangle u$ for every $v \in V$.
+A quick calculation shows that $T^*Tv = ||x||^2\langle v, u \rangle u$ for every $v \in V$.
 The map $R \in \mathcal{L}(V)$ defined by
 
 $$
 Rv = \frac{||x||}{||u||}\langle v, u \rangle u
 $$
 
-is a square root of $T\^*T$.
+is a square root of $T^*T$.
 Moreover, it is easy to check that $\langle Rv, v \rangle \ge 0$ for all $v \in V$.
 We but need to prove that $R$ is self-adjoint.
 Let $e_1, \dots, e_n$ be an orthonormal basis of $V$.
@@ -53,7 +53,7 @@ $$
 \mathcal{M}(R)_{j, k} = \frac{||x||}{||u||}a_j \overline{a_k}.
 $$
 
-Thus $\mathcal{M}(R)\_{j, k} = \overline{\mathcal{M}(R)\_{k, j}}$, that is, $\mathcal{M}(R) = \mathcal{M}(R^\*)$.
+Thus $\mathcal{M}(R)_{j, k} = \overline{\mathcal{M}(R)_{k, j}}$, that is, $\mathcal{M}(R) = \mathcal{M}(R^*)$.
 Hence $R$ is self-adjoint.
 
 _Exercise 2_
@@ -79,41 +79,41 @@ Thus $0$ is the only eigenvalue of $T$.
 We have
 
 $$
-\mathcal{M}(T^\*T) = \mathcal{M}(T^\*)\mathcal{M}(T) = \begin{pmatrix}0 & 0\\\\5 & 0\end{pmatrix}\begin{pmatrix}0 & 5\\\\0 & 0\end{pmatrix} = \begin{pmatrix}0 & 0\\\\0 & 25\end{pmatrix}.
+\mathcal{M}(T^*T) = \mathcal{M}(T^*)\mathcal{M}(T) = \begin{pmatrix}0 & 0\\\\5 & 0\end{pmatrix}\begin{pmatrix}0 & 5\\\\0 & 0\end{pmatrix} = \begin{pmatrix}0 & 0\\\\0 & 25\end{pmatrix}.
 $$
 
-Hence the eigenvalues of $T^\*T$ are $0$ and $25$.
+Hence the eigenvalues of $T^*T$ are $0$ and $25$.
 By 7.52, the singular values of $T$ are $0$ and $5$.
 
 _Exercise 3_
 
-By the Polar Decomposition (7.45), there exists an isometry $S \in \mathcal{L}(V)$ such that $T^\* = S\sqrt{TT^\*}$.
+By the Polar Decomposition (7.45), there exists an isometry $S \in \mathcal{L}(V)$ such that $T^* = S\sqrt{TT^*}$.
 Taking the adjoint of each side, we get
 
 $$
-T = (S\sqrt{TT\^*})^\* = (\sqrt{TT^\*})\^*S^\* = \sqrt{TT^\*}S^\*,
+T = (S\sqrt{TT^*})^* = (\sqrt{TT^*})^*S^* = \sqrt{TT^*}S^*,
 $$
 
-where the last equality follows because $\sqrt{TT^\*}$ is self-adjoint.
-This yields the desired result, because $S^\*$ is also an isometry.
+where the last equality follows because $\sqrt{TT^*}$ is self-adjoint.
+This yields the desired result, because $S^*$ is also an isometry.
 
 _Exercise 4_
 
-Let $v \in V$ be an eigenvector of $\sqrt{T^\*T}$ with $||v|| = 1$ corresponding to $s$ and let $S \in \mathcal{L}(V)$ be an isometry such that $T = S\sqrt{T^\*T}$.
+Let $v \in V$ be an eigenvector of $\sqrt{T^*T}$ with $||v|| = 1$ corresponding to $s$ and let $S \in \mathcal{L}(V)$ be an isometry such that $T = S\sqrt{T^*T}$.
 Then
 
 $$
-||Tv|| = ||S\sqrt{T^\*T}v|| = ||\sqrt{T^\*T}v|| = |s|\\:||v|| = |s| = s,
+||Tv|| = ||S\sqrt{T^*T}v|| = ||\sqrt{T^*T}v|| = |s|||v|| = |s| = s,
 $$
 
-where the last equality follows because $\sqrt{T^\*T}$ is positive.
+where the last equality follows because $\sqrt{T^*T}$ is positive.
 
 _Exercise 5_
 
 We have
 
 $$
-\mathcal{M}(T^\*T) = \mathcal{M}(T^\*)\mathcal{M}(T) = \begin{pmatrix}0 & 1\\\\-4 & 0\end{pmatrix}\begin{pmatrix}0 & -4\\\\1 & 0\end{pmatrix} = \begin{pmatrix}1 & 0\\\\0 & 16\end{pmatrix}.
+\mathcal{M}(T^*T) = \mathcal{M}(T^*)\mathcal{M}(T) = \begin{pmatrix}0 & 1\\\\-4 & 0\end{pmatrix}\begin{pmatrix}0 & -4\\\\1 & 0\end{pmatrix} = \begin{pmatrix}1 & 0\\\\0 & 16\end{pmatrix}.
 $$
 
 Therefore, the singular values of $T$ are $1$ and $4$.
@@ -146,7 +146,7 @@ $$
 Thus
 
 $$
-\mathcal{M}(D^\*D) =
+\mathcal{M}(D^*D) =
 \begin{pmatrix}
 0 & 0 & 0\\\\
 \sqrt{3} & 0 & 0\\\\
@@ -171,13 +171,13 @@ _Exercise 7_
 A quick calculation, like the ones in the previous exercises, shows that
 
 $$
-T^\*T(z_1, z_2, z_3) = (4z_1, 9z_2, z_3).
+T^*T(z_1, z_2, z_3) = (4z_1, 9z_2, z_3).
 $$
 
 Thus
 
 $$
-\sqrt{T^\*T}(z_1, z_2, z_3) = (2z_1, 3z_2, z_3).
+\sqrt{T^*T}(z_1, z_2, z_3) = (2z_1, 3z_2, z_3).
 $$
 
 Define $S \in \mathcal{L}(\mathbb{F}^3)$ by
@@ -186,34 +186,34 @@ $$
 S(z_1, z_2, z_3) = (z_3, z_1, z_2).
 $$
 
-$S$ is clearly an isometry (it maps the standard basis, which is orthonormal, to a permutation of the standard basis) and we have $S\sqrt{T^\*T} = T$.
+$S$ is clearly an isometry (it maps the standard basis, which is orthonormal, to a permutation of the standard basis) and we have $S\sqrt{T^*T} = T$.
 
 _Exercise 8_
 
-Let $S' \in \mathcal{L}(V)$ be an isometry such that $T = S'\sqrt{T^\*T}$.
+Let $S' \in \mathcal{L}(V)$ be an isometry such that $T = S'\sqrt{T^*T}$.
 Then
 
 $$
 \begin{aligned}
 0 &= ||Tv|| - ||Tv||\\\\
-&= ||S^\*Tv|| - ||S'^\*Tv||\\\\
-&= ||Rv|| - ||\sqrt{T^\*T}v||\\\\
-&= \langle R^\*Rv, v \rangle - \langle T^\*Tv, v \rangle\\\\
-&= \langle (R^\*R - T^\*T)v, v \rangle\\\\
-&= \langle (R^2 - T^\*T)v, v \rangle
+&= ||S^*Tv|| - ||S'^*Tv||\\\\
+&= ||Rv|| - ||\sqrt{T^*T}v||\\\\
+&= \langle R^*Rv, v \rangle - \langle T^*Tv, v \rangle\\\\
+&= \langle (R^*R - T^*T)v, v \rangle\\\\
+&= \langle (R^2 - T^*T)v, v \rangle
 \end{aligned}
 $$
 
 where the last line follows because $R$ is self-adjoint.
-7.16 now implies that $R^2 = T^\*T$.
-Since $R$ is positive and the positive square root of $T^\*T$ is unique (by 7.36), it follows that $R = \sqrt{T^\*T}$.
+7.16 now implies that $R^2 = T^*T$.
+Since $R$ is positive and the positive square root of $T^*T$ is unique (by 7.36), it follows that $R = \sqrt{T^*T}$.
 
 _Exercise 9_
 
 Consider the proof of 7.45.
 $T$ being invertible implies $\operatorname{dim} (\operatorname{range} T)^\perp = 0$, thus $S_2 = 0$ and so $S = S_1$.
 Clearly $S_1$ is unique, so $S$ must also be unique.
-Conversely, if $S$ is unique then $S_2 = 0$, otherwise we could set $S = S_1 - S_2$ and it would still be an isometry satisfying $T = S\sqrt{T^\*T}$.
+Conversely, if $S$ is unique then $S_2 = 0$, otherwise we could set $S = S_1 - S_2$ and it would still be an isometry satisfying $T = S\sqrt{T^*T}$.
 This implies that $m = 0$, because from the defintion we see that $S_2$ must be invertible for any positive integer $m$.
 Thus $\operatorname{dim} (\operatorname{range} T)^\perp = 0$ and so $T$ is invertible.
 
@@ -223,13 +223,33 @@ Suppose $\lambda$ is an eigenvalue of $T$ and $v$ a corresponding eigenvector.
 Then
 
 $$
-T^\*Tv = T^2v = \lambda^2 v = |\lambda|^2v,
+T^*Tv = T^2v = \lambda^2 v = |\lambda|^2v,
 $$
 
 where the last equality follows because the eigenvalues of self-adjoint operators are real (see 7.13).
-Therefore, the eigenvectors of $T$ are also eigenvectors of $T^\*T$ with corresponding eigenvalues squared.
-Since $T$ has a basis consisting of eigenvectors, so does $T^\*T$ and thus all eigenvalues of $T^\*T$ are squares of the absolute values of eigenvalues of $T$.
+Therefore, the eigenvectors of $T$ are also eigenvectors of $T^*T$ with corresponding eigenvalues squared.
+Since $T$ has a basis consisting of eigenvectors, so does $T^*T$ and thus all eigenvalues of $T^*T$ are squares of the absolute values of eigenvalues of $T$.
 7.52 now implies that the singular values of $T$ are the absolute values of the eigenvalues of $T$.
+
+_Exercise 11_
+
+We need to prove that eigenvalues of $\sqrt{T^*T}$ and $\sqrt{TT^*}$ are the same. 
+
+As we know, eigenvalues of $\sqrt{T^*T}$ are non-negative square roots of $T^*T$, the same goes with eigenvalues of $\sqrt{TT^*}$, so we need to prove, that $T^*T$ and $TT^*$ have the same eigenvalues.
+
+Suppose $T^*Tv = \lambda v$ with $v \neq 0$, so $\lambda$ is an eigenvalue of $T^*T$. We have two possibilities: either $\lambda = 0$ or not.
+
+Suppose $\lambda = 0$. Then, $T$ is not injective, which means that $\operatorname{range}T \neq V$, which means that $(\operatorname{null}T^*)^\perp \neq V$, which means that $\operatorname{null}T^* \neq \{0\}$, so $T^*$ is also not injective hence 0 is eigenvalue of $T^*$.
+
+Now, suppose $\lambda \neq 0$. Then, multiplying this equation from both sides by $T$ we get
+
+$$
+TT^*(Tv) = \lambda Tv
+$$
+
+Since $\lambda \neq 0$, it can not be that $Tv = 0$, since else $T^*0 = 0 = \lambda v \neq 0$. This means, that $Tv$ is an eigenvector of $TT^*$ with corresponding eigenvalue $\lambda$.
+
+We now proved that for any $\lambda$ - eigenvalue of $T^*T$ it follows that $\lambda$ is also an eigenvalue of $TT^*$. Considering the same proof, but starting with $TT^*$, we conclude, that any eigenvalue of $TT^*$ is also an eigenvalue of $T^*T$, which completes the proof.
 
 _Exercise 12_
 
@@ -237,7 +257,7 @@ As a counterexample, take the linear map $T$ from Exercise 5.
 We have
 
 $$
-\mathcal{M}((T^2)^\*T^2) = \mathcal{M}(T^*)^2\mathcal{M}(T)^2 = \begin{pmatrix}-4 & 0\\\\0 & -4\end{pmatrix}\begin{pmatrix}-4 & 0\\\\0 & -4\end{pmatrix}
+\mathcal{M}((T^2)^*T^2) = \mathcal{M}(T^*)^2\mathcal{M}(T)^2 = \begin{pmatrix}-4 & 0\\\\0 & -4\end{pmatrix}\begin{pmatrix}-4 & 0\\\\0 & -4\end{pmatrix}
 = \begin{pmatrix}16 & 0\\\\0 & 16\end{pmatrix}.
 $$
 
@@ -250,56 +270,56 @@ Suppose $T$ is invertible.
 Then
 
 $$
-\operatorname{null} T^\* = (\operatorname{range} T)^\perp = V^\perp = \\{0\\},
+\operatorname{null} T^* = (\operatorname{range} T)^\perp = V^\perp = \{0\},
 $$
 
 where the first equality follows from 7.7 and the second because $T$ is surjective.
-This shows that $T^\*$ is also invertible.
-Therefore $0$ is not eigenvalue of $T^\*T$ and so, by 7.52, it cannot be a singular value of $T$.
+This shows that $T^*$ is also invertible.
+Therefore $0$ is not eigenvalue of $T^*T$ and so, by 7.52, it cannot be a singular value of $T$.
 
 Conversely, suppose $0$ is not a singular value of $T$.
-Then $T^\*Tv \neq 0$ for all non-zero $v \in V$.
+Then $T^*Tv \neq 0$ for all non-zero $v \in V$.
 This implies that $Tv \neq 0$ for all non-zero $v \in V$.
 Thus $T$ is invertible.
 
 _Exercise 14_
 
-First we will prove that $\operatorname{range} T = \operatorname{range} T^\*T$.
-From Exercise 5 in section 7A we see that $\operatorname{range} T = \operatorname{range} T^\*$.
+First we will prove that $\operatorname{range} T = \operatorname{range} T^*T$.
+From Exercise 5 in section 7A we see that $\operatorname{range} T = \operatorname{range} T^*$.
 
 Suppose $w \in \operatorname{range} T$.
-Then $w \in \operatorname{range} T^\*$.
-Thus $w = T^\*v$ for some $v \in V$.
-We can write $v = v' + v''$ for some $v' \in \operatorname{null} T^\*$ and $v'' \in (\operatorname{null} T^\*)^\perp$.
-Thus $w = T^\*v''$.
-But 7.7 shows that $(\operatorname{null} T^\*)^\perp = \operatorname{range} T$.
-Therefore $v'' = Tu$ for some $u \in V$ and so $w = T^\*Tu \in \operatorname{range}{T^\*T}$.
-Hence $\operatorname{range} T \subset \operatorname{range} T^\*T$.
+Then $w \in \operatorname{range} T^*$.
+Thus $w = T^*v$ for some $v \in V$.
+We can write $v = v' + v''$ for some $v' \in \operatorname{null} T^*$ and $v'' \in (\operatorname{null} T^*)^\perp$.
+Thus $w = T^*v''$.
+But 7.7 shows that $(\operatorname{null} T^*)^\perp = \operatorname{range} T$.
+Therefore $v'' = Tu$ for some $u \in V$ and so $w = T^*Tu \in \operatorname{range}{T^*T}$.
+Hence $\operatorname{range} T \subset \operatorname{range} T^*T$.
 
 The inclusion in the other direction is easy.
 We have
 
 $$
-\operatorname{range} T^\*T \subset \operatorname{range} T^\* = \operatorname{range} T.
+\operatorname{range} T^*T \subset \operatorname{range} T^* = \operatorname{range} T.
 $$
 
-Therefore $\operatorname{range} T = \operatorname{range} T^\*T$.
+Therefore $\operatorname{range} T = \operatorname{range} T^*T$.
 
-Since $\sqrt{T^\*T}$ is diagonalizable (because it is self-adjoint), it follows that the number of nonzero singular values of $T$ equals the dimension of $\operatorname{range} \sqrt{T^\*T}$.
-Note that $\operatorname{range} T^\*T = \operatorname{range} \sqrt{T^\*T}$.
-Therefore $\operatorname{dim} \operatorname{range} \sqrt{T^\*T} = \operatorname{dim} \operatorname{range} T$, completing the proof.
+Since $\sqrt{T^*T}$ is diagonalizable (because it is self-adjoint), it follows that the number of nonzero singular values of $T$ equals the dimension of $\operatorname{range} \sqrt{T^*T}$.
+Note that $\operatorname{range} T^*T = \operatorname{range} \sqrt{T^*T}$.
+Therefore $\operatorname{dim} \operatorname{range} \sqrt{T^*T} = \operatorname{dim} \operatorname{range} T$, completing the proof.
 
 _Exercise 15_
 
-The forward direction is obvious, because if $S$ is an isometry, then $\sqrt{S^\*S}$ equals the identity, whose eigenvalues equal $1$.
+The forward direction is obvious, because if $S$ is an isometry, then $\sqrt{S^*S}$ equals the identity, whose eigenvalues equal $1$.
 
 Suppose all singular values of $S$ equal $1$.
-This implies that $\sqrt{S^\*S}$, and therefore so does $S^\*S$, equals the identity.
+This implies that $\sqrt{S^*S}$, and therefore so does $S^*S$, equals the identity.
 7.42 now implies that $S$ is an isometry.
 
 _Exercise 16_
 
-Let $S_1, S_2 \in \mathcal{L}(V)$ be isometries such that $T_1 = S_1\sqrt{T_1^\*T_1}$ and $T_2 = S_2\sqrt{T_2^\*T_2}$ and let $e_1, \dots, e_n$ and $f_1, \dots, f_n$ be orthonormal basis of $V$ consisting of eigenvectors of $T_1$ and $T_2$, respectively, corresponding to the singular values $s_1, \dots, s_n$.
+Let $S_1, S_2 \in \mathcal{L}(V)$ be isometries such that $T_1 = S_1\sqrt{T_1^*T_1}$ and $T_2 = S_2\sqrt{T_2^*T_2}$ and let $e_1, \dots, e_n$ and $f_1, \dots, f_n$ be orthonormal basis of $V$ consisting of eigenvectors of $T_1$ and $T_2$, respectively, corresponding to the singular values $s_1, \dots, s_n$.
 Defin $S \in \mathcal{L}(V)$ by
 
 $$
@@ -311,33 +331,96 @@ Then $S$ is also an isometry and we have
 
 $$
 \begin{aligned}
-\sqrt{T_1^\*T_1}e_j &= s_je_j\\\\
-&= S^\*(s_jf_j)\\\\
-&= S^\*\sqrt{T_2^\*T_2}f_j\\\\
-&= S^\*\sqrt{T_2^\*T_2}Se_j.
+\sqrt{T_1^*T_1}e_j &= s_je_j\\\\
+&= S^*(s_jf_j)\\\\
+&= S^*\sqrt{T_2^*T_2}f_j\\\\
+&= S^*\sqrt{T_2^*T_2}Se_j.
 \end{aligned}
 $$
 
-So $\sqrt{T_1^\*T_1} =  S^\*\sqrt{T_2^\*T_2}S$.
+So $\sqrt{T_1^*T_1} =  S^*\sqrt{T_2^*T_2}S$.
 Therefore
 
 $$
-T_1 = S_1\sqrt{T_1^\*T_1} = S_1S^\*\sqrt{T_2^\*T_2}S = S_1S^\*S_2^\*T_2S,
+T_1 = S_1\sqrt{T_1^*T_1} = S_1S^*\sqrt{T_2^*T_2}S = S_1S^*S_2^*T_2S,
 $$
 
-where the last equality follows by multiplying both sides of the equation $T_2 = S_2\sqrt{T_2^\*T_2}$ by $S_2^\*$.
+where the last equality follows by multiplying both sides of the equation $T_2 = S_2\sqrt{T_2^*T_2}$ by $S_2^*$.
 This gives the desired result, because the product of isometries is also an isometry.
+
+Alternative proof: 
+
+Suppose 
+$$
+\begin{align}
+T_1 = S_1T_2S_2 \implies \\
+T_1^* =S_2^*T_2^*S_1^* = S_2^{-1}T_2^*S_1^{-1}
+\end{align}
+$$
+
+Hence, 
+$$
+T_1^*T_1 = S_2^*T_2^*T_2S_2
+$$
+
+Suppose $v,\lambda$ are eigen vector and squared singular value of $T_2$. Then,
+
+$$
+T_2^*T_2v = \lambda v
+$$
+
+Denote $w = S_2^{-1}v \neq 0$. Then, it follows that
+
+$$
+T_1^*T_1w = S_2^*T_2^*T_2S_2S_2^{-1}v = S_2^*T_2^*T_2v = \lambda S_2^{-1}v = \lambda w
+$$
+
+So, $\lambda$ is a squared singular value of $T_1$, hence all the singular values of $T_2$ are also singular values of $T_1$. Replacing $T_1$ and $T_2$ and repeating the reasoning, we conclude that singular values of $T_1$ and $T_2$ are the same.
+
+Now, let us prove the reverse statement:
+
+Suppose all the singular values of $T_1$ and $T_2$ are the same, we need to prove, that $T_1 = S_1T_2S_2$ for some isometries $S_1,S_2$.
+
+Using singular value decomposition, we can write for arbitrary $v \in V$:
+
+$$
+\begin{align}
+T_1v = s_1\langle v, e_1 \rangle f_1 + ... + s_n\langle v, e_n \rangle f_n
+T_2v = s_1\langle v, \tilde e_1 \rangle \tilde f_1 + ... + s_n\langle v, \tilde e_n \rangle \tilde f_n
+\end{align}
+$$
+
+Where $e_1,..,e_n$, $f_1,..,f_n$, $\tilde e_1,..,\tilde e_n$, $\tilde f_1,..,\tilde f_n$ are some orhtonormal basises.
+
+Consider following isometries $S_1,S_2$:
+
+$$
+S_1e_i = \tilde e_i \\
+S_2\tilde f_i = f_i \\
+$$
+
+Such defined linear maps will be isometries, which can be easily seen (using (d) of Characterization of isometries).
+
+$$
+\begin{align}
+  S_2v = \langle v, e_1 \rangle \tilde e_1 + ... + \langle v, e_n \rangle \tilde e_n\\
+  T_2S_2v = \langle v, e_1 \rangle \tilde f_1 + ... + \langle v, e_n \rangle \tilde f_n \\
+  S_1T_2S_2v = \langle v, e_1 \rangle f_1 + ... + \langle v, e_n \rangle f_n \\
+\end{align}
+$$
+
+So, we see that $S_1T_2S_2v = T_1v$ for any $v$, which means $S_1T_2S_2 = T_1$.
 
 _Exercise 17_
 
 _(a)_
 We have $Te_j = s_jf_j$.
 This implies that the matrix of $T$ if respect to the bases $e_1, \dots, e_n$ and $f_1, \dots, f_n$ is the diagonal matrix whose diagonal entries are the singular values of $T$.
-By 7.10, we have $T^\*f_j = s_je_j$ for each $j$.
+By 7.10, we have $T^*f_j = s_je_j$ for each $j$.
 If we replace $v$ with $f_j$ in the right hand side of the desired result we get the same thing, therefore
 
 $$
-T^\*v = s_1\langle v, f_1 \rangle e_1 + \dots + s_n \langle v, f_n \rangle e_n
+T^*v = s_1\langle v, f_1 \rangle e_1 + \dots + s_n \langle v, f_n \rangle e_n
 $$
 
 by uniqueness of linear maps (see 3.5).
@@ -346,8 +429,8 @@ _(b)_
 Just apply the previous item to the formula given of the singular value decomposition of $T$.
 
 _(c)_
-Note that the $e_j$'s are eigenvectors of $T^\*T$ with corresponding eigenvalue $s_j^2$.
-Thus $\sqrt{T^\*T}e_j = s_je_j$.
+Note that the $e_j$'s are eigenvectors of $T^*T$ with corresponding eigenvalue $s_j^2$.
+Thus $\sqrt{T^*T}e_j = s_je_j$.
 Plugging $e_j$ in the place of $v$ in the right hand side yields the same thing, so the result holds by uniqueness of linear maps again.
 
 _(d)_
@@ -379,7 +462,41 @@ Let $v$ be an eigenvector of $T$ corresponding to $\lambda$ with $||v|| = 1$.
 Then
 
 $$
-|\lambda| = |\lambda|\\:||v|| = ||Tv|| \le s||v|| = s.
+|\lambda| = |\lambda|||v|| = ||Tv|| \le s||v|| = s.
 $$
 
 Similarly, we have $\hat{s} \le |\lambda|$.
+
+
+_Exercise 19_
+
+To prove uniform continuity we need to show that $\forall \varepsilon > 0 \exists \delta > 0 : \forall u, v \in V ||u - v|| < \delta \implies ||T(u) - T(v)|| < \varepsilon$.
+
+This is quite easy to do using previous exercise: we already know, that if $s$ is the largest singular value of $T$, then
+
+$$
+||T(u - v)|| \le s||u-v|| < s\delta
+$$
+
+If $s = 0$, then it is obvious that $T = 0$, so any delta will be fine, for instance $\delta = 1$. Suppose $s > 0$, so $T \neq 0$. Then, if we chose $\delta = \frac{\varepsilon}{s}$, we will have $||T(u - v)|| < \varepsilon$ as desired.
+
+_Exercise 20_
+
+Consider $v$ - eigenvector of $T + S$, corresponding to eigenvalue $r$. 
+
+$$
+||(S+T)v|| = r||v||
+$$
+
+On the other hand, using triangle inequality, we have 
+
+$$
+||(S+T)v|| = ||Sv + Tv|| \le ||Sv|| + ||Tv|| \le s||v|| + t||v||
+$$
+
+as was shown in the exercise 18. So,
+
+$$
+r||v|| \le s||v|| + t||v|| \\
+r \le s + t
+$$

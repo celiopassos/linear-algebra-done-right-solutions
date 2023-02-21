@@ -52,13 +52,13 @@ Conversely, suppose $T$ is invertible.
 Then
 
 $$
-I = \mathcal{M}(T{-1}T, (v_1, \dots, v_n)) = \mathcal{M}(T^{-1}, (v_1, \dots, v_n))\mathcal{M}(T, (v_1, \dots, v_n))
+I = \mathcal{M}(T^{-1}T, (v_1, \dots, v_n)) = \mathcal{M}(T^{-1}, (v_1, \dots, v_n))\mathcal{M}(T, (v_1, \dots, v_n))
 $$
 
 and
 
 $$
-I = \mathcal{M}(TT{-1}, (v_1, \dots, v_n)) = \mathcal{M}(T^{-1}, (v_1, \dots, v_n))\mathcal{M}(T^{-1}, (v_1, \dots, v_n)),
+I = \mathcal{M}(TT^{-1}, (v_1, \dots, v_n)) = \mathcal{M}(T^{-1}, (v_1, \dots, v_n))\mathcal{M}(T^{-1}, (v_1, \dots, v_n)),
 $$
 
 which shows that $\mathcal{M}(T, (v_1, \dots, v_n))$ is invertible.
@@ -187,7 +187,7 @@ Every orthogonal projection is positive (see 7.32) and equal to its square (see 
 We have
 
 $$
-(PQP)^\* = P^\*Q^\*P\^* = PQP
+(PQP)^* = P^*Q^*P\^* = PQP
 $$
 
 and
@@ -296,15 +296,15 @@ Therefore $T = 0$.
 _Exercise 18_
 
 Note that $||Te_j||^2$ is the sum of the the squares of the absolute values of the entries in the $j$-th column of the matrix of $T$ with respect to the basis $e_1, \dots, e_n$.
-Thus, we're essentially being asked to prove that $\operatorname{trace}(T^\*T)$ equals the sum of the squares of the absolute values of the entries in the matrix of $T$ with respect to any orthonormal basis.
+Thus, we're essentially being asked to prove that $\operatorname{trace}(T^*T)$ equals the sum of the squares of the absolute values of the entries in the matrix of $T$ with respect to any orthonormal basis.
 We have
 
 $$
-\operatorname{trace}(T^\*T) = \operatorname{trace}(\mathcal{M}(T^\*T)) = \operatorname{trace}(\mathcal{M}(T^\*)\mathcal{M}(T)),
+\operatorname{trace}(T^*T) = \operatorname{trace}(\mathcal{M}(T^*T)) = \operatorname{trace}(\mathcal{M}(T^*)\mathcal{M}(T)),
 $$
 
 where these matrices are taken with respect to $e_1, \dots, e_n$.
-The equation above gives the desired result, because $\mathcal{M}(T^\*)$ is the conjugate transpose of $\mathcal{M}(T)$ and so the $j$-th diagonal entry of $\mathcal{M}(T^\*)\mathcal{M}(T)$ equals the sum of the squares of the absolute values of the entries in the $j$-th column of $\mathcal{M}(T)$.
+The equation above gives the desired result, because $\mathcal{M}(T^*)$ is the conjugate transpose of $\mathcal{M}(T)$ and so the $j$-th diagonal entry of $\mathcal{M}(T^*)\mathcal{M}(T)$ equals the sum of the squares of the absolute values of the entries in the $j$-th column of $\mathcal{M}(T)$.
 
 _Exercise 19_
 
@@ -312,7 +312,7 @@ The function $\langle \cdot, \cdot \rangle$ satisfies additivity and homogeneity
 For conjugate symmetry we have
 
 $$
-\langle S, T \rangle = \operatorname{trace}(ST^\*) = \operatorname{trace}((TS^\*)^\*) = \overline{\operatorname{trace}(TS^\*)} = \overline{\langle T, S \rangle},
+\langle S, T \rangle = \operatorname{trace}(ST^*) = \operatorname{trace}((TS^*)^*) = \overline{\operatorname{trace}(TS^*)} = \overline{\langle T, S \rangle},
 $$
 
 where the third equality follows from Exercise 10.
@@ -320,54 +320,53 @@ By Exercise 18, it satisfies positive-definiteness.
 
 _Exercise 20_
 
-As explained in the solution to Exercise 18, the right side of the inequality is equal to $\operatorname{trace} (T^\*T)$.
+As explained in the solution to Exercise 18, the right side of the inequality is equal to $\operatorname{trace} (T^*T)$.
 Let $f_1, \dots, f_n$ be an orthonormal basis of $V$ with respect to which the matrix of $T$ is upper triangular (6.37 assures the existence of this basis).
 Then the eigenvalues of $T$ appear on the diagonal of this matrix.
-Because $\mathcal{M}(T^\*)$ is the conjugate transpose of $\mathcal{M}(T)$, where this matrices are with respect to the basis $f_1, \dots, f_n$, a moment's thought shows that
+Because $\mathcal{M}(T^*)$ is the conjugate transpose of $\mathcal{M}(T)$, where this matrices are with respect to the basis $f_1, \dots, f_n$, a moment's thought shows that
 
 $$
-|\lambda_1|^2 + \dots + |\lambda_n|^2 \le \operatorname{trace}(\mathcal{M}(T^\*)\mathcal{M}(T)).
+|\lambda_1|^2 + \dots + |\lambda_n|^2 \le \operatorname{trace}(\mathcal{M}(T^*)\mathcal{M}(T)).
 $$
 
-The right side of the inequality above equals $\operatorname{trace}(T^\*T)$, which yields the desired result.
+The right side of the inequality above equals $\operatorname{trace}(T^*T)$, which yields the desired result.
 
 _Exercise 21_
 
-Let $e_1, \dots, e_n$ be an orthonormal basis of $V$ with respect to which the matrix of $T$ is upper triangular.
-Thus we can write
+We already have proven, that if $e_1,..,e_n$ is an othonormal basis, then $\operatorname{trace}(T^*T) = ||Te_1||^2 + ... + ||Te_n||^2$.
+
+Since $Te_i = A_{1i}e_1 + ... + A_{ni}e_n$, we have that $||Te_i||^2 = |A_{1i}|^2 + ... + |A_{ni}|^2$, and hence 
 
 $$
-\mathcal{M}(T, (e_1, \dots, e_n)) =
+\operatorname{trace}(T^*T) = \sum\limits_{k=1}^n\sum\limits_{j=1}^n|A_{jk}|^2
+$$
+
+On the other hand, consider a basis $v_1,..,v_n$ of $T$ where it has upper-triangular matrix, which exists for any operator over $\mathbb{C}$.
+
+$$
+\mathcal{M}(T, (v_1, \dots, v_n)) =
 \begin{pmatrix}
-a_{1,1} & \cdots & a_{1,n}\\\\
- & \ddots & \vdots\\\\
-0 & & a_{n,n}
-\end{pmatrix}.
+a_{11} &  a_{12} &   &   &\\\\
+ 0 &  a_{22} & \ddots &   &\\\\
+  &   & ... &   &  \\\\
+  &   &   &  &   a_{nn}\\\\
+\end{pmatrix}
 $$
 
-Then
+
+ It is easy to see, that in this basis $T^*T$ has matrix such that $\mathcal{M}(T^*T, (v_1,..,v_n))_{i,i} = |a_{1i}|^2 + ... + |a_{i,i}|^2 \ge |a_{ii}|^2$, with $a_{11}...a_{nn}$ being the list of eigenvalues of $T$. 
+
+ Since the trace of an operator is the trace of its matrix in any basis, we conclude that 
 
 $$
-||Te_1||^2 = |a_{1,1}|^2 \text{ and } ||T^\*e_1||^2 = |a_{1,1}|^2 + \dots + |a_{1,n}|^2.
+\operatorname{trace}(T^*T) = \sum\limits_{k=1}^n\sum\limits_{j=1}^n|A_{jk}|^2 = |\lambda_1|^2 + ... + |\lambda_n|^2 + c
 $$
 
-Because $||T^\*e_1|| \le ||Te_1||$, this shows that all entries in the first row, except the first entry, are $0$.
-Then we have
+where $c = \sum\limits_{i=1}^n\sum\limits_{j=1}^i|a_{ij}|^2 \ge 0$, so it is clear that 
 
 $$
-||Te_2||^2 = |a_{1,2}|^2 + |a_{2,2}|^2 = |a_{2,2}|^2
+|\lambda_1|^2 + ... |\lambda_n|^2 \le \sum\limits_{k=1}^n\sum\limits_{j=1}^n|A_{jk}|^2
 $$
-
-and
-
-$$
-||T^\*e_2||^2 = |a_{2,2}|^2 + \dots + |a_{2,n}|^2.
-$$
-
-Because $||T^\*e_2|| \le ||Te_2||$, this shows that all entries in the second row, except the second entry, are $0$.
-Continuing like this, we see that the matrix of $T$ is actually diagonal.
-Hence $e_1, \dots, e_n$ is an orthonormal basis of $V$ consisting of eigenvectors of $T$.
-By the Complex Spectral Theorem (7.29) $T$ is normal.
 
 _Exercise 21_
 
@@ -376,10 +375,10 @@ By Exercise 18, we have
 
 $$
 \begin{aligned}
-\operatorname{trace}(T^\*T) &= ||Te_1||^2 + \dots + ||Te_n||^2\\\\
-&\ge ||T^\*e_1||^2 + \dots + ||T^\*e_n||^2\\\\
-&= \operatorname{trace}(TT^\*)\\\\
-&= \operatorname{trace}(T^\*T).
+\operatorname{trace}(T^*T) &= ||Te_1||^2 + \dots + ||Te_n||^2\\\\
+&\ge ||T^*e_1||^2 + \dots + ||T^*e_n||^2\\\\
+&= \operatorname{trace}(TT^*)\\\\
+&= \operatorname{trace}(T^*T).
 \end{aligned}
 $$
 
@@ -387,17 +386,17 @@ Because the first and last lines are equal, we must have equality throughout.
 Thus
 
 $$
-||Te_1||^2 + \dots + ||Te_n||^2 = ||T^\*e_1||^2 + \dots + ||T^\*e_n||^2.
+||Te_1||^2 + \dots + ||Te_n||^2 = ||T^*e_1||^2 + \dots + ||T^*e_n||^2.
 $$
 
-Since $||Te_j|| \ge ||T^\*e_j||$, the equation above actually implies that $||Te_j|| = ||T^\*e_j||$.
+Since $||Te_j|| \ge ||T^*e_j||$, the equation above actually implies that $||Te_j|| = ||T^*e_j||$.
 Note that the basis $e_1, \dots, e_n$ was arbitrary and for any nonzero vector $v \in V$, we can extend $\frac{v}{||v||}$ to an orthonormal basis of $V$.
 Thus
 
 $$
-\left|\left|T\left(\frac{v}{||v||}\right)\right|\right| = \left|\left|T^\*\left(\frac{v}{||v||}\right)\right|\right|
+\left|\left|T\left(\frac{v}{||v||}\right)\right|\right| = \left|\left|T^*\left(\frac{v}{||v||}\right)\right|\right|
 $$
 
 for all nonzero $v \in V$.
-Multiplying the equation above by $||v||$ we get that $||Tv|| = ||T^\*v||$.
+Multiplying the equation above by $||v||$ we get that $||Tv|| = ||T^*v||$.
 Then $T$ is normal by 7.20.

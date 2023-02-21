@@ -9,17 +9,17 @@ Chapter 6: **Inner Product Spaces**
 - [x] Exercise 5
 - [x] Exercise 6
 - [x] Exercise 7
-- [ ] Exercise 8
+- [x] Exercise 8
 - [x] Exercise 9
 - [x] Exercise 10
 - [x] Exercise 11
 - [x] Exercise 12
 - [x] Exercise 13
-- [ ] Exercise 14
+- [x] Exercise 14
 
 _Exercise 1_
 
-Suppose $w \in \\{v_1, \dots, v_m\\}^\perp$.
+Suppose $w \in \{v_1, \dots, v_m\}^\perp$.
 Let $v = \in \operatorname{span}(v_1, \dots, v_m)$.
 We have that
 
@@ -42,11 +42,11 @@ Therefore $w \in \\{v_1, \dots, v_m\\}^\perp$ and thus $(\operatorname{span}(v_1
 
 _Exercise 2_
 
-Suppose $U^\perp = \\{0\\}$.
+Suppose $U^\perp = \{0\}$.
 Since $V = U \oplus U^\perp$ (by 6.47), it follows that $U = V$.
 
 Conversely, suppose $U = V$.
-Then $U^\perp = V^\perp = \\{0\\}$.
+Then $U^\perp = V^\perp = \{0\}$.
 
 _Exercise 3_
 
@@ -117,6 +117,41 @@ $$
 
 Therefore $P = P_U$.
 
+_Exercise 8_
+
+We will try to prove that $U = \operatorname{range}P$ is the desired subspace, such that $P = P_U$.
+
+Consider any basis $u_1,...,u_k$ of $U$, and extend it to a basis of $V$. Perform Gramm-Schmidt orthogonalization, getting orthonormal basis $e_1,...,e_n$, with $e_1,...,e_k$ still forming basis of $U$. We can notice, that $Pe_i = e_i$ for any $i =1...k$, because since $e_i \in U$, there exists $w: Pv = e_i$, and so $Pe_i = P^2w = Pw = e_i$. 
+
+Consider $j>k$ with $Pe_j = b_1e_1 + ... + b_kc_k$ (since $Pe_j \in U$, it can be represented through its basis), and let us consider vector $v = x_1e_1 + ... x_ke_k + e_{k+1}$. We can easily write its squared norm as 
+
+$$
+||v||^2 = x_1^2 + ... + x_k^2 + 1
+$$
+
+Now, applying $P$ to this vector and computing its squared norm, we get
+
+$$
+||Pv||^2 = ||P(x_1e_1 + ... x_ke_k + e_{k+1})|| = (x_1 + b_1)^2 + ... + (x_k + b_k)^2
+$$
+
+We know, that $||Pv|| \le ||v||$, hence $||Pv||^2 \le ||v||^2$, so
+
+$$
+(x_1 + b_1)^2 + ... + (x_k + b_k)^2 \le x_1^2 + ... + x_k^2 + 1
+$$
+
+Let us select all $x_i$ to be proportional to $b_i$ with some fixed coefficient $x$: $x_i = xb_i$. Then, inequality simplifies
+
+$$
+\begin{align}
+(1 + x)^2b_1^2 + ... + (x + 1)^2b_k^2 &\le x^2(b_1^2 + ... + b_k^2) + 1 \implies \\
+(2x + 1)\sum\limits_{i=1}^kb_i^2 &\le 1
+\end{align}
+$$
+
+We can now see, that if $\sum\limits_{i=1}^kb_i^2 \neq 0$, we have a condition which can be violated by selecting appropriate $x > \frac{1}{2\sum\limits_{i=1}^kb_i^2} - \frac{1}{2}$. Hence, $\sum\limits_{i=1}^kb_i^2 = 0$, which implies $b_i = 0$ for all $i=1...k$, so $Pe_j = 0$ for any $j > k$, and so since for any $v \in V$ $v = \sum\limits_{i=1}^kx_ie_i +  \sum\limits_{i=k+1}^nx_ie_i = u + w$, where $u \in U$ and $w \in U^\perp$, and $Pv = u$, we conclude, that $P = P_U$.
+
 _Exercise 9_
 
 Suppose $U$ is invariant under $T$.
@@ -129,7 +164,7 @@ Let $u \in U$.
 Then
 
 $$
-T_U = T P_U u = P_U T P_U u \in U.
+Tu = T P_U u = P_U T P_U u \in U.
 $$
 Therefore $U$ is invariant under $T$.
 
@@ -188,7 +223,7 @@ _Exercise 12_
 Define $U$ by
 
 $$
-U = \\{p \in P_3(\mathbb{R}): p(0) = 0 \text{ and } p'(0)\\}.
+U = \{p \in P_3(\mathbb{R}): p(0) = 0 \text{ and } p'(0)\}.
 $$
 
 Note that $U$ is a subspace of $\mathcal{P}_3(\mathbb{R})$.
@@ -254,3 +289,104 @@ approx_sin = project(sin(x), orthonormal_basis)
 p = collect(expand(approx_sin), x)
 print(latex(p))
 ```
+
+_Exercise 14_
+
+_(a)_
+
+Suppose there exists $v \neq 0: v \in U^\perp$. We can represent it as $v(x) = u(x) + v(0)$, where $u(x) = v(x) - v(0) \in U$, since $u(0) = 0$. 
+
+Since $u \in U$, it follows that $\langle v, u \rangle = 0$:
+$$
+\langle v, u \rangle = ||u||^2 + v(0)\langle u, 1 \rangle = 0
+$$
+
+We have two options here: 
+
+1. Suppose $\langle u, 1 \rangle = 0$. This implies $||u||^2 = 0$, and this is possible only if $u(x) = 0$, so $v(x) = v(0) = const$, and it is easy to show that this restricts $v(0) = 0$, because $\langle v, x^2 \rangle = v(0)\frac{1}{3}x^3 \Big |_{-1}^1 = \frac{2}{3}v(0)$ should be equal 0 since $x^2 \in U$, which implies $v(x) = v(0) = 0$, and this contradicts our hypothesis that $v(x) \neq 0$.
+2. $\langle u, 1 \rangle \neq 0$. Then, we can express $v(0)$:
+
+$$
+v(0) = -\frac{||u||^2}{\langle u, 1 \rangle}
+$$
+
+Consider 
+
+$$
+f_n(x) = 
+\begin{cases}
+1, |x| > \frac{1}{n}\\
+n|x|, |x| \le \frac{1}{n}
+\end{cases}
+$$
+
+It is clear that $f_n \in C_\mathbb{R}([-1,1])$, and 
+
+$$
+\langle v, f_n \rangle = \langle v, 1 \rangle - \int\limits_{-\frac{1}{n}}^\frac{1}{n}v(x)n|x|dx
+$$
+
+Since $v$ is continuous, $\forall \varepsilon > 0 \ \exists \delta: |x| < \delta \implies |v(x) - v(0)| < \varepsilon$. 
+
+So, for arbitrary $\varepsilon > 0$ we can find $N_\varepsilon = [\frac{1}{\delta}] + 1$, such that if $n > N_\varepsilon$, we get $|v(x) - v(0)| < \varepsilon$ when $x \in [-\frac{1}{n}, \frac{1}{n}]$.
+
+This means that when $n > N_\varepsilon$, we have
+
+$$
+\int\limits_{-\frac{1}{n}}^\frac{1}{n}v(x)n|x|dx \le \int\limits_{-\frac{1}{n}}^\frac{1}{n}(v(0) + \varepsilon)n|x|dx = \frac{(v(0) + \varepsilon)}{n}
+$$
+
+In the same fashion, 
+
+$$
+\int\limits_{-\frac{1}{n}}^\frac{1}{n}v(x)n|x|dx \ge \int\limits_{-\frac{1}{n}}^\frac{1}{n}(v(0) - \varepsilon)n|x|dx = \frac{(v(0) - \varepsilon)}{n}
+$$
+
+This means, that $\operatorname{lim}\limits_{n \to \infty}\int\limits_{-\frac{1}{n}}^\frac{1}{n}v(x)n|x|dx = 0$
+
+So, taking limit of $\langle f_n, v \rangle$, we get 
+
+$$
+0 = \langle v, 1 \rangle
+$$
+
+This implies, that $0 = \langle u + v(0), 1 \rangle = \langle u, 1 \rangle + 2v(0)$, so 
+
+$$
+\langle u, 1 \rangle = - 2v(0)
+$$
+
+and so, 
+
+$$
+v(0) = -\frac{||u||^2}{\langle u, 1 \rangle} = \frac{||u||^2}{2v(0)}
+$$
+
+Hence 
+
+$$
+v(0)^2 = \frac{1}{2}||u||^2
+$$
+
+Now, consider $||v||^2$:
+
+$$
+||v||^2 = ||u||^2 + 2v(0)\langle u, 1 \rangle + 2v(0)^2
+$$
+
+
+Substituting $v(0)$ and $v(0)^2$ we get
+
+$$
+||v||^2 = ||u||^2 -2\frac{||u||^2}{\langle u, 1 \rangle}\langle u, 1 \rangle + 2 \frac{1}{2}||u||^2 = 0
+$$
+
+Which implies that $v = 0$, and this is a contradiction with $v \neq 0$.
+
+So, in both cases we ended up with a contradiction, so $U^\perp = \{0\}$.
+
+_(b)_
+
+We can easily see, that $C_\mathbb{R}([-1, 1]) = U \oplus \{f(x) = c| c \in \mathbb{R}\}$, and so $C_\mathbb{R}([-1, 1]) \neq U \oplus U^\perp$.
+
+As for the second statement, it is clear that $(U^\perp)^\perp = \{0\}^\perp = C_\mathbb{R}([-1, 1]) \neq U$. 

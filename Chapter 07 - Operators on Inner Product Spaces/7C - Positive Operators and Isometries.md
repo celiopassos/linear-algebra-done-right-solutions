@@ -54,6 +54,8 @@ $$
 
 _Exercise 2_
 
+If $v = 0$, then $w = 0$ as well, so $v = w$. Suppose now, that $v \neq w$.
+
 $T$ is the positive square root of $T^2$.
 Note that
 
@@ -61,7 +63,7 @@ $$
 T^2v = TTv = Tw = v
 $$
 
-hence $v$ is an eigenvalue of $T^2$.
+hence $v$ is an eigenvector of $T^2$.
 From the proof of 7.36, we see that $Tv = \sqrt{1}v$.
 But $Tv = w$, therefore $v = w$.
 
@@ -84,15 +86,15 @@ which shows that $T|_U$ is positive.
 
 _Exercise 4_
 
-We have $(T^\*T)^\* = T^\*(T^\*)^\* = T^\*T$, which implies that $T^\*T$ is self-adjoint and, for all $v \in V$,
+We have $(T^*T)^* = T^*(T^*)^* = T^*T$, which implies that $T^*T$ is self-adjoint and, for all $v \in V$,
 
 $$
-\langle T^\*Tv, v \rangle = \langle Tv, Tv \rangle \ge 0.
+\langle T^*Tv, v \rangle = \langle Tv, Tv \rangle \ge 0.
 $$
 
-Thereofer $T^\*T$ is positive.
+Thereofer $T^*T$ is positive.
 
-It's basically the same thing for $TT^\*$.
+It's basically the same thing for $TT^*$.
 
 _Exercise 5_
 
@@ -100,7 +102,7 @@ Suppose $S, T \in \mathcal{L}(V)$ are positive operators.
 Then
 
 $$
-(S + T)^\* = S^\* + T^\* = S + T.
+(S + T)^* = S^* + T^* = S + T.
 $$
 
 Hence $S + T$ is self-adjoint.
@@ -117,7 +119,7 @@ _Exercise 6_
 From 7.6 (e), we have
 
 $$
-(T^k)^\* = (T^\*)^k = T^k.
+(T^k)^* = (T^*)^k = T^k.
 $$
 
 Therefore $T^k$ is self-adjoint.
@@ -147,18 +149,18 @@ Let $R$ be the positive square root of $T$.
 Then
 
 $$
-\langle Tv, v \rangle = \langle R^\*Rv, v \rangle = \langle Rv, Rv \rangle > 0,
+\langle Tv, v \rangle = \langle R^*Rv, v \rangle = \langle Rv, Rv \rangle > 0,
 $$
 
 where the inequality follows because $R$ and $T$ have the same eigenvalues (as we saw in the proof of 7.36), but $0$ is not an eigenvalue of $T$, thus $Rv \neq 0$ for all $v$.
 
 Conversely, suppose $\langle Tv, v \rangle > 0$ for every $v \in V$ with $v \neq 0$.
-This directly implies that $\operatorname{null} T = \\{0\\}$.
-Thereofer $T$ is invertible.
+This directly implies that $\operatorname{null} T = \{0\}$.
+Therefore, $T$ is invertible.
 
 _Exercise 8_
 
-Suppose $\langle \cdot, \cdot \rangle_T$ is an inner product on $V$.
+Suppose $\langle \cdot, \cdot \rangle _T$ is an inner product on $V$.
 Let $v \in \operatorname{null} T$.
 Then
 
@@ -167,7 +169,7 @@ $$
 $$
 
 Therefore, by the definiteness property of inner products, $v = 0$.
-Thus $\operatorname{null} T = \\{0\\}$ and so $T$ is invertible.
+Thus $\operatorname{null} T = \{0\}$ and so $T$ is invertible.
 Suppose now that $v$ is an eigenvector of $T$ with eigenvalue $\lambda$.
 Then
 
@@ -182,7 +184,7 @@ We have
 
 $$
 \begin{aligned}
-\langle u, T^\*v \rangle &= \langle Tu, v \rangle\\\\
+\langle u, T^*v \rangle &= \langle Tu, v \rangle\\\\
 &= \langle u, v \rangle_T\\\\
 &= \overline{\langle v, u \rangle_T}\\\\
 &= \overline{\langle Tv, u \rangle}\\\\
@@ -268,17 +270,17 @@ Each of this solutions define a different self-adjoint square root, hence the id
 _Exercise 10_
 
 Suppose (a) holds, so $S$ is an isometry.
-Then 7.42 ("(a) $\Rightarrow$ (f)") implies that $SS^\* = I$.
+Then 7.42 ("(a) $\Rightarrow$ (f)") implies that $SS^* = I$.
 Therefore, for all $u, v \in V$ we have
 
 $$
-\langle u, v \rangle = \langle SS^\*u, v \rangle = \langle S^\*u, S^\*v \rangle.
+\langle u, v \rangle = \langle SS^*u, v \rangle = \langle S^*u, S^*v \rangle.
 $$
 
 Thus (b) holds.
 Clearly (b) implies (c) and (c) implies (d).
 Now suppose (d) holds.
-Then 7.42 ("(d) $\Rightarrow$ (g)" with $S$ replaced with $S^\*$) implies that $S$ is an isometry.
+Then 7.42 ("(d) $\Rightarrow$ (g)" with $S$ replaced with $S^*$) implies that $S$ is an isometry.
 Thus (a) holds.
 
 _Exercise 11_
@@ -292,15 +294,15 @@ $$
 
 for $j = 1, 2, 3$.
 One easily checks that $S$ is an isometry (using the Pythagorean Theorem).
-Then, because $S^{-1} = S^\*$ (by 7.42), we have $S^\*f_j = e_j$.
+Then, because $S^{-1} = S^*$ (by 7.42), we have $S^*f_j = e_j$.
 Thus
 
 $$
-T_1e_1 = 2e_1 = S^\*(2f_1) = S^\*(T_2f_1) = S^\*T_2Se_1.
+T_1e_1 = 2e_1 = S^*(2f_1) = S^*(T_2f_1) = S^*T_2Se_1.
 $$
 
-Similarly $T_1e_2 = S^\*T_2Se_2$ and $T_1e_3 = S^\*T_2Se_3$.
-Therefore $T_1 = S^\*T_2S$.
+Similarly $T_1e_2 = S^*T_2Se_2$ and $T_1e_3 = S^*T_2Se_3$.
+Therefore $T_1 = S^*T_2S$.
 
 _Exercise 12_
 
@@ -322,12 +324,12 @@ T_2e_4 &= 7e_4.
 $$
 
 Then both $T_1$ and $T_2$ are self-adjoint (the matrices equal their transposes) and $2, 5, 7$ are their eigenvalues.
-Suppose by contradiction that $S$ is an isometry on $V$ such that $T_1 = S^\*T_2S$.
+Suppose by contradiction that $S$ is an isometry on $V$ such that $T_1 = S^*T_2S$.
 Let $v \in V$ be the vector that $S$ maps to $e_2$.
 Then
 
 $$
-T_1v = S^\*T_2Sv = S\^*T_2e_2 = 5S\^*e_2 = 5v
+T_1v = S^*T_2Sv = S^*T_2e_2 = 5S^*e_2 = 5v
 $$
 
 Therefore $v \in E(T_1, 5) = \operatorname{span}(e_3)$.
@@ -336,7 +338,7 @@ Note that $v, w$ is linearly independent, because $e_2, e_3$ is linearly indepen
 Then
 
 $$
-T_1w = S^\*T_2Sw = S\^*T_2e_3 = 5S\^*e_3 = 5w.
+T_1w = S^*T_2Sw = S^*T_2e_3 = 5S^*e_3 = 5w.
 $$
 
 Therefore $w \in E(T_1, 5) = \operatorname{span}(e_3)$.

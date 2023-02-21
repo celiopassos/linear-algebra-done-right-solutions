@@ -14,7 +14,7 @@ Chapter 8: **Operators on Complex Vector Spaces**
 - [x] Exercise 10
 - [x] Exercise 11
 - [x] Exercise 12
-- [ ] Exercise 13
+- [x] Exercise 13
 - [x] Exercise 14
 - [x] Exercise 15
 - [x] Exercise 16
@@ -383,6 +383,30 @@ _Exercise 13_
 
 If $\mathbb{F} = \mathbb{C}$, this follows directly from the previous exercise from the Complex Spectral Theorem (7.24).
 
+Suppose $\mathbb{F} = \mathbb{R}$. Using 8.40, we know, that there is a unique monic polynomial of smallest degree, such that $p(T) = 0$.
+
+Suppose $m$ is the degree of this polynomial, then we can state that there exist $a_0,...,a_m \in \mathbb{R}$ such that
+
+$$
+T^m = a_0 + a_1T + ... + a_{m-1} T^{m-1}
+$$
+
+Now, let us consider $T$ as an operator over $\mathbb{C}$. There is also a minimal monic polynomial $q \in \mathcal{P}(\mathbb{C})$ such that $q(T) = 0$. Suppose it has degree $k$ and so
+
+$$
+T^k = (b_0 + c_0i) + (b_1 + c_1i)T + ... + (b_{k-1} + c_{k-1}i)T^{k-1}
+$$
+
+It is clear, that $k \le m$, because $p \in \mathcal{F}(\mathbb{R}) \subset \mathcal{F}(\mathbb{C})$, $p$ is monic and $p(T) = 0$, so it must be $k = \operatorname{deg}q \le \operatorname{deg}p = m$.
+
+$$
+T^k - b_0 - b_1 T - ... - b_{k-1}T^{k-1} = i(c_0 + c_1T + ... + c_{k-1}T^{k-1})
+$$
+
+Fix any basis of $V$ when $V$ is considered a real vector space. It can be easily shown, that this set of vectors also form a basis of $V$ when it is considered as a complex vector space. On the left-hand side, we have an operator, which has real-valued coefficients when applied to any vector in $V$'s basis, while on the right-hand side, all the coefficients have 0 real part. This implies, that left part, as well as right part, are just 0 operators, and this, in turn, means that $k \ge m$, because any zero polynomial of $T$ over $\mathbb{R}$ should be a multiple of minimal polynomial, so it has degree no less, than $m$. It is also clear, that $c_0, ..., c_{k - 1}$ are all equal to zero, since else $c_0 + c_1T + ... + c_{k-1}T^{k-1}$ will be a polynomial of less than $m$ degree which is 0, which contradicts the fact that $p$ is minimal polynomial of $T$ over $\mathbb{R}$.
+
+We already proved, that over $\mathbb{C}$ $T$ has a minimal polynomial with no repeated zeros. Since this minimal polynomial is the same over $\mathbb{R}$, we can conclude that it has no repeated real roots.
+
 _Exercise 14_
 
 As you can see in the solution to Exercise 10, the constant term in the characteristic polynomial, which equals $p(0)$, is is $1$ or $-1$ times the product of the eigenvalues of $S$ raised to the their respective multiplicities.
@@ -425,19 +449,18 @@ $$
 Taking the adjoint of it side yields
 
 $$
-\overline{a_0}I + \overline{a_1} T^\* + \overline{a_2} (T^\*)^2 + \dots + \overline{a_{m-1}}(T^\*)^{m-1} + (T^\*)^m = 0
+\overline{a_0}I + \overline{a_1} T^* + \overline{a_2} (T^*)^2 + \dots + \overline{a_{m-1}}(T^*)^{m-1} + (T^*)^m = 0
 $$
 
-and we see that the minimal polynomial of $T^\*$ is
+and we see that the minimal polynomial of $T^*$ is
 
 $$
 \overline{a_0} + \overline{a_1} z + \overline{a_2} z^2 + \dots + \overline{a_{m-1}}z^{m-1} + z^m.
 $$
 
-To see this, suppose by contradiction this is not the minimal polynomial of $T^\*$.
-Let $p$ denote the minimal polynomial $T$.
-Then $\deg p < m$.
-Because $p(T^\*) = 0$, taking the adjoing of each side as we did above shows that $\overline{p}(T) = 0$, where $\overline{p}$ equals $p$ with conjugated coefficients.
+To see this, suppose by contradiction this is not the minimal polynomial of $T^*$.
+Let $p$ denote the minimal polynomial of $T^*$.
+Then $\deg p < m$. Because $p(T^*) = 0$, taking the adjoing of each side as we did above shows that $\overline{p}(T) = 0$, where $\overline{p}$ equals $p$ with conjugated coefficients.
 But $\deg \overline{p} < m$, which is a contradiction because the minimal polynomial of $T$ has degree $m$.
 
 _Exercise 17_
@@ -446,6 +469,104 @@ The characteristic polynomial of $T$, call it $q$, has degree $\dim V$ (see 8.36
 Because $q$ is a multiple of $q$, it follows that $q = ps$ for some polynomial $s$ and, because $\deg q = \deg p$, it follows that $\deg s = 0$.
 Hence $s$ is a constant.
 Since they're both monic, $s = 1$ and they should be equal.
+
+_Exercise 18_
+
+First, let us consider equations on eigenvalues. Suppose $(x_1, x_2, ..., x_n)$ is an eigenvector corresponding to eigenvalue $\lambda$. Then we can write:
+
+$$
+\begin{cases}
+\lambda x_0 = -a_0x_{n-1}\\
+\lambda x_1 = x_0 - a_1x_{n-1}\\
+...\\
+\lambda x_{n-1} = x_{n-2} - a_{n-1}x_{n-1}
+\end{cases}
+$$
+
+Let us multiply $i$'th equation in this system by $\lambda^{i-1}$:
+
+$$
+\begin{cases}
+\lambda x_0 = -a_0x_{n-1}\\
+\lambda^2 x_1 = \lambda x_0 - a_1\lambda x_{n-1}\\
+\lambda^3 x_2 = \lambda^2 x_1 - a_2\lambda^2 x_{n-1}\\
+...\\
+\lambda^{n} x_{n-1} = \lambda^{n-1}x_{n-2} - a_{n-1}\lambda^{n-1}x_{n-1}
+\end{cases}
+$$
+
+We can now sequentially substitute left part from $k$'th equation into right part of $k+1$st equation, getting
+
+$$
+\lambda^{k + 1} x_{k} = -a_0x_{n-1} -a_1\lambda x_{n-1} - .... - a_{k}\lambda^{k} x_{n-1}
+$$
+
+So, for the last one, we obtain
+
+$$
+\lambda^{n} x_{n-1} = -a_0x_{n-1} -a_1\lambda x_{n-1} - .... - a_{n-1}\lambda^{n-1} x_{n-1}
+$$
+
+Hence 
+
+$$
+(\lambda^{n} + a_{n-1}\lambda^{n-1} + ... + a_1\lambda +a_0)x_{n-1} = 0
+$$
+
+Left part turns zero if either first or second factor is 0. Suppose at first that $x_{n-1} = 0$. Then, from the last equation from the initial system we conclude that $x_{n-2} = 0$, this implies that $x_{n-3} = 0$ and so on. Therefore, if $x_{n-1} = 0$, then all the coefficients of vector must be zero, so it won't be eigenvector, and this means that $x_{n-1}\neq 0$. 
+
+Now, this means that 
+
+$$
+\lambda^{n} + a_{n-1}\lambda^{n-1} + ... + a_1\lambda +a_0 = 0
+$$
+
+It is easy to show, that if $\lambda$ is a zero of the above polynomial, we can consequitively find unique solution for $x_i$, supposing that $x_{n-1}=1$: 
+
+$$
+\begin{align}
+x_{n-1} &= 1\\
+x_{n-2} &= a_{n-1} + \lambda \\
+x_{n-3} &= a_{n-2} + a_{n-1}\lambda + \lambda^2\\
+... & \\
+x_0 &= a_1 + a_2\lambda + ... + \lambda^{n-1}
+\end{align}
+$$
+
+and so all the eigenvalues of the operator are zeros of the above polynomial. However, it is not yet clear whether this polynomial is minimal or characteristic polynomial of given operator, since the multiplicities of roots may differ in those two polynomials, even though all the mentioned polynomials have the same set of roots. We will now try to prove, that this polynomial is in fact minimal (and hence, characteristic, because it is monic and its degree is n).
+
+First let us prove that minimal polynomial has in fact degree $n$. To do it, we will prove lemma: $A^j$ has a form 
+
+$$
+A^j = \begin{pmatrix}
+  0 & 0 & ... & 0 & -a_0 & ... \\
+  0 & 0 & ... & 0 & -a_1 & ... \\
+  ... & ... & ... & ... & ... & ... \\
+  1 & 0 & ... & 0 & -a_{j} & ... \\
+  0 & 1 & ... & 0 & -a_{j + 1} & ... \\
+  ... & ... & ... & ... & ... & ... \\
+  0 & 0 & ... & 1 & -a_{n - 1} & ... \\
+\end{pmatrix}
+$$
+
+In short, $A_{j+1, 1} = A_{j+2, 2} = ... = A_{n, n - j} = 1$, $A_{i,n - j + 1} = -a_{i - 1}$ for all $i = 1..n$, and $A_{ij} = 0$ for all other $i = 1..n$, $j = 1..n - j$.
+
+This is obviously true for $j = 1$, and it is also true for $j = 0$ if we agree to ignore all the values which do not fit into matrix size (since for $j = 0$ it doesn't make sense to talk about $A_{i,n - j + 1}$ for any $i$).
+
+To prove this statement, we can use induction. Suppose this is true for $A^j$, consider now $A^{j+1} = A\cdot A^j$. 
+....
+
+Consider now minimal polynomial $p(z)$, and suppose its least power term having non-zero coefficient is $c_jz^j$ (such monomial exists since $p(z) \neq 0$). This means, that $p(A)$ matrix gets $c_j \neq 0$ as a coefficient in position $(j + 1,1)$. By the above lemma, no powers of $A$ in range $0..n$ except $A^j$ and $A^{n}$ can have non-zero coefficient in this position, so to make it $p(A)_{j+1,1}$ zero, we must add properly scaled $A^{n}$. This implies, that $p(z)$ has a degree of at least $n$. On the other hand, we know that characteristic polynomial has a degree of $n$ by Cayley–Hamilton theorem, and that minimal polynomial has a degree not greater than that of characteristic polynomial. This implies, that $\operatorname{deg}p(z) = n$.
+
+Now that we proved minimal polynomial has a degree of $n$, it must be that minimal polynomial and characteristic polynomial are the same, since they have the same degree, minimal polynomial divides characteristic polynomial and they both are monic.
+
+Finally, we have already understood, that minimal polynomial contains term $z^n$ (since it has a degree $n$ and is monic, so the coefficient is 1). Suppose $p(z) = z^n + c_{n-1}z^{n-1} + ... + c_1z + c_0$ We know that $p(A) = 0$, which implies, that $0 = p(A)_{i,1} = A^n_{i,1} + c_{i - 1}A^{i-1} = -a_{i-1} + c_{i - 1}$, where the last two equations follow from the above lemma. 
+
+This means, that $c_{i-1} = a_{i-1}$, and so in fact minimal and characteristic polynomials are both 
+
+$$
+p(z) = z^{n} + a_{n-1}z^{n-1} + ... + a_1z +a_0 
+$$
 
 _Exercise 19_
 
@@ -456,11 +577,11 @@ _Exercise 20_
 This is a bit obvious if you realize that
 
 $$
-\dim G(\lambda, T) = \dim G(\lambda, T|\_{V_1}) + \dots + G(\lambda, T|\_{V_m}) \tag{2}
+\dim G(\lambda, T) = \dim G(\lambda, T|_{V_1}) + \dots + G(\lambda, T|_{V_m}) \tag{2}
 $$
 
 for every $\lambda \in \mathbb{F}$.
-This is true because the subspaces on the right side of the equation are contained in $G(\lambda, T)$ and because when we write each $V_j$ as a direct sum of generalized eigenspaces of $T|\_{V_j}$ in the equation
+This is true because the subspaces on the right side of the equation are contained in $G(\lambda, T)$ and because when we write each $V_j$ as a direct sum of generalized eigenspaces of $T|_{V_j}$ in the equation
 
 $$
 V = V_1 \oplus \dots \oplus V_m

@@ -53,6 +53,8 @@ Therefore $I - T$ is an inverse of $I + T + \dots + T^{n-1}$, which implies the 
 _(b)_
 I wouldn't.
 
+We know, that $(1 - x^n) = (1 - x)(1 + x + ... + x^{n-1})$. If we consider this as polynomial over $\mathcal{L}(V)$, and substitute $T$, we get $I = (I - T)(I + T + ... + T^{n-1})$.
+
 _Exercise 2_
 
 Suppose $\lambda$ is an eigenvalue of $T$ and $v$ a corresponding eigenvector.
@@ -104,7 +106,7 @@ $$
 0 = Pu = P^2 w = Pw = u
 $$
 
-Therefore $\operatorname{null} P \cap \operatorname{range} P = \\{0\\}$ and by 1.45 it is direct sum.
+Therefore $\operatorname{null} P \cap \operatorname{range} P = \{0\}$ and by 1.45 it is direct sum.
 
 _Exercise 5_
 
@@ -211,10 +213,10 @@ Then $-1$ is an eigenvalue of $p(T)$, but $p$ is always positive, therefore no e
 
 _Exercise 13_
 
-By 5.21, $W$ is either $\\{0\\}$ or infinite-dimensional.
+By 5.21, $W$ is either $\{0\}$ or infinite-dimensional.
 Let $U$ be a subspace of $W$ invariant under $T$.
 Then $T\rvert_U$ also has no eigenvalues.
-But $T\rvert_U$ is also an operator on a complex vector space, therefore $U$ is either $\\{0\\}$ or infinite-dimensional.
+But $T\rvert_U$ is also an operator on a complex vector space, therefore $U$ is either $\{0\}$ or infinite-dimensional.
 
 _Exercise 14_
 
@@ -276,7 +278,7 @@ Hence $f(0) = \operatorname{dim} \operatorname{range} T < \operatorname{dim} \op
 
 _Exercise 19_
 
-5.20 implies that any two operators in $\\{p(T): p \in \mathcal{P}(\mathbb{F})\\}$ commute.
+5.20 implies that any two operators in $\{p(T): p \in \mathcal{P}(\mathbb{F})\}$ commute.
 But this is obviously not true for $\mathcal{L}(V)$, because $\operatorname{dim} V > 1$.
 For example, let $v_1, \dots, v_n$ be a basis of $V$.
 Define $S, R \in L(V)$ by

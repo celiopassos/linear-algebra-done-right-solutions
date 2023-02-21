@@ -69,10 +69,10 @@ $$
 0 & & & \lambda_j
 \end{pmatrix}^2 =
 \begin{pmatrix}
-\lambda_j^2 & 2\lambda_j & & 0\\\\
-& \ddots & \ddots &\\\\
-& & \ddots & 2\lambda_j\\\\
-0 & & & \lambda_j^2
+\lambda_j^2 & 2\lambda_j & 1 & & 0\\\\
+& \ddots & \ddots & \ddots &\\\\
+& & \ddots & \ddots & 2\lambda_j\\\\
+0 & & & \ddots & \lambda_j^2
 \end{pmatrix}.
 $$
 
